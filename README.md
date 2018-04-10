@@ -3,11 +3,11 @@
 One Paragraph of project description goes here
 
 ## Contributors
-*sevsev9[https://github.com/sevsev9]
-*Altmanninger[https://github.com/Altmanninger]
-*Fruewirth[https://github.com/Fruewirth]
-*Kollau[https://github.com/Philjey]
-*MarcK[https://github.com/MarcKoppler]
+*[sevsev9](https://github.com/sevsev9)
+*[Altmanninger](https://github.com/Altmanninger)
+*[Fruewirth](https://github.com/Fruewirth)
+*[Kollau](https://github.com/Philjey)
+*[MarcK](https://github.com/MarcKoppler)
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
