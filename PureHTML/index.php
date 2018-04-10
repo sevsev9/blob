@@ -41,12 +41,12 @@
         -->
 
 
-        <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;">
+        <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;" >
             <h1 id="head">Login</h1>
             <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
             <div class="form-group"><input class="form-control" type="email" id="form2" placeholder="Email"></div>
             <div class="form-group"><input class="form-control" type="password" id="form2" placeholder="Password"></div><button class="btn btn-light" type="button" id="btns">Login</button>
-            <a href="#" id="link">Forgot your E-mail or password?</a>
+            <a href="" id="link">Forgot your E-mail or password?</a>
         </form>
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
