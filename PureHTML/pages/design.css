@@ -1,0 +1,17 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.xp {
+    font-family: "Arial Black";
+    position: absolute;
+    color: mediumpurple;
+    width: 100%;
+    margin: 0;
+    padding: 0%;
+    padding-bottom: 5%;
+    text-align: center;
+    z-index: 10;
+    bottom: 0;
+}
