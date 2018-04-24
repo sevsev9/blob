@@ -29,8 +29,8 @@ body{
 
 .shop{
     position: absolute;
-    top: -25%;
-    left: 35%;
+    top: -120%;
+    left: 10%;
     z-index: 20;
 }
 

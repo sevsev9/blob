@@ -38,14 +38,21 @@
 <div class="zentr"><div class="name">[NAME]</div></div>
 <div class="xp">[CURRENT_XPCOUNT]/[NEEDED_XP]xp</div>
 <div class="coins">[anzahl_coins] Coins</div>
-<img src="../img/shop.png" width="50%" class="shop"/>
+<img src="../img/shop.png" width="80%" class="shop"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     function shop() {
         $(document).ready(function(){
-            $(".shop").animate({top: '50%'}, "slow");
+            $(".shop").animate({top: '-18%'}, "slow");
+            doBounce($(".shop"), 3, '10px', 300);
         });
+    }
+    function doBounce(element, times, distance, speed) {
+        for(var i = 0; i < times; i++) {
+            element.animate({marginTop: '-='+distance}, speed)
+                .animate({marginTop: '+='+distance}, speed);
+        }
     }
 
 </script>
