@@ -29,7 +29,7 @@
 
 
 </head>
-<body>
+<body onload="shop()">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
@@ -38,8 +38,18 @@
 <div class="zentr"><div class="name">[NAME]</div></div>
 <div class="xp">[CURRENT_XPCOUNT]/[NEEDED_XP]xp</div>
 <div class="coins">[anzahl_coins] Coins</div>
+<img src="../img/shop.png" width="50%" class="shop"/>
 
-<img src="../img/testblob.png" width="500vw" class="blobbox">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function shop() {
+        $(document).ready(function(){
+            $(".shop").animate({top: '50%'}, "slow");
+        });
+    }
+
+</script>
+
 
 
 

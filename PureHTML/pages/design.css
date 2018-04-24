@@ -27,6 +27,13 @@ body{
     bottom: 10%;
 }
 
+.shop{
+    position: absolute;
+    top: -25%;
+    left: 35%;
+    z-index: 20;
+}
+
 .name{
     font-size: 1.4em;
     position: relative;
@@ -42,6 +49,7 @@ body{
 
 .coins {
     position: absolute;
+    top: -250px;
     right: 1%;
     padding: 1%;
     margin: 0;
