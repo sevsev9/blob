@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-        $active = $row['active'];
+        //$active = $row['active'];
         $count = mysqli_num_rows($result);
 
 
@@ -37,18 +37,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             session_start();
             $_SESSION['userName'] = 'Root';
-            $_SESSION['login_user'] = $username->uname;
+            $_SESSION['login_user'] = $username;
 
             $db->close();
             echo "<script type='text/javascript'>
-                                
-                                function sleep (time) {
-                                  return new Promise((resolve) => setTimeout(resolve, time));
-                                }
-                                
-                                sleep(0).then(() => {
-                                    window.location.replace(\"../pages/gui.html\");
-                                });                            
+
+                            function sleep (time) {
+                               return new Promise((resolve) => setTimeout(resolve, time));
+                            }
+                            sleep(0).then(() => {
+                                GoInFullscreen();
+                                window.location.replace(\"../pages/gui.html\");
+                            });                     
                           </script>";
         } else {
             echo "<script type='text/javascript'>
