@@ -28,6 +28,7 @@ body{
 }
 
 .name{
+    font-size: 1.4em;
     position: relative;
     left: 41%;
     width: 15%;
