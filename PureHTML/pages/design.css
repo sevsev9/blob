@@ -42,6 +42,7 @@ body{
 
 .coins {
     position: absolute;
+    top: -250px;
     right: 1%;
     padding: 1%;
     margin: 0;
