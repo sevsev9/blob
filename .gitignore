@@ -5,6 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+PureHTML\.idea\workspace.xml
+
 # Runtime data
 pids
 *.pid
@@ -57,3 +59,4 @@ typings/
 # dotenv environment variables file
 .env
 
+PureHTML/.idea/workspace.xml
