@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -36,16 +36,19 @@
 
     </head>
     <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        -->
 
 
-        <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;" >
+        <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;" method="post" action="php/login.php" >
             <h1 id="head">Login</h1>
             <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
-            <div class="form-group"><input class="form-control" type="email" id="form2" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" id="form2" placeholder="Password"></div><button class="btn btn-light" type="button" id="btns">Login</button>
+
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2" name="umail" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="form2" name="psw" placeholder="Password">
+            </div>
+            <button class="btn btn-light" type="submit" id="btns">Login</button>
             <a href="" id="link">Forgot your E-mail or password?</a>
         </form>
 
