@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                return new Promise((resolve) => setTimeout(resolve, time));
                             }
                             sleep(0).then(() => {
-                                GoInFullscreen();
+                                toggleFullScreen();
                                 window.location.replace(\"../pages/gui.html\");
                             });                     
                           </script>";

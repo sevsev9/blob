@@ -36,7 +36,7 @@
 
     </head>
     <body>
-
+<div id="fscreen"></div>
         <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;" method="post" action="php/login.php" >
             <h1 id="head">Login</h1>
             <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
@@ -50,6 +50,43 @@
             <button class="btn btn-light" type="submit" id="btns">Login</button>
             <a href="" id="link">Forgot your E-mail or password?</a>
         </form>
+
+        <script type="text/javascript">
+            function toggleFullscreen(elem) {
+                elem = elem || document.documentElement;
+                if (!document.fullscreenElement && !document.mozFullScreenElement &&
+                    !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.msRequestFullscreen) {
+                        elem.msRequestFullscreen();
+                    } else if (elem.mozRequestFullScreen) {
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+
+            document.getElementById('btns').addEventListener('click', function() {
+                toggleFullscreen();
+            });
+
+            document.getElementById('exampleImage').addEventListener('click', function() {
+                toggleFullscreen(this);
+            });
+
+        </script>
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
