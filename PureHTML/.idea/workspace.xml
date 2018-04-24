@@ -64,8 +64,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/navbar.html" />
         <option value="$PROJECT_DIR$/navbartemp.html" />
-        <option value="$PROJECT_DIR$/pages/gui.html" />
         <option value="$PROJECT_DIR$/pages/design.css" />
+        <option value="$PROJECT_DIR$/pages/gui.html" />
       </list>
     </option>
   </component>
@@ -1023,12 +1023,12 @@
       <workItem from="1523366789138" duration="5242000" />
       <workItem from="1523524583462" duration="758000" />
       <workItem from="1524128917191" duration="1880000" />
-      <workItem from="1524577813580" duration="438000" />
+      <workItem from="1524577813580" duration="977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19789000" />
+    <option name="totallyTimeSpent" value="20328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1040" extended-state="1" />
