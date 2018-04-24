@@ -9,9 +9,50 @@ body{
     color: mediumpurple;
     width: 100%;
     margin: 0;
-    padding: 0%;
-    padding-bottom: 5%;
+    padding: 0;
+    padding-bottom: 2.5%;
     text-align: center;
     z-index: 10;
     bottom: 0;
+}
+
+.zentr{
+    font-family: "Arial Black";
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 10;
+    bottom: 10%;
+}
+
+.name{
+    font-size: 1.4em;
+    position: relative;
+    left: 41%;
+    width: 15%;
+    height: 5%;
+    padding: 1%;
+    margin: 0;
+    border: ridge saddlebrown 0.6em;
+    background-color: #bc7a00;
+    color: white;
+}
+
+.coins {
+    position: absolute;
+    right: 1%;
+    padding: 1%;
+    margin: 0;
+    font-family: "Arial Black";
+    border: ridge saddlebrown 0.6em;
+    background-color: #bc7a00;
+    color: white;
+}
+
+.blobbox{
+    position: absolute;
+    left: 37.5%;
+    top: 20%;
 }
