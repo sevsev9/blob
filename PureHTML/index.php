@@ -37,7 +37,6 @@
     </head>
     <body>
 
-
         <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;" method="post" action="php/login.php" >
             <h1 id="head">Login</h1>
             <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
@@ -66,5 +65,22 @@
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+        <div style="
+                    background: url('./img/loginpage_animated-image.gif') no-repeat;
+                    background-size: cover;
+                    -webkit-filter: blur(5px);
+                    -moz-filter: blur(5px);
+                    -o-filter: blur(5px);
+                    -ms-filter: blur(5px);
+                    filter: blur(5px);
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;">
+        </div>
     </body>
 </html>
