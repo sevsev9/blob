@@ -34,16 +34,70 @@
 <![endif]-->
 
 <!-------------------------------------------------Site Content--------------------------------------------------------->
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
     <div class="name">[NAME]</div>
     <div class="xp">[CURRENT_XPCOUNT]/[NEEDED_XP]xp</div>
 </div>
-
 <div class="coins">[anzahl_coins] Coins</div>
+<!--------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------SHOP-->
 <div class="shop">
     <img src="../img/shop.png" width="80%"/>
     <h1 class="shopX" style="cursor:pointer" onclick="closeshop()">X</h1>
-    <div class="shopinhalt">
+
+    <div class="tab">
+            <div id="tabup" class="tablinks" onclick="openTab(event, 'Augen')">augen</div>
+            <div id="tabdown" class="tablinks" onclick="openTab(event, 'Brillen')">Brillen</div>
+    </div>
+
+
+    <div class="shopinhalt" id="Brillen">
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huat</span>
+            <button style="margin-left: 3%; margin-top: 7%; position: absolute; height: 7%; background-color: limegreen; font-size: 250%;">Kaufen</button>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: dodgerblue; font-size: 250%;"><s>Anziehen</s></button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
+        </div>
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <button style="margin-left: 3%; margin-top: 7%; position: absolute; height: 7%; background-color: red; font-size: 250%;">Kaufen</button>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: dodgerblue; font-size: 250%;"><s>Anziehen</s></button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
+        </div>
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <div style="margin-left: 5%; margin-top: 6%; position: absolute; height: 7%; color: limegreen; font-size: 500%; cursor: pointer;">✔</div>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: darkorange; font-size: 250%;">Angezogen</button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
+        </div>
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <div style="margin-left: 5%; margin-top: 6%; position: absolute; height: 7%; color: limegreen; font-size: 500%; cursor: pointer">✔</div>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: dodgerblue; font-size: 250%;">Anziehen</button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
+        </div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+    </div>
+
+
+    <div class="shopinhalt" id="Augen">
         <div class="shopinhalt_elem">
             <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
             <button style="margin-left: 3%; margin-top: 7%; position: absolute; height: 7%; background-color: limegreen; font-size: 250%;">Kaufen</button>
@@ -81,10 +135,18 @@
         <div class="shopinhalt_elem"></div>
     </div>
 </div>
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
 <div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button> </div>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
+<!--------------------------------------------------------------------------------------------------------------------------->
 
 
+
+<!----------------------------------------------------------------------------------------------------------------------NAVBAR-->
 <nav>
     <ul>
         <li>
@@ -106,32 +168,33 @@
 </nav>
 
 <img src="../img/testblob.png" width="30%" class="blobbox">
+<!--------------------------------------------------------------------------------------------------------------------------->
 
 
 
-
-
-
-
-
-
+<!----------------------------------------------------------------------------------------------------------------------Javascript und JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+
+    //Script wird beim Start ausgeführt
     function startscript(){
         background = document.getElementById("background");
         background.style.width = "50%";
         $(document).ready(function(){
             $(".shop").animate({top: '-17%'}, 100);
             $(".shop").animate({top: '-120%'}, 100);
+            openTab(event, 'Augen');
         });
     }
 
+    //Shop schließen
     function closeshop(){
         $(document).ready(function(){
             $(".shop").animate({top: '-120%'}, 1000);
         });
     }
 
+    //Shop öffnen
     function shop() {
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
@@ -140,6 +203,8 @@
             navCount = 1;
         });
     }
+
+    //Bounce-Animation
     function doBounce(element, times, distance, speed) {
         for(var i = 0; i < times; i++) {
                 element.animate({marginTop
@@ -148,6 +213,7 @@
         }
     }
 
+    //Wechseln in den Fullscreenmodus
     function toggleFullscreen(elem) {
         elem = elem || document.documentElement;
         isfullscreen = document.getElementById("startgamediv");
@@ -183,6 +249,7 @@
         }
     }
 
+    //Fullscreenmode enabled?
     $(document).on('webkitfullscreenchange', function(e)
     {
         if(document.webkitIsFullScreen){}
@@ -192,8 +259,10 @@
         }
     });
 
+    //Navbar auf, oder zu --> 1 zum öffnen, 0 zum schließen
     navCount = 1;
 
+    //Navbar öffnen oder schließen
     function openNav() {
 
         if (navCount==1){
@@ -213,12 +282,13 @@
 </script>
 
 <script>
-    function openCity(evt, cityName) {
+    //Verschiedene Tabs für Shop
+    function openTab(evt, tabname) {
         // Declare all variables
         var i, tabcontent, tablinks;
 
         // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
+        tabcontent = document.getElementsByClassName("shopinhalt");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
@@ -230,10 +300,11 @@
         }
 
         // Show the current tab, and add an "active" class to the link that opened the tab
-        document.getElementById(cityName).style.display = "block";
+        document.getElementById(tabname).style.display = "block";
         evt.currentTarget.className += " active";
     }
 </script>
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-----
 
 <p></p>
 <script src="../js/vendor/modernizr-3.5.0.min.js"></script>
