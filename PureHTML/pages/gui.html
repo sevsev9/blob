@@ -45,27 +45,33 @@
     <h1 class="shopX" style="cursor:pointer" onclick="closeshop()">X</h1>
     <div class="shopinhalt">
         <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/bb1.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <button style="margin-left: 3%; margin-top: 7%; position: absolute; height: 7%; background-color: limegreen; font-size: 250%;">Kaufen</button>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: dodgerblue; font-size: 250%;"><s>Anziehen</s></button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
         </div>
         <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/bb1.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <button style="margin-left: 3%; margin-top: 7%; position: absolute; height: 7%; background-color: red; font-size: 250%;">Kaufen</button>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: dodgerblue; font-size: 250%;"><s>Anziehen</s></button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
         </div>
         <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/bb1.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <div style="margin-left: 5%; margin-top: 6%; position: absolute; height: 7%; color: limegreen; font-size: 500%; cursor: pointer;">✔</div>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: darkorange; font-size: 250%;">Angezogen</button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
         </div>
-        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 3%; margin-top: 2%; font-size: 300%; position: absolute">Deppada Huad</span>
+            <div style="margin-left: 5%; margin-top: 6%; position: absolute; height: 7%; color: limegreen; font-size: 500%; cursor: pointer">✔</div>
+            <button style="margin-left: 12%; margin-top: 7%; position: absolute; height: 7%; background-color: dodgerblue; font-size: 250%;">Anziehen</button>
+            <span style="margin-left: 40%; font-size: 400%; position: absolute; margin-top: 5%">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13%; margin-left: 82%; position: absolute; margin-top: 0;"/>
+        </div>
         <div class="shopinhalt_elem"></div>
         <div class="shopinhalt_elem"></div>
         <div class="shopinhalt_elem"></div>
@@ -128,8 +134,10 @@
 
     function shop() {
         $(document).ready(function(){
-            $(".shop").delay(700).animate({top: '-17%'}, 1000);
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $(".shop").animate({top: '-17%'}, 1000);
             doBounce($(".shop"), 1, '1%', 180);
+            navCount = 1;
         });
     }
     function doBounce(element, times, distance, speed) {
@@ -184,10 +192,6 @@
         }
     });
 
-</script>
-
-<script>
-
     navCount = 1;
 
     function openNav() {
@@ -195,6 +199,7 @@
         if (navCount==1){
             $(document).ready(function(){
                 $("nav").animate({left: '-1.5%'}, 1000);
+                $(".shop").animate({top: '-120%'}, 1000);
             });
             navCount=0;
         }else{
@@ -204,6 +209,29 @@
             navCount=1;
         }
 
+    }
+</script>
+
+<script>
+    function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
     }
 </script>
 

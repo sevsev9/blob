@@ -19,6 +19,7 @@ body{
     z-index: 10;
     border: ridge saddlebrown 0.6em;
     background-color: #bc7a00;
+    text-shadow: white 0em 0em 0em 1em;
 }
 
 .zentr{
