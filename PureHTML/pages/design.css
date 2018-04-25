@@ -1,19 +1,25 @@
+html{
+    overflow: hidden;
+}
+
 body{
+    font-family: "Arial Black";
     padding: 0;
     margin: 0;
 }
 
 .xp {
     font-family: "Arial Black";
-    position: absolute;
+    position: relative;
     color: mediumpurple;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 2.5%;
-    text-align: center;
+    width: 20%;
+    left: 40%;
+    padding: 1%;
+    height: 3%;
     z-index: 10;
-    bottom: 0;
+    text-shadow: black 0 0 0.2em;
+    border: ridge saddlebrown 0.6em;
+    background-color: #bc7a00;
 }
 
 .zentr{
@@ -24,11 +30,12 @@ body{
     padding: 0;
     text-align: center;
     z-index: 10;
-    bottom: 10%;
+    bottom: 6%;
 }
 
 .shop{
     position: absolute;
+    width: 100%;
     top: -200%;
     left: 10%;
     z-index: 20;
@@ -37,7 +44,7 @@ body{
 .name{
     font-size: 1.4em;
     position: relative;
-    left: 41%;
+    left: 42.5%;
     width: 15%;
     height: 5%;
     padding: 1%;
@@ -49,6 +56,7 @@ body{
 
 .coins {
     position: absolute;
+    top: 1%;
     right: 1%;
     padding: 1%;
     margin: 0;
@@ -62,4 +70,95 @@ body{
     position: absolute;
     left: 37.5%;
     top: 20%;
+}
+
+#startgamediv{
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+}
+
+#startgame{
+    position: absolute;
+    height: 10%;
+    width: 30%;
+    top: 45%;
+    left: 35%;
+    background-color: lime;
+}
+
+.openBtn{
+    position: absolute;
+    top: 4%;
+    left: 76%;
+    font-size: 3em;
+    color: white;
+}
+
+.text{
+    font-size: 2em;
+    color: white;
+}
+
+.coinTxt{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+
+.questTxt{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+}
+
+.helpTxt{
+    position: absolute;
+    top: 80%;
+    left: 15%;
+}
+
+.logoutTxt{
+    position: absolute;
+    top: 90%;
+    left: 15%;
+}
+
+.coinBtn{
+    position: absolute;
+    top: 13%;
+    left: 70%;
+}
+
+.questBtn{
+    position: absolute;
+    top: 22.5%;
+    left: 70%;
+}
+
+.helpBtn{
+    position: absolute;
+    top: 78.5%;
+    left: 70%;
+}
+
+.logoutBtn{
+    position: absolute;
+    top: 89%;
+    left: 70%;
+}
+
+nav{
+    border-right: ridge saddlebrown 0.6em;
+    background-color: #bc7a00;
+    position: absolute;
+    z-index: 0;
+    left: -9.8%;
+    top: 0;
+    width: 15%;
+    height: 100%;
 }
