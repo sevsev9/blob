@@ -40,9 +40,40 @@
 </div>
 
 <div class="coins">[anzahl_coins] Coins</div>
-<img src="../img/shop.png" width="80%" class="shop"/>
+<div class="shop"><img src="../img/shop.png" width="80%"/></div>
 <div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button> </div>
 <img src="../img/background_purple.png" width="100%" id="background"/>
+
+
+<nav>
+    <ul>
+        <li>
+            <span style="cursor:pointer" class="openBtn" onclick="openNav()">&#9776;</span>
+        </li>
+        <li>
+            <span class="coinTxt text" style="cursor:pointer" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
+        </li>
+        <li>
+            <span class="questTxt text">Quest</span><img src="../img/quest.png" width="25%" class="questBtn">
+        </li>
+        <li>
+            <span class="helpTxt text">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
+        </li>
+        <li>
+            <span class="logoutTxt text">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
+        </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -54,14 +85,15 @@
 
     function shop() {
         $(document).ready(function(){
-            $(".shop").animate({top: '-18%'}, 1000);
+
+            $(".shop").delay(700).animate({top: '-17%'}, 1000);
             doBounce($(".shop"), 1, '1%', 180);
         });
     }
     function doBounce(element, times, distance, speed) {
         for(var i = 0; i < times; i++) {
-            element.animate({marginTop: '-='+distance}, speed)
-                .animate({marginTop: '+='+distance}, speed);
+                element.animate({marginTop: '-='+distance}, speed)
+                    .animate({marginTop: '+='+distance}, speed);
         }
     }
 
@@ -109,6 +141,27 @@
         }
     });
 
+</script>
+
+<script>
+
+    navCount = 1;
+
+    function openNav() {
+
+        if (navCount==1){
+            $(document).ready(function(){
+                $("nav").animate({left: '-1.5%'}, 1000);
+            });
+            navCount=0;
+        }else{
+            $(document).ready(function(){
+                $("nav").animate({left: '-9.8%'}, 1000);
+            });
+            navCount=1;
+        }
+
+    }
 </script>
 
 <p></p>

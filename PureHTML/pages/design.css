@@ -3,6 +3,7 @@ html{
 }
 
 body{
+    font-family: "Arial Black";
     padding: 0;
     margin: 0;
 }
@@ -34,6 +35,7 @@ body{
 
 .shop{
     position: absolute;
+    width: 100%;
     top: -200%;
     left: 10%;
     z-index: 20;
@@ -87,4 +89,76 @@ body{
     top: 45%;
     left: 35%;
     background-color: lime;
+}
+
+.openBtn{
+    position: absolute;
+    top: 4%;
+    left: 76%;
+    font-size: 3em;
+    color: white;
+}
+
+.text{
+    font-size: 2em;
+    color: white;
+}
+
+.coinTxt{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+
+.questTxt{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+}
+
+.helpTxt{
+    position: absolute;
+    top: 80%;
+    left: 15%;
+}
+
+.logoutTxt{
+    position: absolute;
+    top: 90%;
+    left: 15%;
+}
+
+.coinBtn{
+    position: absolute;
+    top: 13%;
+    left: 70%;
+}
+
+.questBtn{
+    position: absolute;
+    top: 22.5%;
+    left: 70%;
+}
+
+.helpBtn{
+    position: absolute;
+    top: 78.5%;
+    left: 70%;
+}
+
+.logoutBtn{
+    position: absolute;
+    top: 89%;
+    left: 70%;
+}
+
+nav{
+    border-right: ridge saddlebrown 0.6em;
+    background-color: #bc7a00;
+    position: absolute;
+    z-index: 0;
+    left: -9.8%;
+    top: 0;
+    width: 15%;
+    height: 100%;
 }
