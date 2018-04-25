@@ -28,7 +28,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 </head>
-<body onload="shop()">
+<body onload="fullscreen()">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
@@ -52,6 +52,10 @@
             element.animate({marginTop: '-='+distance}, speed)
                 .animate({marginTop: '+='+distance}, speed);
         }
+    }
+
+    function fullscreen(){
+        document.documentElement.webkitRequestFullScreen();
     }
 </script>
 
