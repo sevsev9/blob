@@ -3,15 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <title>Only_navbar</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Arial Black";
+            margin: 0;
+            padding: 0;
+        }
+
+        .openBtn{
+            position: relative;
+            top: 2%;
+            left: 70%;
+            font-size: 3em;
+            color: white;
+        }
+
+        .text{
+            font-size: 2em;
+            color: white;
+        }
+
+        .coinTxt{
+            position: absolute;
+            top: 15%;
+            left: 15%;
+        }
+
+        .questTxt{
+            position: absolute;
+            top: 25%;
+            left: 15%;
+        }
+
+        .helpTxt{
+            position: absolute;
+            top: 80%;
+            left: 15%;
+        }
+
+        .logoutTxt{
+            position: absolute;
+            top: 90%;
+            left: 15%;
+        }
+
+        .coinBtn{
+            position: absolute;
+            top: 13%;
+            left: 70%;
+        }
+
+        .questBtn{
+            position: absolute;
+            top: 22.5%;
+            left: 70%;
+        }
+
+        .helpBtn{
+            position: absolute;
+            top: 78.5%;
+            left: 70%;
+        }
+
+        .logoutBtn{
+            position: absolute;
+            top: 89%;
+            left: 70%;
+        }
+
+        nav{
+            border-right: ridge saddlebrown 0.6em;
+            background-color: #bc7a00;
+            position: absolute;
+            z-index: 0;
+            left: -9.8%;
+            top: 0;
+            width: 15%;
+            height: 100%;
+        }
+
+    </style>
+
 </head>
 <body>
 
-<ul class="nav nav-pills nav-stacked">
-<div class="btn-group">
-    <button type="button">Shop</button>
-    <button type="button">?</button>
-</div>
+<nav>
+<ul>
+    <li>
+        <span style="cursor:pointer" class="openBtn" onclick="openNav()">&#9776;</span>
+    </li>
+    <li>
+        <span class="coinTxt text">Shop</span><img src="./img/coin.png" width="25%" class="coinBtn">
+    </li>
+    <li>
+        <span class="questTxt text">Quest</span><img src="./img/quest.png" width="25%" class="questBtn">
+    </li>
+    <li>
+        <span class="helpTxt text">Help</span><img src="./img/help.png" width="25%" class="helpBtn">
+    </li>
+    <li>
+        <span class="logoutTxt text">Logout</span><img src="./img/cancel.png" width="25%" class="logoutBtn">
+    </li>
 </ul>
+</nav>
+
+<script>
+
+    navCount = 1;
+
+    function openNav() {
+
+        if (navCount==1){
+            $(document).ready(function(){
+                $("nav").animate({left: '-1.5%'}, 1000);
+            });
+            navCount=0;
+        }else{
+            $(document).ready(function(){
+                $("nav").animate({left: '-9.8%'}, 1000);
+            });
+            navCount=1;
+        }
+
+    }
+</script>
 
 </body>
 </html>
