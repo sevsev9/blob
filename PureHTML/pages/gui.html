@@ -43,6 +43,37 @@
 <div class="shop">
     <img src="../img/shop.png" width="80%"/>
     <h1 class="shopX" style="cursor:pointer" onclick="closeshop()">X</h1>
+    <div class="shopinhalt">
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
+        </div>
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
+        </div>
+        <div class="shopinhalt_elem">
+            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
+            <img src="../img/bb1.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
+        </div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+        <div class="shopinhalt_elem"></div>
+    </div>
 </div>
 <div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button> </div>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
@@ -83,6 +114,10 @@
     function startscript(){
         background = document.getElementById("background");
         background.style.width = "50%";
+        $(document).ready(function(){
+            $(".shop").animate({top: '-17%'}, 100);
+            $(".shop").animate({top: '-120%'}, 100);
+        });
     }
 
     function closeshop(){
