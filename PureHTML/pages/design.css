@@ -41,6 +41,14 @@ body{
     z-index: 500;
 }
 
+.shopX{
+    position: absolute;
+    left: 73%;
+    top: 32%;
+    color: white;
+    z-index: 501;
+}
+
 .name{
     font-size: 1.4em;
     position: relative;

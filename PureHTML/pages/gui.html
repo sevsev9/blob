@@ -40,7 +40,10 @@
 </div>
 
 <div class="coins">[anzahl_coins] Coins</div>
-<div class="shop"><img src="../img/shop.png" width="80%"/></div>
+<div class="shop">
+    <img src="../img/shop.png" width="80%"/>
+    <h1 class="shopX" style="cursor:pointer" onclick="closeshop()">X</h1>
+</div>
 <div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button> </div>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
 
@@ -82,17 +85,22 @@
         background.style.width = "50%";
     }
 
+    function closeshop(){
+        $(document).ready(function(){
+            $(".shop").animate({top: '-120%'}, 1000);
+        });
+    }
 
     function shop() {
         $(document).ready(function(){
-
             $(".shop").delay(700).animate({top: '-17%'}, 1000);
             doBounce($(".shop"), 1, '1%', 180);
         });
     }
     function doBounce(element, times, distance, speed) {
         for(var i = 0; i < times; i++) {
-                element.animate({marginTop: '-='+distance}, speed)
+                element.animate({marginTop
+                        : '-='+distance}, speed)
                     .animate({marginTop: '+='+distance}, speed);
         }
     }
