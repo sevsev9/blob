@@ -308,7 +308,7 @@
 </div>
 <form name="VokabelQuestInputForm">
     <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
-    <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="uploadVokabelFile()" accept=".csv">
+    <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".csv">
 </form>
 
 <script>
@@ -320,18 +320,24 @@
     var zeilenanz;
 
 
-    function uploadVokabelFile() {
-        var Vokabeldatei = document.forms["VokabelQuestInputForm"]["VokabelPathPicker"].value;
-        Vokabeldatei = Vokabeldatei.split('\\').pop().replace(/\..+$/, '');
+    function readVokabelFile() {
 
-            $.ajax({
-                type: "GET",
-                url: Vokabeldatei + ".csv",
-                dataType: "text",
-                success: function (data) {
-                    vokabelliste = data;
-                }
-            });
+        var files = document.getElementById('VokabelPathPicker').files;
+
+        var file = files[0];
+        var start = 0;
+        var stop = file.size;
+
+        var reader = new FileReader();
+
+        reader.onloadend = function(evt) {
+            if (evt.target.readyState == FileReader.DONE) {
+                vokabelliste = evt.target.result;
+            }
+        };
+
+        var blob = file.slice(start, stop);
+        reader.readAsBinaryString(blob);
     }
 
     function createVokabelQuest() {

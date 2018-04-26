@@ -1,3 +1,7 @@
+.versteckt{
+    display: none;
+}
+
 html{
     overflow: hidden;
 }
@@ -199,6 +203,12 @@ body{
     z-index: 10;
 }
 
+.englishTxt{
+    position: absolute;
+    top: 35%;
+    left: 15%;
+}
+
 .helpTxt{
     position: absolute;
     top: 80%;
@@ -215,16 +225,22 @@ body{
 
 .coinBtn{
     position: absolute;
-    top: 13%;
+    top: 13.5%;
     left: 70%;
     z-index: 10;
 }
 
 .matheBtn{
     position: absolute;
-    top: 22.5%;
+    top: 23.5%;
     left: 70%;
     z-index: 10;
+}
+
+.englishBtn{
+    position: absolute;
+    top: 34%;
+    left: 70%;
 }
 
 .helpBtn{
@@ -303,6 +319,68 @@ nav{
     left: 70%;
     border-radius: 1em;
     width: 5%;
+    z-index: 501;
+}
+
+
+
+.vokabelbox{
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    z-index: 500;
+}
+
+#Vokabelaufgabentext{
+    position: absolute;
+    font-family: "Arial Black";
+    font-size: 5em;
+    top: 20%;
+    left: 30%;
+    z-index: 501;
+}
+
+#VokabelQuestInput{
+    position: absolute;
+    top: 63%;
+    left: 40%;
+    font-family: "Arial Black";
+    font-size: 2em;
+    width: 20em;
+    height: 1.2em;
+    padding: 0.4em;
+    margin: 0;
+    border-radius: 1em;
+    z-index: 501;
+}
+
+.VokabelNextBtn{
+    padding: 0.3em;
+    position: absolute;
+    top: 80%;
+    left: 27%;
+    font-size: 1.5em;
+    font-family: "Arial Black";
+    border-radius: 1em;
+    z-index: 501;
+}
+
+.vokabelOkBtn{
+    position: absolute;
+    top: 65.5%;
+    left: 70%;
+    border-radius: 1em;
+    width: 5%;
+    z-index: 501;
+}
+
+#VokabelPathPicker{
+    position: absolute;
+    top: 70.5%;
+    left: 50%;
+    font-size: 1.5em;
+    padding: 0.2em;
+    margin: 0;
     z-index: 501;
 }
 

@@ -60,7 +60,20 @@
 
 <!--------------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------englishbox-->
 
+<div class="vokabelbox">
+    <img src="../img/Vokabelaufgabenbox.png" width="90%"/>
+    <button onclick="createVokabelQuest()" class="nextBtn">Next word</button>
+    <img src="../img/ok.png" onclick="answerVokabelQuest()" class="vokabelOkBtn">
+    <div id="Vokabelaufgabentext">Bereit?</div>
+</div>
+<form name="VokabelQuestInputForm">
+    <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
+    <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".csv">
+</form>
+
+<!--------------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
 
@@ -166,7 +179,10 @@
             <span class="coinTxt text" style="cursor:pointer" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
         </li>
         <li>
-            <span class="matheTxt text" style="cursor: pointer" onclick="openNav(), mathboxopen()">Quest</span><img src="../img/quest.png" width="25%" class="matheBtn">
+            <span class="matheTxt text" style="cursor: pointer" onclick="openNav(), mathboxopen()">Quest</span><img src="../img/mathe.png" width="25%" class="matheBtn">
+        </li>
+        <li>
+            <span class="englishTxt text">English</span><img src="../img/english.png" width="25%" class="englishBtn">
         </li>
         <li>
             <span class="helpTxt text">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
@@ -353,6 +369,9 @@
         evt.currentTarget.className += " active";
     }
 </script>
+
+<!----------------------------------------------------------------------------------------------------------------------Mathesystem-->
+
 <script>
 
     var ergebnis = -1;
@@ -444,6 +463,75 @@
     });
 
 </script>
+
+<!----------------------------------------------------------------------------------------------------------------------englishsystem-->
+
+<script>
+
+    var vokabelliste;
+    var german;
+    var english;
+    var englcount=0;
+    var zeilenanz;
+
+
+    function readVokabelFile() {
+
+        var files = document.getElementById('VokabelPathPicker').files;
+
+        var file = files[0];
+        var start = 0;
+        var stop = file.size;
+
+        var reader = new FileReader();
+
+        reader.onloadend = function(evt) {
+            if (evt.target.readyState == FileReader.DONE) {
+                vokabelliste = evt.target.result;
+            }
+        };
+
+        var blob = file.slice(start, stop);
+        reader.readAsBinaryString(blob);
+    }
+
+    function createVokabelQuest() {
+
+        document.getElementById("Vokabelaufgabentext").style.color = "black";
+
+        if (englcount==zeilenanz){
+            englcount=0;
+        }
+
+
+        var allTextLines = vokabelliste.split(/\r\n|\n/);
+        zeilenanz = allTextLines.length;
+
+        german = allTextLines[englcount].split(';')[0];
+        english = allTextLines[englcount].split(';')[1];
+
+
+        document.getElementById("Vokabelaufgabentext").innerText = german + " -> ?";
+    }
+
+    function answerVokabelQuest() {
+
+        x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
+
+        if (x==english){
+            document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
+            document.getElementById("Vokabelaufgabentext").style.color = "green";
+        }else {
+            document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
+            document.getElementById("Vokabelaufgabentext").style.color = "red";
+        }
+
+        englcount++;
+
+    }
+
+</script>
+
 <!--------------------------------------------------------------------------------------------------------------------------->
 
 <p></p>
