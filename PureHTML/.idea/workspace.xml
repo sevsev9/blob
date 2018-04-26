@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5187db-bc84-4af2-8709-848c42fdf88c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbartemp.html" afterPath="$PROJECT_DIR$/navbartemp.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +20,8 @@
       <file leaf-file-name="navbartemp.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/navbartemp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+            <state relative-caret-position="185">
+              <caret line="214" column="68" lean-forward="false" selection-start-line="214" selection-start-column="68" selection-end-line="214" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -55,9 +55,9 @@
         <option value="$PROJECT_DIR$/design.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/navbar.html" />
-        <option value="$PROJECT_DIR$/navbartemp.html" />
         <option value="$PROJECT_DIR$/pages/gui.html" />
         <option value="$PROJECT_DIR$/pages/design.css" />
+        <option value="$PROJECT_DIR$/navbartemp.html" />
       </list>
     </option>
   </component>
@@ -182,12 +182,12 @@
       <workItem from="1524650714618" duration="1492000" />
       <workItem from="1524679452178" duration="6182000" />
       <workItem from="1524720710127" duration="776000" />
-      <workItem from="1524732945713" duration="781000" />
+      <workItem from="1524732945713" duration="1123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41986000" />
+    <option name="totallyTimeSpent" value="42328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1040" extended-state="0" />
@@ -503,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/navbartemp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        <state relative-caret-position="185">
+          <caret line="214" column="68" lean-forward="false" selection-start-line="214" selection-start-column="68" selection-end-line="214" selection-end-column="68" />
           <folding />
         </state>
       </provider>
