@@ -32,6 +32,9 @@ function test_input($data) {
 
 function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,$dbname,$dbuname,$dbpassw) {
 
+    if ($uname == null || $psw == null || $fname == null || $lname == null) {
+    }
+
     $db = mysqli_connect($servername,$dbuname,$dbpassw,$dbname);
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
@@ -42,49 +45,31 @@ function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,
     $username_reg = mysqli_fetch_object($result);
 
     if ($username_reg->uname != "") {
-        echo "<br>You are already registered!<br>";
-        echo "Please Login<br><br>";
-
-        echo "<a href='../pages/gui.html' class='button_login-form'>Login</a><br><br>";
+        errorAlert("You are already Registered!\n Please login", 0);
     } else {
         $sql = "INSERT INTO users (vorname, nachname, email, username, password, schulname, klasse) VALUES ('$fname','$lname','$email','$uname','$psw','$school','$class_')";
 
         if ($db->query($sql) === TRUE) {
-            echo "<h4 style='text-align: center'>Registered Successfully</h4>";
+            errorAlert("Successfully Registered");
         } else {
-            echo "Error: " . $sql . "<br>" . $db->error;
+            errorAlert("Error: " . $sql . "\n" . $db->error);
         }
-    }
-
-
-
-    if ($db->query($sql) === TRUE) {
-        echo "";
-    } else {
-        echo "Error: " . $sql . "<br>" . $db->error;
     }
 
     $db->close();
 }
 
-function showInput($fname,$lname,$email,$uname,$psw) {
-    echo "<h1>Input:</h1>";echo "<br>";
-    echo "Username :  ";
-    echo $uname;
-    echo "<br>";
-    echo "Password :  ";
-    echo $psw;
-    echo "<br>";
-    echo "E-Mail   :  ";
-    echo $email;
-    echo "<br>";
-    echo "Fist Name:  ";
-    echo $fname;
-    echo "<br>";
-    echo "Last Name:  ";
-    echo $lname;
-    echo "<br>";
-    echo "Date     :  ";
-    exit();
+function errorAlert($message, $nr) {
+    echo "<script type='text/javascript'>                      
+                    window.alert('$message');
+                    
+                    function sleep (time) {
+                      return new Promise((resolve) => setTimeout(resolve, time));
+                    }
+                    
+                    sleep(0).then(() => {
+                        window.location.replace(\"../pages/gui.html\");
+                    });                            
+                </script>";
 }
 ?>
