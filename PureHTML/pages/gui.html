@@ -48,14 +48,20 @@
 
 
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
-<div class="shop">
-    <img src="../img/shop.png" width="80%"/>
-    <h1 class="shopX" style="cursor:pointer" onclick="closeshop()">X</h1>
 
+
+
+
+<div class="shop">
     <div class="tab">
         <button id="tabup" class="tablinks" onclick="openTab(event, 'Augen')">augen</button>
         <button id="tabdown" class="tablinks" onclick="openTab(event, 'Brillen')">Brillen</button>
     </div>
+
+    <div class="shopimage"><img src="../img/shop.png" style="width:80%"></div>
+    <h1 class="shopX" style="cursor:pointer; z-index: 501" onclick="closeshop()">X</h1>
+
+
 
     <!----------------------------------------------------------------------------------------------------------------------BRILLEN-->
     <div class="shopinhalt" id="Brillen">
