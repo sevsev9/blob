@@ -139,7 +139,7 @@
             position: absolute;
             top: 18%;
             left: 18%;
-            z-index: 500;
+            z-index: 50;
         }
 
         .helpText{
@@ -148,7 +148,7 @@
             left: 25%;
             font-size: 1.8em;
             font-family: "Arial Black";
-            z-index: 502;
+            z-index: 52;
         }
 
     </style>
@@ -188,7 +188,7 @@
 </form>
 
 <img src="img/helpBox.png" width="73.75%" class="helpBox">
-<span style="position: absolute;left: 65%;top: 10%;font-family: 'Arial Black';font-size: 40em;z-index: 501;opacity: 0.2;">?</span>
+<span style="position: absolute;left: 65%;top: 10%;font-family: 'Arial Black';font-size: 40em;z-index: 51;opacity: 0.2;">?</span>
 <p class="helpText">
     Du befindest dich hier im Hilfebereich des Spiels!
     <br>Hier findest du allerhand Tipps und Tricks.
@@ -211,6 +211,8 @@
     var w = -1;
 
     function createQuest() {
+
+        document.getElementById("aufgabentext").style.color = "black";
 
         w = (Math.random() * (3 - 1)) + 1;
         w = Math.round(w);
@@ -263,26 +265,26 @@
         if (w==1){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   richtig!";
-                document.getElementById("aufgabentext").style.color = green;
+                document.getElementById("aufgabentext").style.color = "green";
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   falsch!";
-                document.getElementById("aufgabentext").style.color = red;
+                document.getElementById("aufgabentext").style.color = "red";
             }
         }else if(w==2){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   richtig!";
-                document.getElementById("aufgabentext").style.color = green;
+                document.getElementById("aufgabentext").style.color = "green";
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   falsch!";
-                document.getElementById("aufgabentext").style.color = red;
+                document.getElementById("aufgabentext").style.color = "red";
             }
         }else {
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   richtig!";
-                document.getElementById("aufgabentext").style.color = green;
+                document.getElementById("aufgabentext").style.color = "green";
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   falsch!";
-                document.getElementById("aufgabentext").style.color = red;
+                document.getElementById("aufgabentext").style.color = "red";
             }
         }
 

@@ -24,7 +24,7 @@ function toggleFullscreen(elem) {
     }
 }
 
-document.getElementById('btns').addEventListener('click', function() {
+document.getElementById('log_btn').addEventListener('click', function() {
     toggleFullscreen();
 });
 

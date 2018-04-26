@@ -14,7 +14,7 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="./css/normalize.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css">
-        <link rel="stylesheet" type="text/css" href="./design.css">-
+        <link rel="stylesheet" type="text/css" href="./design.css">
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
@@ -24,6 +24,7 @@
 
         <!-- Javascripts -->
         <script type="text/javascript" src="./js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="./js/fading_moves.js"></script>
 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -36,8 +37,14 @@
 
     </head>
     <body>
-<div id="fscreen"></div>
-        <form id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;" method="post" action="php/login.php" >
+        <form id="login_form"
+              style="   font-family:Quicksand, sans-serif;
+                        background-color:rgba(44,40,52,0.73);
+                        width:320px;
+                        padding:40px;
+                        position: absolute;
+                        margin-left: 0;"
+              method="post" action="php/login.php" >
             <h1 id="head">Login</h1>
             <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
 
@@ -47,47 +54,67 @@
             <div class="form-group">
                 <input class="form-control" type="password" id="form2" name="psw" placeholder="Password">
             </div>
-            <button class="btn btn-light" type="submit" id="btns">Login</button>
+            <button class="btn btn-light" type="submit" id="log_btn">Login</button><br>
+            <button class="btn btn-light floginbutton" type="button" id="registerfade">Register</button>
             <a href="" id="link">Forgot your E-mail or password?</a>
         </form>
+<!--///////////////////////////REGISTRATION//////////////////////////-->
+        <form id="reg_form"
+              style="   font-family:Quicksand, sans-serif;
+                        background-color:rgba(44,40,52,0.73);
+                        width:320px;
+                        padding:40px;
+                        position: absolute;
+                        margin-left: 0;
+                        margin-top: -5%;
+                        display: none;"
+              method="post" action="php/registration.php" >
+            <h1 id="head">Register</h1>
+            <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
 
-        <script type="text/javascript">
-            function toggleFullscreen(elem) {
-                elem = elem || document.documentElement;
-                if (!document.fullscreenElement && !document.mozFullScreenElement &&
-                    !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                    if (elem.requestFullscreen) {
-                        elem.requestFullscreen();
-                    } else if (elem.msRequestFullscreen) {
-                        elem.msRequestFullscreen();
-                    } else if (elem.mozRequestFullScreen) {
-                        elem.mozRequestFullScreen();
-                    } else if (elem.webkitRequestFullscreen) {
-                        elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                    }
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                    } else if (document.msExitFullscreen) {
-                        document.msExitFullscreen();
-                    } else if (document.mozCancelFullScreen) {
-                        document.mozCancelFullScreen();
-                    } else if (document.webkitExitFullscreen) {
-                        document.webkitExitFullscreen();
-                    }
-                }
-            }
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2"       name="email" placeholder="Email (optional)">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2"       name="school" placeholder="Schule (optional)">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2"       name="class_" placeholder="Klasse (optional)">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2"       name="uname" placeholder="Desired Username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="form2"   name="psw"  pattern="^\S{8,}$"
+                       onchange="
+                                this.setCustomValidity(
+                                    this.validity.patternMismatch ? 'Password must be at least 8 characters long' : ''
+                                );
+                                if(this.checkValidity())
+                                    form.psw2.pattern = this.value;
+                       " placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="form2"  name="psw2" pattern="^\S{8,}$"
+                       onchange="
+                                this.setCustomValidity(
+                                    this.validity.patternMismatch ? 'Passwords must match!' : ''
+                                );"
+                       placeholder="Confirm Password" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2"      name="fname" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" id="form2"      name="lname" placeholder="Last Name" required>
+            </div>
 
-            document.getElementById('btns').addEventListener('click', function() {
-                toggleFullscreen();
-            });
 
-            document.getElementById('exampleImage').addEventListener('click', function() {
-                toggleFullscreen(this);
-            });
-
-        </script>
-
+            <button class="btn btn-light" type="submit" id="reg_btn">Register</button><br>
+            <button class="btn btn-light fregisterbtn" type="button" id="loginfade">Back to Login</button>
+            <a href="" id="link">Forgot your E-mail or password?</a>
+        </form>
+<!--////////////////////////////REGISTRATION END///////////////////////-->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
@@ -105,13 +132,8 @@
 
 
         <div style="
-                    background: url('./img/loginpage_animated-image.gif') no-repeat;
+                    background: url('./img/back_login.png') no-repeat;
                     background-size: cover;
-                    -webkit-filter: blur(5px);
-                    -moz-filter: blur(5px);
-                    -o-filter: blur(5px);
-                    -ms-filter: blur(5px);
-                    filter: blur(5px);
                     position: fixed;
                     width: 100%;
                     height: 100%;

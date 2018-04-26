@@ -35,20 +35,22 @@ body{
 .tab{
     position: absolute;
     left: -4%;
-    width: 7%;
+    width: 5%;
     height: 51%;
     top: 42.2%;
-    z-index: 502;
+    z-index: 499;
 }
 
 .tablinks{
+    -webkit-border-bottom-left-radius: 1em;
+    -webkit-border-top-left-radius: 1em;
+    border-right: 0;
     padding: 20%;
     padding-right: -5%;
     border-left: 0.6em ridge saddlebrown;
-    border-right: 0.6em ridge saddlebrown;
     background-color: #db8e00;
     height: 14%;
-    width: 100%;
+    width: 80%;
 }
 
 .tablinks:hover{
@@ -61,16 +63,16 @@ body{
 
 #tabup{
     border-top: 0.6em ridge saddlebrown;
-    border-bottom: 0.1em solid black;
+    border-bottom: 0.3em ridge saddlebrown;
 }
 
 #tabmid{
-    border-top: 0;
-    border-bottom: 0.1em solid black;
+    border-top: 0.3em ridge saddlebrown;
+    border-bottom: 0.6em ridge saddlebrown;
 }
 
 #tabdown{
-    border-top: 0;
+    border-top: 0.3em ridge saddlebrown;
     border-bottom: 0.6em ridge saddlebrown;
 }
 
@@ -79,7 +81,7 @@ body{
     width: 100%;
     top: -120%;
     left: 10%;
-    z-index: 500;
+    z-index: 600;
 }
 
 .shopX{
@@ -87,7 +89,7 @@ body{
     left: 73%;
     top: 32%;
     color: white;
-    z-index: 501;
+    z-index: 502;
 }
 
 .shopinhalt{
@@ -96,7 +98,7 @@ body{
     height: 55%;
     left: 1.9%;
     top: 41%;
-    z-index: 501;
+    z-index: 502;
     overflow: auto;
 }
 
@@ -142,6 +144,10 @@ body{
     left: 35%;
     top: 20%;
     z-index: 100;
+}
+
+.shopimage{
+    z-index: 500;
 }
 
 #startgamediv{
