@@ -38,6 +38,12 @@
             left: 15%;
         }
 
+        .englishTxt{
+            position: absolute;
+            top: 35%;
+            left: 15%;
+        }
+
         .helpTxt{
             position: absolute;
             top: 80%;
@@ -59,6 +65,12 @@
         .questBtn{
             position: absolute;
             top: 22.5%;
+            left: 70%;
+        }
+
+        .englishBtn{
+            position: absolute;
+            top: 34%;
             left: 70%;
         }
 
@@ -151,6 +163,77 @@
             z-index: 52;
         }
 
+        .versteckt{
+            display: none;
+        }
+
+
+
+
+
+
+
+        .vokabelbox{
+            position: absolute;
+            top: 18%;
+            left: 18%;
+            z-index: 500;
+        }
+
+        #Vokabelaufgabentext{
+            position: absolute;
+            font-family: "Arial Black";
+            font-size: 5em;
+            top: 20%;
+            left: 30%;
+            z-index: 501;
+        }
+
+        #VokabelQuestInput{
+            position: absolute;
+            top: 63%;
+            left: 40%;
+            font-family: "Arial Black";
+            font-size: 2em;
+            width: 20em;
+            height: 1.2em;
+            padding: 0.2em;
+            margin: 0;
+            border-radius: 1em;
+            z-index: 501;
+        }
+
+        .VokabelNextBtn{
+            padding: 0.3em;
+            position: absolute;
+            top: 80%;
+            left: 27%;
+            font-size: 1.5em;
+            font-family: "Arial Black";
+            border-radius: 1em;
+            z-index: 501;
+        }
+
+        .vokabelOkBtn{
+            position: absolute;
+            top: 65.5%;
+            left: 70%;
+            border-radius: 1em;
+            width: 5%;
+            z-index: 501;
+        }
+
+        #VokabelPathPicker{
+            position: absolute;
+            top: 71.25%;
+            left: 50%;
+            font-size: 1.5em;
+            padding: 0.2em;
+            margin: 0;
+            z-index: 501;
+        }
+
+
     </style>
 
 </head>
@@ -165,7 +248,10 @@
         <span class="coinTxt text">Shop</span><img src="./img/coin.png" width="25%" class="coinBtn">
     </li>
     <li>
-        <span class="questTxt text">Quest</span><img src="./img/quest.png" width="25%" class="questBtn">
+        <span class="questTxt text">Quest</span><img src="./img/mathe.png" width="25%" class="questBtn">
+    </li>
+    <li>
+        <span class="englishTxt text">English</span><img src="./img/english.png" width="25%" class="englishBtn">
     </li>
     <li>
         <span class="helpTxt text">Help</span><img src="./img/help.png" width="25%" class="helpBtn">
@@ -176,10 +262,10 @@
 </ul>
 </nav>
 
-
+<div class="versteckt">
 <div class="questbox">
     <img src="./img/aufgabenbox.png" width="90%"/>
-    <button onclick="createQuest()" class="nextBtn">Nächste Aufgabe</button>
+    <button onclick="createQuest()" class="VokabelNextBtn">Nächste Aufgabe</button>
     <img src="img/ok.png" onclick="answerQuest()" class="okBtn">
     <div id="aufgabentext">Bereit?</div>
 </div>
@@ -204,6 +290,88 @@
     <br>und somit deinem Blob schöne und lustige Kleidungsstücke im
     <br>Geschäft kaufen und anziehen.</span>
 </p>
+
+
+</div>
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------WORKSPACE----->
+
+
+
+<div class="vokabelbox">
+    <img src="./img/Vokabelaufgabenbox.png" width="90%"/>
+    <button onclick="createVokabelQuest()" class="nextBtn">Next word</button>
+    <img src="img/ok.png" onclick="answerVokabelQuest()" class="vokabelOkBtn">
+    <div id="Vokabelaufgabentext">Bereit?</div>
+</div>
+<form name="VokabelQuestInputForm">
+    <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
+    <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="uploadVokabelFile()" accept=".csv">
+</form>
+
+<script>
+
+    var vokabelliste;
+    var german;
+    var english;
+    var englcount=0;
+    var zeilenanz;
+
+
+    function uploadVokabelFile() {
+        var Vokabeldatei = document.forms["VokabelQuestInputForm"]["VokabelPathPicker"].value;
+        Vokabeldatei = Vokabeldatei.split('\\').pop().replace(/\..+$/, '');
+
+            $.ajax({
+                type: "GET",
+                url: Vokabeldatei + ".csv",
+                dataType: "text",
+                success: function (data) {
+                    vokabelliste = data;
+                }
+            });
+    }
+
+    function createVokabelQuest() {
+
+        document.getElementById("Vokabelaufgabentext").style.color = "black";
+
+        if (englcount==zeilenanz){
+            englcount=0;
+        }
+
+
+        var allTextLines = vokabelliste.split(/\r\n|\n/);
+        zeilenanz = allTextLines.length;
+
+        german = allTextLines[englcount].split(';')[0];
+        english = allTextLines[englcount].split(';')[1];
+
+
+        document.getElementById("Vokabelaufgabentext").innerText = german + " -> ?";
+    }
+
+    function answerVokabelQuest() {
+
+        x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
+
+        if (x==english){
+            document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
+            document.getElementById("Vokabelaufgabentext").style.color = "green";
+        }else {
+            document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
+            document.getElementById("Vokabelaufgabentext").style.color = "red";
+        }
+
+        englcount++;
+
+    }
+
+</script>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------UNNÖTIG---->
 
 <script>
 
