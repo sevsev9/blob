@@ -19,6 +19,7 @@ body{
     z-index: 10;
     border: ridge saddlebrown 0.6em;
     background-color: #bc7a00;
+    text-shadow: white 0em 0em 0em 1em;
 }
 
 .zentr{
@@ -30,6 +31,35 @@ body{
     text-align: center;
     z-index: 10;
     bottom: 6%;
+}
+.tab{
+    position: absolute;
+    left: -4%;
+    width: 7%;
+    height: 51%;
+    top: 42%;
+    z-index: 502;
+}
+
+.tablinks{
+    padding: 20%;
+    padding-right: -5%;
+    border-left: 0.6em ridge saddlebrown;
+    border-right: 0.6em ridge saddlebrown;
+    background-color: #db8e00;
+}
+
+#tabup{
+    border-top: 0.6em ridge saddlebrown;
+    border-bottom: 0.1em solid black;
+}
+
+#tabmid{
+    border-bottom: 0.1em solid black;
+}
+
+#tabdown{
+    border-bottom: 0.6em ridge saddlebrown;
 }
 
 .shop{
@@ -69,14 +99,14 @@ body{
 }
 
 .name{
-    font-size: 1.4em;
+    font-size: 200%;
     position: relative;
     left: 42.5%;
     width: 15%;
     height: 5%;
     padding: 1%;
     margin: 0;
-    border: ridge saddlebrown 0.6em;
+    border: ridge saddlebrown 0.3em;
     background-color: #bc7a00;
     color: white;
     z-index: 10;
@@ -125,7 +155,7 @@ body{
 .openBtn{
     position: absolute;
     top: 4%;
-    left: 76%;
+    left: 77%;
     font-size: 3em;
     color: white;
     z-index: 10;
