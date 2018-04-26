@@ -1,2 +1,3 @@
-- achievementsystem
-- bonus item alle 20 lvl
++ achievementsystem
++ bonus item alle 10 lvl
++ vokabelsystem
