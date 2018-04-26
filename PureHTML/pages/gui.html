@@ -53,11 +53,11 @@
     <h1 class="shopX" style="cursor:pointer" onclick="closeshop()">X</h1>
 
     <div class="tab">
-            <div id="tabup" class="tablinks" onclick="openTab(event, 'Augen')">augen</div>
-            <div id="tabdown" class="tablinks" onclick="openTab(event, 'Brillen')">Brillen</div>
+        <button id="tabup" class="tablinks" onclick="openTab(event, 'Augen')">augen</button>
+        <button id="tabdown" class="tablinks" onclick="openTab(event, 'Brillen')">Brillen</button>
     </div>
 
-<!----------------------------------------------------------------------------------------------------------------------BRILLEN-->
+    <!----------------------------------------------------------------------------------------------------------------------BRILLEN-->
     <div class="shopinhalt" id="Brillen">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
@@ -89,8 +89,8 @@
         <div class="shopinhalt_elem"></div>
         <div class="shopinhalt_elem"></div>
     </div>
-<!--------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------AUGEN-->
+    <!--------------------------------------------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------------------------------AUGEN-->
     <div class="shopinhalt" id="Augen">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huat</span>
@@ -196,9 +196,9 @@
     //Bounce-Animation
     function doBounce(element, times, distance, speed) {
         for(var i = 0; i < times; i++) {
-                element.animate({marginTop
-                        : '-='+distance}, speed)
-                    .animate({marginTop: '+='+distance}, speed);
+            element.animate({marginTop
+                    : '-='+distance}, speed)
+                .animate({marginTop: '+='+distance}, speed);
         }
     }
 
@@ -293,7 +293,7 @@
         evt.currentTarget.className += " active";
     }
 </script>
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-----
+<!--------------------------------------------------------------------------------------------------------------------------->
 
 <p></p>
 <script src="../js/vendor/modernizr-3.5.0.min.js"></script>

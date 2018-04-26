@@ -37,7 +37,7 @@ body{
     left: -4%;
     width: 7%;
     height: 51%;
-    top: 42%;
+    top: 42.2%;
     z-index: 502;
 }
 
@@ -47,6 +47,16 @@ body{
     border-left: 0.6em ridge saddlebrown;
     border-right: 0.6em ridge saddlebrown;
     background-color: #db8e00;
+    height: 14%;
+    width: 100%;
+}
+
+.tablinks:hover{
+    background-color: #d18802;
+}
+
+.tab button.active{
+    background-color: #bc7a00;
 }
 
 #tabup{
@@ -55,10 +65,12 @@ body{
 }
 
 #tabmid{
+    border-top: 0;
     border-bottom: 0.1em solid black;
 }
 
 #tabdown{
+    border-top: 0;
     border-bottom: 0.6em ridge saddlebrown;
 }
 
