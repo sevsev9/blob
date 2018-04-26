@@ -3,20 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <title>Only_navbar</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Arial Black";
+            margin: 0;
+            padding: 0;
+        }
+
+        .openBtn{
+            position: relative;
+            top: 2%;
+            left: 70%;
+            font-size: 3em;
+            color: white;
+        }
+
+        .text{
+            font-size: 2em;
+            color: white;
+        }
+
+        .coinTxt{
+            position: absolute;
+            top: 15%;
+            left: 15%;
+        }
+
+        .questTxt{
+            position: absolute;
+            top: 25%;
+            left: 15%;
+        }
+
+        .helpTxt{
+            position: absolute;
+            top: 80%;
+            left: 15%;
+        }
+
+        .logoutTxt{
+            position: absolute;
+            top: 90%;
+            left: 15%;
+        }
+
+        .coinBtn{
+            position: absolute;
+            top: 13%;
+            left: 70%;
+        }
+
+        .questBtn{
+            position: absolute;
+            top: 22.5%;
+            left: 70%;
+        }
+
+        .helpBtn{
+            position: absolute;
+            top: 78.5%;
+            left: 70%;
+        }
+
+        .logoutBtn{
+            position: absolute;
+            top: 89%;
+            left: 70%;
+        }
+
+        nav{
+            border-right: ridge saddlebrown 0.6em;
+            background-color: #bc7a00;
+            position: absolute;
+            z-index: 0;
+            left: -9.8%;
+            top: 0;
+            width: 15%;
+            height: 100%;
+        }
+
+        .questbox{
+            position: absolute;
+            top: 18%;
+            left: 18%;
+            z-index: 500;
+        }
+
+        #aufgabentext{
+            position: absolute;
+            font-family: "Arial Black";
+            font-size: 5em;
+            top: 20%;
+            left: 30%;
+            z-index: 501;
+        }
+
+        #questInput{
+            position: absolute;
+            top: 63%;
+            left: 40%;
+            font-family: "Arial Black";
+            font-size: 2em;
+            width: 20em;
+            height: 1.2em;
+            padding: 0.2em;
+            margin: 0;
+            border-radius: 1em;
+            z-index: 501;
+        }
+
+        .nextBtn{
+            padding: 0.3em;
+            position: absolute;
+            top: 80%;
+            left: 27%;
+            font-size: 1.5em;
+            font-family: "Arial Black";
+            border-radius: 1em;
+            z-index: 501;
+        }
+
+        .okBtn{
+            position: absolute;
+            top: 65.5%;
+            left: 70%;
+            border-radius: 1em;
+            width: 5%;
+            z-index: 501;
+        }
+
+        .helpBox{
+            position: absolute;
+            top: 18%;
+            left: 18%;
+            z-index: 50;
+        }
+
+        .helpText{
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            font-size: 1.8em;
+            font-family: "Arial Black";
+            z-index: 52;
+        }
+
+    </style>
+
 </head>
 <body>
 
+<nav>
 <ul>
     <li>
-        Shop
+        <span style="cursor:pointer" class="openBtn" onclick="openNav()">&#9776;</span>
     </li>
     <li>
-
+        <span class="coinTxt text">Shop</span><img src="./img/coin.png" width="25%" class="coinBtn">
     </li>
     <li>
-        icon help
+        <span class="questTxt text">Quest</span><img src="./img/quest.png" width="25%" class="questBtn">
+    </li>
+    <li>
+        <span class="helpTxt text">Help</span><img src="./img/help.png" width="25%" class="helpBtn">
+    </li>
+    <li>
+        <span class="logoutTxt text">Logout</span><img src="./img/cancel.png" width="25%" class="logoutBtn">
     </li>
 </ul>
+</nav>
+
+
+<div class="questbox">
+    <img src="./img/aufgabenbox.png" width="90%"/>
+    <button onclick="createQuest()" class="nextBtn">Nächste Aufgabe</button>
+    <img src="img/ok.png" onclick="answerQuest()" class="okBtn">
+    <div id="aufgabentext">Bereit?</div>
+</div>
+<form name="questInputForm">
+<input id="questInput" name="questInput" placeholder="Antwort: " type="text">
+</form>
+
+<img src="img/helpBox.png" width="73.75%" class="helpBox">
+<span style="position: absolute;left: 65%;top: 10%;font-family: 'Arial Black';font-size: 40em;z-index: 51;opacity: 0.2;">?</span>
+<p class="helpText">
+    Du befindest dich hier im Hilfebereich des Spiels!
+    <br>Hier findest du allerhand Tipps und Tricks.
+    <br>
+    <br><span style="color: white">Navigationsbeschreibung:
+    <br>Links in der Navigation findest du ganz oben das Geschäft (Shop),
+    <br>darunter die Matheaufgaben (Quest).
+    <br>Ganz unten ist der Knopf zum Ausloggen, um das Spiel zu beenden.
+    <br>
+    <br>Spieleanleitung:
+    <br>In der Mitte des Bildschirms siehst du deinen Blob.
+    <br>Mithilfe der Matheaufgaben kannst du Münzen (Coins) erspielen
+    <br>und somit deinem Blob schöne und lustige Kleidungsstücke im
+    <br>Geschäft kaufen und anziehen.</span>
+</p>
+
+<script>
+
+    var ergebnis = -1;
+    var w = -1;
+
+    function createQuest() {
+
+        w = (Math.random() * (3 - 1)) + 1;
+        w = Math.round(w);
+
+        if (w==1){
+
+            z1 = (Math.random() * (50 - 1)) + 1;
+            z1 = Math.round(z1);
+            z2 = (Math.random() * (50 - 1)) + 1;
+            z2 = Math.round(z2);
+
+            ergebnis = z1 + z2;
+
+            document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = ?";
+
+        }else if(w==2){
+
+            z1 = 1;
+            z2 = 2;
+
+            while(z1<z2){
+                z1 = (Math.random() * (50 - 1)) + 1;
+                z1 = Math.round(z1);
+                z2 = (Math.random() * (50 - 1)) + 1;
+                z2 = Math.round(z2);
+            }
+
+            ergebnis = z1 - z2;
+
+            document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = ?";
+
+        }else{
+
+            z1 = (Math.random() * (10 - 1)) + 1;
+            z1 = Math.round(z1);
+            z2 = (Math.random() * (10 - 1)) + 1;
+            z2 = Math.round(z2);
+
+            ergebnis = z1 * z2;
+
+            document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = ?";
+
+        }
+    }
+
+    function answerQuest() {
+
+        x = document.forms["questInputForm"]["questInput"].value;
+
+        if (w==1){
+            if (x==ergebnis){
+                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").style.color = green;
+            }else {
+                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").style.color = red;
+            }
+        }else if(w==2){
+            if (x==ergebnis){
+                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").style.color = green;
+            }else {
+                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").style.color = red;
+            }
+        }else {
+            if (x==ergebnis){
+                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").style.color = green;
+            }else {
+                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").style.color = red;
+            }
+        }
+
+
+    }
+
+</script>
+
+<script>
+
+    navCount = 1;
+
+    function openNav() {
+
+        if (navCount==1){
+            $(document).ready(function(){
+                $("nav").animate({left: '-1.5%'}, 1000);
+            });
+            navCount=0;
+        }else{
+            $(document).ready(function(){
+                $("nav").animate({left: '-9.8%'}, 1000);
+            });
+            navCount=1;
+        }
+
+    }
+</script>
 
 </body>
 </html>
