@@ -45,6 +45,21 @@
 <div class="coins">[anzahl_coins] Coins</div>
 <!--------------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------mathebox-->
+<div id="matheboxfull" class="keepontop">
+    <div class="mathebox">
+    <img src="../img/aufgabenbox.png" width="90%"/>
+    <button onclick="createQuest()" class="nextBtn">Nächste Aufgabe</button>
+    <img src="../img/ok.png" onclick="answerQuest()" class="okBtn">
+    <div id="aufgabentext">Bereit?</div>
+    </div>
+    <form name="matheInputForm">
+        <input id="matheInput" name="matheInput" placeholder="Antwort: " type="number">
+    </form>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------------->
+
 
 
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
@@ -151,7 +166,7 @@
             <span class="coinTxt text" style="cursor:pointer" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
         </li>
         <li>
-            <span class="questTxt text">Quest</span><img src="../img/quest.png" width="25%" class="questBtn">
+            <span class="matheTxt text" style="cursor: pointer" onclick="openNav(), mathboxopen()">Quest</span><img src="../img/quest.png" width="25%" class="matheBtn">
         </li>
         <li>
             <span class="helpTxt text">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
@@ -185,6 +200,8 @@
             $(".shop").animate({top: '-120%'}, 100);
             openTab(event, 'Augen');
         });
+        mathebox = document.getElementById("matheboxfull");
+        mathebox.style.display = "none";
     }
 
     //Shop schließen
@@ -211,6 +228,21 @@
                     : '-='+distance}, speed)
                 .animate({marginTop: '+='+distance}, speed);
         }
+    }
+
+    //Mathebox
+    function mathboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $("#matheboxfull:hidden:first").css("z-index", 500).fadeIn(1000, "");
+            navCount = 1;
+        });
+    }
+
+    function mathboxclose() {
+        $(document).ready(function(){
+            $("#matheboxfull").fadeOut(1000);
+        });
     }
 
     //Wechseln in den Fullscreenmodus
@@ -269,6 +301,7 @@
             $(document).ready(function(){
                 $("nav").animate({left: '-1.5%'}, 1000);
                 $(".shop").animate({top: '-120%'}, 1000);
+                $("#matheboxfull").fadeOut(1000);
             });
             navCount=0;
         }else{
@@ -303,6 +336,97 @@
         document.getElementById(tabname).style.display = "block";
         evt.currentTarget.className += " active";
     }
+</script>
+<script>
+
+    var ergebnis = -1;
+    var w = -1;
+
+    function createQuest() {
+
+        document.getElementById("aufgabentext").style.color = "black";
+
+        w = (Math.random() * (3 - 1)) + 1;
+        w = Math.round(w);
+
+        if (w==1){
+
+            z1 = (Math.random() * (50 - 1)) + 1;
+            z1 = Math.round(z1);
+            z2 = (Math.random() * (50 - 1)) + 1;
+            z2 = Math.round(z2);
+
+            ergebnis = z1 + z2;
+
+            document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = ?";
+
+        }else if(w==2){
+
+            z1 = 1;
+            z2 = 2;
+
+            while(z1<z2){
+                z1 = (Math.random() * (50 - 1)) + 1;
+                z1 = Math.round(z1);
+                z2 = (Math.random() * (50 - 1)) + 1;
+                z2 = Math.round(z2);
+            }
+
+            ergebnis = z1 - z2;
+
+            document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = ?";
+
+        }else{
+
+            z1 = (Math.random() * (10 - 1)) + 1;
+            z1 = Math.round(z1);
+            z2 = (Math.random() * (10 - 1)) + 1;
+            z2 = Math.round(z2);
+
+            ergebnis = z1 * z2;
+
+            document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = ?";
+
+        }
+    }
+
+    function answerQuest() {
+
+        x = document.forms["matheInputForm"]["matheInput"].value;
+
+        if (w==1){
+            if (x==ergebnis){
+                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").style.color = "green";
+            }else {
+                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").style.color = "red";
+            }
+        }else if(w==2){
+            if (x==ergebnis){
+                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").style.color = "green";
+            }else {
+                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").style.color = "red";
+            }
+        }else {
+            if (x==ergebnis){
+                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").style.color = "green";
+            }else {
+                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").style.color = "red";
+            }
+        }
+
+
+    }
+
+    $('#matheInput').keydown(function(e) {
+        if(e.which == 13) { return false; }
+    });
+
 </script>
 <!--------------------------------------------------------------------------------------------------------------------------->
 
