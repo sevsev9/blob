@@ -253,7 +253,55 @@ nav{
     z-index: 9;
 }
 
+.questbox{
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    z-index: 500;
+}
 
+#aufgabentext{
+    position: absolute;
+    font-family: "Arial Black";
+    font-size: 5em;
+    top: 20%;
+    left: 30%;
+    z-index: 501;
+}
+
+#questInput{
+    position: absolute;
+    top: 63%;
+    left: 40%;
+    font-family: "Arial Black";
+    font-size: 2em;
+    width: 20em;
+    height: 1.2em;
+    padding: 0.2em;
+    margin: 0;
+    border-radius: 1em;
+    z-index: 501;
+}
+
+.nextBtn{
+    padding: 0.3em;
+    position: absolute;
+    top: 80%;
+    left: 27%;
+    font-size: 1.5em;
+    font-family: "Arial Black";
+    border-radius: 1em;
+    z-index: 501;
+}
+
+.okBtn{
+    position: absolute;
+    top: 65.5%;
+    left: 70%;
+    border-radius: 1em;
+    width: 5%;
+    z-index: 501;
+}
 
 
 
