@@ -39,14 +39,14 @@
 
 <!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
-    <div class="name">[NAME]</div>
+    <div class="name fadeoutdiv">[NAME]</div>
     <div class="xp">[CURRENT_XPCOUNT]/[NEEDED_XP]xp</div>
 </div>
 <div class="coins">[anzahl_coins] Coins</div>
 <!--------------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------mathebox-->
-<div id="matheboxfull" class="keepontop">
+<div id="matheboxfull" class="fadeindiv">
     <div class="mathebox">
     <img src="../img/aufgabenbox.png" width="90%"/>
     <button onclick="createQuest()" class="nextBtn">Nächste Aufgabe</button>
@@ -177,8 +177,8 @@
     </ul>
 </nav>
 <!----------------------------------------------------------------------------------------------------------------------BLOB-->
-<div class="">
-    <img src="../img/Blob_basic.png" width="30%" class="blobbox animation-target">
+<div class="fadeoutdiv">
+    <img src="../img/Blob_basic.png" width="30%" class="blobbox">
 </div>
 <!--------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------->
@@ -188,7 +188,20 @@
 <!----------------------------------------------------------------------------------------------------------------------Javascript und JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+    //blob
+    box = $(".blobbox");
+    box.on("click", function() {
+        box.addClass("animation-target");
+        box.on("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
+            box.queue(function(next){
+                $(this).removeClass("animation-target");
+                next();
+            });
+        });
 
+        //box.addClass( "animation-target" );
+        //box.delay(1000);
+    });
 
 
     //Script wird beim Start ausgeführt
@@ -234,14 +247,16 @@
     function mathboxopen() {
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
-            $("#matheboxfull:hidden:first").css("z-index", 500).fadeIn(1000, "");
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('#matheboxfull:hidden:first').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
     }
 
     function mathboxclose() {
         $(document).ready(function(){
-            $("#matheboxfull").fadeOut(1000);
+            $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv:hidden:first').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -301,7 +316,8 @@
             $(document).ready(function(){
                 $("nav").animate({left: '-1.5%'}, 1000);
                 $(".shop").animate({top: '-120%'}, 1000);
-                $("#matheboxfull").fadeOut(1000);
+                $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
+                $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             });
             navCount=0;
         }else{
