@@ -40,33 +40,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['login_user'] = $username;
 
             $db->close();
-            echo "<script type='text/javascript'>
-
-                            function sleep (time) {
-                               return new Promise((resolve) => setTimeout(resolve, time));
-                            }
-                            sleep(0).then(() => {
-                                toggleFullScreen();
-                                window.location.replace(\"../pages/gui.html\");
-                            });                     
-                          </script>";
+            errorAlert('');
         } else {
-            echo "<script type='text/javascript'>
-                      window.alert('Invalid Username/Email and Password combination!');
-                      
-                      function sleep (time) {
-                        return new Promise((resolve) => setTimeout(resolve, time));
-                      }
-                    
-                        sleep(2).then(() => {
-                            window.location.replace(\"http://localhost\");
-                        }); 
-                  </script>";
+            errorAlert("Invalid Username/Email and Password combination!");
         }
     } else {
         $usr = $_SESSION['login_user'];
-        echo "<div style='text-align: center;margin-left: -3.5%;text-underline-color: red'>You are already logged in.</div>
-                <script type='text/javascript'>                      
+        errorAlert("You are already logged in");
+    }
+}
+
+function errorAlert($message) {
+    echo "<script type='text/javascript'>
+            var text = '$message';                     
+                    
+                    if (text) {
+                        window.alert('$message');
+                    }
+                    
                     function sleep (time) {
                       return new Promise((resolve) => setTimeout(resolve, time));
                     }
@@ -75,7 +66,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         window.location.replace(\"../pages/gui.html\");
                     });                            
                 </script>";
-    }
 }
 
 function test_input($data) {
