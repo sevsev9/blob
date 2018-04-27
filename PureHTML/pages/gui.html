@@ -708,6 +708,7 @@
     var vokabelliste;
     var german;
     var english;
+    var english2;
     var englcount=0;
     var zeilenanz;
 
@@ -748,8 +749,9 @@
         var allTextLines = vokabelliste.split(/\r\n|\n/);
         zeilenanz = allTextLines.length;
 
-        german = allTextLines[englcount].split(' ')[0];
-        english = allTextLines[englcount].split(' ')[1];
+        german = allTextLines[englcount].split('\t')[0];
+        english = allTextLines[englcount].split('\t')[1];
+        english2 = allTextLines[englcount].split('\t')[2];
 
 
         document.getElementById("Vokabelaufgabentext").innerText = german + " -> ?";
@@ -761,12 +763,22 @@
 
         x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
 
-        if (x==english){
-            document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
-            document.getElementById("Vokabelaufgabentext").style.color = "green";
-        }else {
-            document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
-            document.getElementById("Vokabelaufgabentext").style.color = "red";
+        if(english2!=undefined){
+            if ((x==english) || (x==english2)){
+                document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
+                document.getElementById("Vokabelaufgabentext").style.color = "green";
+            }else {
+                document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
+                document.getElementById("Vokabelaufgabentext").style.color = "red";
+            }
+        }else{
+            if (x==english){
+                document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
+                document.getElementById("Vokabelaufgabentext").style.color = "green";
+            }else {
+                document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
+                document.getElementById("Vokabelaufgabentext").style.color = "red";
+            }
         }
 
         englcount++;

@@ -1,3 +1,4 @@
-Katze cat
-Hund dog
-Haus house
+Katze	cat
+Hund	dog
+Haus	house	building
+nach Hause gehen	walking home	going home
