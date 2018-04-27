@@ -49,8 +49,8 @@
 <div id="matheboxfull" class="fadeindiv">
     <div class="mathebox">
     <img src="../img/aufgabenbox.png" width="90%"/>
-    <button onclick="createQuest()" class="nextBtn">Nächste Aufgabe</button>
-    <img src="../img/ok.png" onclick="answerQuest()" class="okBtn">
+    <button onclick="createQuest()" id="nextBtn">Nächste Aufgabe</button>
+    <img src="../img/ok.png" onclick="answerQuest()" id="okBtn">
     <div id="aufgabentext">Bereit?</div>
     </div>
     <form name="matheInputForm">
@@ -64,8 +64,8 @@
 <div id="vokabelboxfull" class="fadeindiv">
     <div class="vokabelbox">
         <img src="../img/Vokabelaufgabenbox.png" width="90%"/>
-        <button onclick="createVokabelQuest()" class="nextBtn">Next word</button>
-        <img src="../img/ok.png" onclick="answerVokabelQuest()" class="vokabelOkBtn">
+        <button onclick="createVokabelQuest()" id="VokabelNextBtn">Next word</button>
+        <img src="../img/ok.png" onclick="answerVokabelQuest()" id="VokabelOkBtn">
         <div id="Vokabelaufgabentext">Bereit?</div>
     </div>
     <form name="VokabelQuestInputForm">
@@ -293,6 +293,8 @@
             $('#matheboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
+
+        document.getElementById("okBtn").style.opacity = 0;
     }
     function mathboxclose() {
         $(document).ready(function(){
@@ -309,6 +311,9 @@
             $('#vokabelboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
+
+        document.getElementById("VokabelNextBtn").style.opacity = 0;
+        document.getElementById("VokabelOkBtn").style.opacity = 0;
     }
     function vokabelboxclose() {
         $(document).ready(function(){
@@ -421,6 +426,8 @@
 
     function createQuest() {
 
+        document.getElementById("okBtn").style.opacity = 1;
+
         document.getElementById("aufgabentext").style.color = "black";
 
         w = (Math.random() * (3 - 1)) + 1;
@@ -468,6 +475,8 @@
     }
 
     function answerQuest() {
+
+        document.getElementById("okBtn").style.opacity = 0;
 
         x = document.forms["matheInputForm"]["matheInput"].value;
 
@@ -519,6 +528,8 @@
 
     function readVokabelFile() {
 
+        document.getElementById("VokabelNextBtn").style.opacity = 1;
+
         var files = document.getElementById('VokabelPathPicker').files;
 
         var file = files[0];
@@ -539,6 +550,8 @@
 
     function createVokabelQuest() {
 
+        document.getElementById("VokabelOkBtn").style.opacity = 1;
+
         document.getElementById("Vokabelaufgabentext").style.color = "black";
 
         if (englcount==zeilenanz){
@@ -557,6 +570,8 @@
     }
 
     function answerVokabelQuest() {
+
+        document.getElementById("VokabelOkBtn").style.opacity = 0;
 
         x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
 
