@@ -79,7 +79,7 @@
 
 <!----------------------------------------------------------------------------------------------------------------------helpbox-->
 <div id="helpboxfull">
-    <img src="img/helpBox.png" width="73.75%" class="helpBox">
+    <img src="../img/helpBox.png" width="73.75%" class="helpBox">
     <span style="position: absolute;left: 65%;top: 10%;font-family: 'Arial Black';font-size: 40em;z-index: 51;opacity: 0.2;">?</span>
     <p class="helpText">
         Du befindest dich hier im Hilfebereich des Spiels!
@@ -218,7 +218,7 @@
 </nav>
 <!----------------------------------------------------------------------------------------------------------------------BLOB-->
 <div class="fadeoutdiv">
-    <img src="../img/Blob_basic.png" width="30%" class="blobbox">
+    <img src="../img/Blob_basic.png" width="30%" class="blobbox" id="blobbox1">
 </div>
 <!--------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------->
@@ -228,19 +228,6 @@
 <!----------------------------------------------------------------------------------------------------------------------Javascript und JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    //blob
-    box = $(".blobbox");
-    box.on("click", function() {
-        box.addClass("animation-target");
-        box.on("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
-            box.queue(function(next){
-                $(this).removeClass("animation-target");
-                next();
-            });
-        });
-    });
-
-
     //Script wird beim Start ausgeführt
     function startscript(){
         background = document.getElementById("background");
@@ -255,8 +242,8 @@
         vokabelboxfull = document.getElementById("vokabelboxfull");
         vokabelboxfull.style.display = "none";
         helpboxfull = document.getElementById("helpboxfull");
+        //helpboxfull.style.display = "none";
         helpboxfull.style.display = "none";
-        helpboxfull
     }
 
     //Shop schließen
@@ -586,6 +573,19 @@
         englcount++;
 
     }
+
+    //blob
+    var element = document.getElementById("blobbox1");
+
+    element.addEventListener("click", function(e){
+        e.preventDefault;
+
+        element.classList.remove("animation-target");
+
+        void element.offsetWidth;
+
+        element.classList.add("animation-target");
+    }, false);
 
 </script>
 
