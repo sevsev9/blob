@@ -186,7 +186,11 @@
 
 
 <!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
-<div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button> </div>
+<div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button></div>
+<span id="wt">Welcome to</span>
+<span id="bl">[BLOBLOGO]</span>
+<span id="pb">presented by</span>
+<span id="srd">some random dudes</span>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
 <!--------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------->
@@ -229,6 +233,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     //Script wird beim Start ausgeführt
+
+
     function startscript(){
         background = document.getElementById("background");
         background.style.width = "50%";
@@ -242,8 +248,21 @@
         vokabelboxfull = document.getElementById("vokabelboxfull");
         vokabelboxfull.style.display = "none";
         helpboxfull = document.getElementById("helpboxfull");
-        //helpboxfull.style.display = "none";
         helpboxfull.style.display = "none";
+
+        document.getElementById("pb").style.display = "block";
+        document.getElementById("srd").style.display = "block";
+
+        setTimeout(function () {
+            $("#wt:hidden:first").fadeIn(1500)
+        }, 2000);
+        setTimeout(function () {
+            $("#bl:hidden:first").fadeIn(1500)
+        }, 2500);
+        setTimeout(function () {
+            $("#startgame:hidden:first").fadeIn(1500)
+        }, 4000);
+
     }
 
     //Shop schließen
@@ -311,6 +330,9 @@
 
     //Wechseln in den Fullscreenmodus
     function toggleFullscreen(elem) {
+        document.getElementById("wt").style.display = "none";
+        document.getElementById("bl").style.display = "none";
+
         elem = elem || document.documentElement;
         isfullscreen = document.getElementById("startgamediv");
         if(document.fullscreenEnabled){
