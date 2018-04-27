@@ -49,12 +49,13 @@ body{
     position: absolute;
     left: -4%;
     width: 5%;
-    height: 51%;
+    height: 48%;
     top: 42.2%;
     z-index: 499;
 }
 
 .tablinks{
+    position: absolute;
     -webkit-border-bottom-left-radius: 1em;
     -webkit-border-top-left-radius: 1em;
     border-right: 0;
@@ -68,10 +69,6 @@ body{
 
 .tablinks:hover{
     background-color: #d18802;
-}
-
-.tab button.active{
-    background-color: #bc7a00;
 }
 
 #tabup{
@@ -94,7 +91,6 @@ body{
     width: 100%;
     top: -120%;
     left: 10%;
-    z-index: 600;
 }
 
 .shopX{
@@ -157,10 +153,6 @@ body{
     left: 30%;
     top: 12%;
     z-index: 10;
-}
-
-.shopimage{
-    z-index: 500;
 }
 
 #startgamediv{

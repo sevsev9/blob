@@ -14,7 +14,6 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="./css/normalize.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css">
-        <link rel="stylesheet" type="text/css" href="./design.css">
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
@@ -45,18 +44,18 @@
                         position: absolute;
                         margin-left: 0;"
               method="post" action="php/login.php" >
-            <h1 id="head">Login</h1>
-            <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
+            <h1 id="login_head">Login</h1>
+            <div><img class="rounded img-fluid image" src="img/logo.png"></div>
 
             <div class="form-group">
-                <input class="form-control" type="text" id="form2" name="umail" placeholder="Email">
+                <input class="form-control form" type="text" name="umail" placeholder="Email">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" id="form2" name="psw" placeholder="Password">
+                <input class="form-control form" type="password" name="psw" placeholder="Password">
             </div>
             <button class="btn btn-light" type="submit" id="log_btn">Login</button><br>
             <button class="btn btn-light floginbutton" type="button" id="registerfade">Register</button>
-            <a href="" id="link">Forgot your E-mail or password?</a>
+            <a href="" class="link">Forgot your E-mail or password?</a>
         </form>
 <!--///////////////////////////REGISTRATION//////////////////////////-->
         <form id="reg_form"
@@ -69,23 +68,23 @@
                         margin-top: -5%;
                         display: none;"
               method="post" action="php/registration.php" >
-            <h1 id="head">Register</h1>
-            <div><img class="rounded img-fluid" src="img/logo.png" id="image" style="width:auto;height:auto;"></div>
+            <h1 id="register_head">Register</h1>
+            <div><img class="rounded img-fluid image" src="img/logo.png"></div>
 
             <div class="form-group">
-                <input class="form-control" type="text" id="form2"       name="email" placeholder="Email (optional)">
+                <input class="form-control form" type="text" name="email" placeholder="Email (optional)">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" id="form2"       name="school" placeholder="Schule (optional)">
+                <input class="form-control form" type="text" name="school" placeholder="Schule (optional)">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" id="form2"       name="class_" placeholder="Klasse (optional)">
+                <input class="form-control form" type="text" name="class_" placeholder="Klasse (optional)">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" id="form2"       name="uname" placeholder="Desired Username" required>
+                <input class="form-control form" type="text" name="uname" placeholder="Desired Username" required>
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" id="form2"   name="psw"  pattern="^\S{8,}$"
+                <input class="form-control form" type="password" name="psw"  pattern="^\S{8,}$"
                        onchange="
                                 this.setCustomValidity(
                                     this.validity.patternMismatch ? 'Password must be at least 8 characters long' : ''
@@ -95,7 +94,7 @@
                        " placeholder="Password" required>
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" id="form2"  name="psw2" pattern="^\S{8,}$"
+                <input class="form-control form" type="password"  name="psw2" pattern="^\S{8,}$"
                        onchange="
                                 this.setCustomValidity(
                                     this.validity.patternMismatch ? 'Passwords must match!' : ''
@@ -103,10 +102,10 @@
                        placeholder="Confirm Password" required>
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" id="form2"      name="fname" placeholder="First Name" required>
+                <input class="form-control form" type="text" name="fname" placeholder="First Name" required>
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" id="form2"      name="lname" placeholder="Last Name" required>
+                <input class="form-control form" type="text" name="lname" placeholder="Last Name" required>
             </div>
 
 

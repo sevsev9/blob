@@ -28,23 +28,20 @@
   background-color:rgba(44,40,52,0.73);
 }
 
-#head {
+#login_head {
   text-align:center;
   font-weight: bold;
   font-size: 60px;
   color: rgba(73, 133, 225, 0.73);
 }
 
-#image {
-  margin:auto;
-  margin-left: 15%;
-  width:50%;
+.image {
+  margin-left: 11%;
+  max-width: 75%;
   padding:10px;
-  max-height:175px;
-  max-width:175px;
 }
 
-#link {
+.link {
   display:block;
   text-align:center;
   font-size:12px;
@@ -95,7 +92,7 @@
   color:inherit;
 }
 
-#form2 {
+.form {
   background:none;
   border:none;
   border-bottom:1px solid #434a52;
