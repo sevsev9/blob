@@ -269,9 +269,6 @@ nav{
     z-index: 9;
 }
 
-.matheboxfull{
-}
-
 .mathebox{
     position: absolute;
     top: 18%;
@@ -384,7 +381,21 @@ nav{
     z-index: 501;
 }
 
+.helpBox{
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    z-index: 50;
+}
 
+.helpText{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 1.8em;
+    font-family: "Arial Black";
+    z-index: 52;
+}
 
 
 

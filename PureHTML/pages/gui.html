@@ -61,20 +61,44 @@
 <!--------------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------englishbox-->
-
-<div class="vokabelbox">
-    <img src="../img/Vokabelaufgabenbox.png" width="90%"/>
-    <button onclick="createVokabelQuest()" class="nextBtn">Next word</button>
-    <img src="../img/ok.png" onclick="answerVokabelQuest()" class="vokabelOkBtn">
-    <div id="Vokabelaufgabentext">Bereit?</div>
+<div id="vokabelboxfull" class="fadeindiv">
+    <div class="vokabelbox">
+        <img src="../img/Vokabelaufgabenbox.png" width="90%"/>
+        <button onclick="createVokabelQuest()" class="nextBtn">Next word</button>
+        <img src="../img/ok.png" onclick="answerVokabelQuest()" class="vokabelOkBtn">
+        <div id="Vokabelaufgabentext">Bereit?</div>
+    </div>
+    <form name="VokabelQuestInputForm">
+        <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
+        <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".csv">
+    </form>
 </div>
-<form name="VokabelQuestInputForm">
-    <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
-    <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".csv">
-</form>
+
 
 <!--------------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------helpbox-->
+<div id="helpboxfull">
+    <img src="img/helpBox.png" width="73.75%" class="helpBox">
+    <span style="position: absolute;left: 65%;top: 10%;font-family: 'Arial Black';font-size: 40em;z-index: 51;opacity: 0.2;">?</span>
+    <p class="helpText">
+        Du befindest dich hier im Hilfebereich des Spiels!
+        <br>Hier findest du allerhand Tipps und Tricks.
+        <br>
+        <br><span style="color: white">Navigationsbeschreibung:
+    <br>Links in der Navigation findest du ganz oben das Geschäft (Shop),
+    <br>darunter die Matheaufgaben (Quest).
+    <br>Ganz unten ist der Knopf zum Ausloggen, um das Spiel zu beenden.
+    <br>
+    <br>Spieleanleitung:
+    <br>In der Mitte des Bildschirms siehst du deinen Blob.
+    <br>Mithilfe der Matheaufgaben kannst du Münzen (Coins) erspielen
+    <br>und somit deinem Blob schöne und lustige Kleidungsstücke im
+    <br>Geschäft kaufen und anziehen.</span>
+    </p>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
 
 
@@ -182,7 +206,7 @@
             <span class="matheTxt text" style="cursor: pointer" onclick="openNav(), mathboxopen()">Quest</span><img src="../img/mathe.png" width="25%" class="matheBtn">
         </li>
         <li>
-            <span class="englishTxt text">English</span><img src="../img/english.png" width="25%" class="englishBtn">
+            <span class="englishTxt text" style="cursor: pointer" onclick="openNav(), vokabelboxopen()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
         </li>
         <li>
             <span class="helpTxt text">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
@@ -214,9 +238,6 @@
                 next();
             });
         });
-
-        //box.addClass( "animation-target" );
-        //box.delay(1000);
     });
 
 
@@ -231,6 +252,11 @@
         });
         mathebox = document.getElementById("matheboxfull");
         mathebox.style.display = "none";
+        vokabelboxfull = document.getElementById("vokabelboxfull");
+        vokabelboxfull.style.display = "none";
+        helpboxfull = document.getElementById("helpboxfull");
+        helpboxfull.style.display = "none";
+        helpboxfull
     }
 
     //Shop schließen
@@ -264,15 +290,30 @@
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
-            $('#matheboxfull:hidden:first').css({zIndex:9}).fadeIn(1000);
+            $('#matheboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
     }
-
     function mathboxclose() {
         $(document).ready(function(){
             $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
-            $('.fadeoutdiv:hidden:first').css({zIndex:9}).fadeIn(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+        });
+    }
+
+    //Vokabelbox
+    function vokabelboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('#vokabelboxfull').css({zIndex:9}).fadeIn(1000);
+            navCount = 1;
+        });
+    }
+    function vokabelboxclose() {
+        $(document).ready(function(){
+            $('#vokabelboxfull').css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -333,6 +374,7 @@
                 $("nav").animate({left: '-1.5%'}, 1000);
                 $(".shop").animate({top: '-120%'}, 1000);
                 $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
+                $('#vokabelboxfull').css({zIndex:10}).fadeOut(1000);
                 $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             });
             navCount=0;
