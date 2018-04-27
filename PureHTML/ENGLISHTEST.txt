@@ -1,0 +1,3 @@
+Katze cat
+Hund dog
+Haus house
