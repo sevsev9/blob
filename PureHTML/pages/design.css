@@ -299,7 +299,7 @@ nav{
     z-index: 501;
 }
 
-.nextBtn{
+#nextBtn{
     padding: 0.3em;
     position: absolute;
     top: 80%;
@@ -310,7 +310,7 @@ nav{
     z-index: 501;
 }
 
-.okBtn{
+#okBtn{
     position: absolute;
     top: 65.5%;
     left: 70%;
@@ -351,7 +351,7 @@ nav{
     z-index: 501;
 }
 
-.VokabelNextBtn{
+#VokabelNextBtn{
     padding: 0.3em;
     position: absolute;
     top: 80%;
@@ -362,7 +362,7 @@ nav{
     z-index: 501;
 }
 
-.vokabelOkBtn{
+#VokabelOkBtn{
     position: absolute;
     top: 65.5%;
     left: 70%;
