@@ -107,12 +107,12 @@
 <div class="shop">
     <div class="tab">
         <button id="tabup" class="tablinks" onclick="openTab(event, 'eyes')">Augen</button>
-        <button class="tabmid tablinks" onclick="openTab(event, 'clothing')">Anzüge</button>
-        <button class="tabmid tablinks" onclick="openTab(event, 'color')">Farbe</button>
-        <button class="tabmid tablinks" onclick="openTab(event, 'costume')">Kostüme</button>
-        <button class="tabmid tablinks" onclick="openTab(event, 'hat')">Hüte</button>
-        <button class="tabmid tablinks" onclick="openTab(event, 'mouth')">Mund</button>
-        <button id="tabdown" class="tablinks" onclick="openTab(event, 'accessoires')">Accessoires</button>
+        <button style="top: 14%" class="tabmid tablinks" onclick="openTab(event, 'clothing')">Anzüge</button>
+        <button style="top: 28%" class="tabmid tablinks" onclick="openTab(event, 'color')">Farbe</button>
+        <button style="top: 42%" class="tabmid tablinks" onclick="openTab(event, 'costume')">Kostüme</button>
+        <button style="top: 56%" class="tabmid tablinks" onclick="openTab(event, 'hat')">Hüte</button>
+        <button style="top: 70%" class="tabmid tablinks" onclick="openTab(event, 'mouth')">Mund</button>
+        <button style="top: 84%" id="tabdown" class="tablinks" onclick="openTab(event, 'accessoires')">Accessoires</button>
     </div>
 
     <div class="shopimage"><img src="../img/shop.png" style="width:80%"></div>
@@ -577,6 +577,10 @@
         }
 
     }
+    //Shop tabs
+    $(".tablinks").on("click", function () {
+        $(this).animate({left: '100%'}, 1000);
+    });
 </script>
 
 <script>

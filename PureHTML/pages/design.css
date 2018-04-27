@@ -47,6 +47,7 @@ body{
 }
 
 .tablinks{
+    position: absolute;
     -webkit-border-bottom-left-radius: 1em;
     -webkit-border-top-left-radius: 1em;
     border-right: 0;
