@@ -1,13 +1,16 @@
 <?php
+require_once "session.php";
+
 $servername = "localhost";
 $dbname = "blob_users";
-$dbuname = "webaccess";
+$dbuname = "webacc";
 $dbpassw = "Blob_256!";
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    session_start();
+error_reporting(0);
 
-    if ($_SESSION["login_user"] == '') {
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if(session_id() == '' || !isset($_SESSION)) {
         $db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
 
         if ($db->connect_error) {
@@ -28,7 +31,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         //$active = $row['active'];
         $count = mysqli_num_rows($result);
 
-
         // If result matched $username and $password, table row must be 1 row
         if ($count == 1) {
             $sql = "SELECT username FROM users WHERE (username = '$umail' AND password='$psw') OR (email = '$umail' AND password = '$psw')";
@@ -36,24 +38,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $username = mysqli_fetch_object($result);
 
             session_start();
-            $_SESSION['userName'] = 'Root';
             $_SESSION['login_user'] = $username;
+            $sessionfile = ini_get('session.save_path') . '/' . 'sess_'.session_id();
+            echo 'session file: ', $sessionfile, ' ';
+            echo 'size: ', filesize($sessionfile), "\n";
 
             $db->close();
-            errorAlert('');
+            errorAlert('',0);
         } else {
-            errorAlert("Invalid Username/Email and Password combination!");
+            errorAlert("Invalid Username/Email and Password combination!",1);
         }
     } else {
-        $usr = $_SESSION['login_user'];
-        errorAlert("You are already logged in");
+        print_r($_SESSION['login_user']);
+        errorAlert("You are already logged in",0);
     }
 }
 
-function errorAlert($message) {
+function errorAlert($message, $nr) {
+    $paths = array("../pages/gui.html","../index.html");
     echo "<script type='text/javascript'>
-            var text = '$message';                     
-                    
+           var text = '$message ;';
                     if (text) {
                         window.alert('$message');
                     }
@@ -63,7 +67,7 @@ function errorAlert($message) {
                     }
                     
                     sleep(0).then(() => {
-                        window.location.replace(\"../pages/gui.html\");
+                        window.location.replace(\"$paths[$nr]\");
                     });                            
                 </script>";
 }

@@ -6,10 +6,14 @@
  * Time: 13:36
  */
 
+require_once "session.php";
+
 $servername = "localhost";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
+
+error_reporting(0);
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -51,7 +55,7 @@ function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,
         $sql = "INSERT INTO users (vorname, nachname, email, username, password, schulname, klasse) VALUES ('$fname','$lname','$email','$uname','$psw','$school','$class_')";
 
         if ($db->query($sql) === TRUE) {
-            errorAlert("Successfully Registered",0);
+            errorAlert("Successfully Registered. You can log in now!",0);
         } else {
             errorAlert("Error: $sql \n $db->error",1);
         }
@@ -61,7 +65,7 @@ function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,
 }
 
 function errorAlert($message, $nr) {
-    $paths = array("../pages/gui.html","./index.html");
+    $paths = array("../pages/gui.html","../index.html");
     echo "<script type='text/javascript'>
                     window.alert('$message');
                     
