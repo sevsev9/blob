@@ -146,8 +146,8 @@ body{
 
 .blobbox{
     position: absolute;
-    left: 35%;
-    top: 20%;
+    left: 30%;
+    top: 12%;
     z-index: 10;
 }
 
