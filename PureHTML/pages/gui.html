@@ -70,7 +70,7 @@
     </div>
     <form name="VokabelQuestInputForm">
         <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
-        <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".csv">
+        <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".txt">
     </form>
 </div>
 
@@ -748,8 +748,8 @@
         var allTextLines = vokabelliste.split(/\r\n|\n/);
         zeilenanz = allTextLines.length;
 
-        german = allTextLines[englcount].split(';')[0];
-        english = allTextLines[englcount].split(';')[1];
+        german = allTextLines[englcount].split(' ')[0];
+        english = allTextLines[englcount].split(' ')[1];
 
 
         document.getElementById("Vokabelaufgabentext").innerText = german + " -> ?";
