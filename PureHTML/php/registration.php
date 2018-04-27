@@ -33,6 +33,7 @@ function test_input($data) {
 function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,$dbname,$dbuname,$dbpassw) {
 
     if ($uname == null || $psw == null || $fname == null || $lname == null) {
+        errorAlert("No Value found!",0);
     }
 
     $db = mysqli_connect($servername,$dbuname,$dbpassw,$dbname);
@@ -45,14 +46,14 @@ function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,
     $username_reg = mysqli_fetch_object($result);
 
     if ($username_reg->uname != "") {
-        errorAlert("You are already Registered!\n Please login", 0);
+        errorAlert("You are already Registered!\n Please login", 1);
     } else {
         $sql = "INSERT INTO users (vorname, nachname, email, username, password, schulname, klasse) VALUES ('$fname','$lname','$email','$uname','$psw','$school','$class_')";
 
         if ($db->query($sql) === TRUE) {
-            errorAlert("Successfully Registered");
+            errorAlert("Successfully Registered",0);
         } else {
-            errorAlert("Error: " . $sql . "\n" . $db->error);
+            errorAlert("Error: $sql \n $db->error",1);
         }
     }
 
@@ -60,7 +61,8 @@ function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,
 }
 
 function errorAlert($message, $nr) {
-    echo "<script type='text/javascript'>                      
+    $paths = array("../pages/gui.html","./index.html");
+    echo "<script type='text/javascript'>
                     window.alert('$message');
                     
                     function sleep (time) {
@@ -68,7 +70,7 @@ function errorAlert($message, $nr) {
                     }
                     
                     sleep(0).then(() => {
-                        window.location.replace(\"../pages/gui.html\");
+                        window.location.replace(\"$paths[$nr]\");
                     });                            
                 </script>";
 }
