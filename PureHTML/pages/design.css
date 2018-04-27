@@ -71,9 +71,9 @@ body{
     border-bottom: 0.3em ridge saddlebrown;
 }
 
-#tabmid{
+.tabmid{
     border-top: 0.3em ridge saddlebrown;
-    border-bottom: 0.6em ridge saddlebrown;
+    border-bottom: 0.3em ridge saddlebrown;
 }
 
 #tabdown{
