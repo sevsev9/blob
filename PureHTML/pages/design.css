@@ -4,6 +4,7 @@
 
 html{
     overflow: hidden;
+    user-select: none;
 }
 
 body{
@@ -398,9 +399,9 @@ nav{
     size: 300em;
 }
 
-
-
-
+img{
+    -webkit-user-drag: none;
+}
 
 
 
