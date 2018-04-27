@@ -105,17 +105,17 @@
 
 
 <div class="shop">
-    <div class="tab">
-        <button id="tabup" class="tablinks" onclick="openTab(event, 'eyes')">Augen</button>
-        <button style="top: 14%" class="tabmid tablinks" onclick="openTab(event, 'clothing')">Anzüge</button>
-        <button style="top: 28%" class="tabmid tablinks" onclick="openTab(event, 'color')">Farbe</button>
-        <button style="top: 42%" class="tabmid tablinks" onclick="openTab(event, 'costume')">Kostüme</button>
-        <button style="top: 56%" class="tabmid tablinks" onclick="openTab(event, 'hat')">Hüte</button>
-        <button style="top: 70%" class="tabmid tablinks" onclick="openTab(event, 'mouth')">Mund</button>
-        <button style="top: 84%" id="tabdown" class="tablinks" onclick="openTab(event, 'accessoires')">Accessoires</button>
+    <div class="tab" style="z-index: 499">
+        <button id="tabup" class="tablinks other" onclick="openTab(event, 'eyes')">Augen</button>
+        <button style="top: 14%" class="tabmid tablinks other" onclick="openTab(event, 'clothing')">Anzüge</button>
+        <button style="top: 28%" class="tabmid tablinks other" onclick="openTab(event, 'color')">Farbe</button>
+        <button style="top: 42%" class="tabmid tablinks other" onclick="openTab(event, 'costume')">Kostüme</button>
+        <button style="top: 56%" class="tabmid tablinks other" onclick="openTab(event, 'hat')">Hüte</button>
+        <button style="top: 70%" class="tabmid tablinks other" onclick="openTab(event, 'mouth')">Mund</button>
+        <button style="top: 84%" id="tabdown" class="tablinks other" onclick="openTab(event, 'accessoires')">Accessoires</button>
     </div>
 
-    <div class="shopimage"><img src="../img/shop.png" style="width:80%"></div>
+    <img src="../img/shop.png" style="width:80%; z-index: 500; position: relative">
     <h1 class="shopX" style="cursor:pointer; z-index: 501" onclick="closeshop()">X</h1>
 
 
@@ -430,6 +430,8 @@
         document.getElementById("pb").style.display = "block";
         document.getElementById("srd").style.display = "block";
 
+        document.getElementById("tabup").style.left = "15%";
+
         setTimeout(function () {
             $("#wt:hidden:first").fadeIn(1500)
         }, 2000);
@@ -439,7 +441,6 @@
         setTimeout(function () {
             $("#startgame:hidden:first").fadeIn(1500)
         }, 4000);
-
     }
 
     //Shop schließen
@@ -578,8 +579,12 @@
 
     }
     //Shop tabs
-    $(".tablinks").on("click", function () {
-        $(this).animate({left: '100%'}, 1000);
+    tabs = $(".tablinks");
+    tabs.on("click", function () {
+        $(this).removeClass("other");
+        $(".other").animate({left: '0%'}, 300);
+        $(this).animate({left: '15%'}, 300);
+        $(this).addClass("other");
     });
 </script>
 
