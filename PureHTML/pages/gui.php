@@ -1,3 +1,6 @@
+<?php
+    require_once "../php/session.php";
+?>
 <!doctype html>
 <html lang="">
 <head>
@@ -9,6 +12,7 @@
 
     <link rel="manifest" href="../site.webmanifest">
     <link rel="apple-touch-icon" href="../blob.ico">
+    <link rel="shortcut icon" href="../blob.ico">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Stylesheets -->
@@ -39,10 +43,10 @@
 
 <!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
-    <div class="name fadeoutdiv">[NAME]</div>
-    <div class="xp">[CURRENT_XPCOUNT]/[NEEDED_XP]xp</div>
+    <div class="name fadeoutdiv"><?= $_SESSION['blob_name']?></div>
+    <div class="xp"><?= $_SESSION['curr_xp']?>/<!-- javascript calculation -->xp</div>
 </div>
-<div class="coins">[anzahl_coins] Coins</div>
+<div class="coins"><?= $_SESSION['coins']?> Coins</div>
 <!--------------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------mathebox-->
@@ -394,7 +398,7 @@
             <span class="helpTxt text MouseHover">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
         </li>
         <li>
-            <span class="logoutTxt text MouseHover">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
+            <span class="logoutTxt text MouseHover" onclick="logout()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
         </li>
     </ul>
 </nav>
@@ -411,7 +415,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     //Script wird beim Start ausgeführt
-
 
     function startscript(){
         background = document.getElementById("background");
