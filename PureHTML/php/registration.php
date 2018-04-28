@@ -65,7 +65,7 @@ function save_todb($fname,$lname,$email,$uname,$psw,$school,$class_,$servername,
 }
 
 function errorAlert($message, $nr) {
-    $paths = array("../pages/gui.html","../index.html");
+    $paths = array("../pages/gui.php","../index.html");
     echo "<script type='text/javascript'>
                     window.alert('$message');
                     

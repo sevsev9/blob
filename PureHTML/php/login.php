@@ -39,9 +39,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             session_start();
             $_SESSION['login_user'] = $username;
-            $sessionfile = ini_get('session.save_path') . '/' . 'sess_'.session_id();
-            echo 'session file: ', $sessionfile, ' ';
-            echo 'size: ', filesize($sessionfile), "\n";
+            $_SESSION['curr_xp'] = ;
+            $_SESSION['level'] = ;
+            $_SESSION['blob_name'] = ;
+            $_SESSION['coins'] = ;
 
             $db->close();
             errorAlert('',0);
@@ -55,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 function errorAlert($message, $nr) {
-    $paths = array("../pages/gui.html","../index.html");
+    $paths = array("../pages/gui.php","../index.html");
     echo "<script type='text/javascript'>
            var text = '$message ;';
                     if (text) {
