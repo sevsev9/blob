@@ -1,3 +1,11 @@
+*{
+    cursor: url("../img/mouse/blobzeiger.png") 0 0, default;
+}
+
+.MouseHover:hover{
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+}
+
 .versteckt{
     display: none;
 }

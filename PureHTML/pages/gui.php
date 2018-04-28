@@ -49,12 +49,12 @@
 <div id="matheboxfull" class="fadeindiv">
     <div class="mathebox">
     <img src="../img/aufgabenbox.png" width="90%"/>
-    <button onclick="createQuest()" id="nextBtn">Nächste Aufgabe</button>
-    <img src="../img/ok.png" onclick="answerQuest()" id="okBtn">
+    <button onclick="createQuest()" id="nextBtn" class="MouseHover">Nächste Aufgabe</button>
+    <img src="../img/ok.png" class="MouseHover" onclick="answerQuest()" id="okBtn">
     <div id="aufgabentext">Bereit?</div>
     </div>
     <form name="matheInputForm">
-        <input id="matheInput" name="matheInput" placeholder="Antwort: " type="number">
+        <input id="matheInput" name="matheInput" placeholder="Antwort: " class="MouseHover" type="number">
     </form>
 </div>
 
@@ -64,13 +64,13 @@
 <div id="vokabelboxfull" class="fadeindiv">
     <div class="vokabelbox">
         <img src="../img/Vokabelaufgabenbox.png" width="90%"/>
-        <button onclick="createVokabelQuest()" id="VokabelNextBtn">Next word</button>
-        <img src="../img/ok.png" onclick="answerVokabelQuest()" id="VokabelOkBtn">
+        <button onclick="createVokabelQuest()" class="MouseHover" id="VokabelNextBtn">Next word</button>
+        <img src="../img/ok.png" class="MouseHover" onclick="answerVokabelQuest()" id="VokabelOkBtn">
         <div id="Vokabelaufgabentext">Bereit?</div>
     </div>
     <form name="VokabelQuestInputForm">
-        <input id="VokabelQuestInput" name="VokabelQuestInput" placeholder="The word is: " type="text">
-        <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" onchange="readVokabelFile()" accept=".txt">
+        <input id="VokabelQuestInput" name="VokabelQuestInput" class="MouseHover" placeholder="The word is: " type="text">
+        <input id="VokabelPathPicker" name="VokabelPathPicker" type="file" class="MouseHover" onchange="readVokabelFile()" accept=".txt">
     </form>
 </div>
 
@@ -106,17 +106,18 @@
 
 <div class="shop">
     <div class="tab" style="z-index: 499">
-        <button id="tabup" class="tablinks other" onclick="openTab(event, 'eyes')">Augen</button>
-        <button style="top: 14%" class="tabmid tablinks other" onclick="openTab(event, 'clothing')">Anzüge</button>
-        <button style="top: 28%" class="tabmid tablinks other" onclick="openTab(event, 'color')">Farbe</button>
-        <button style="top: 42%" class="tabmid tablinks other" onclick="openTab(event, 'costume')">Kostüme</button>
-        <button style="top: 56%" class="tabmid tablinks other" onclick="openTab(event, 'hat')">Hüte</button>
-        <button style="top: 70%" class="tabmid tablinks other" onclick="openTab(event, 'mouth')">Mund</button>
-        <button style="top: 84%" id="tabdown" class="tablinks other" onclick="openTab(event, 'accessoires')">Accessoires</button>
+        <button id="tabup" class="tablinks other MouseHover" onclick="openTab(event, 'eyes')">Augen</button>
+        <button style="top: 14%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'clothing')">Anzüge</button>
+        <button style="top: 28%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'color')">Farbe</button>
+        <button style="top: 42%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'costume')">Kostüme</button>
+        <button style="top: 56%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'hat')">Hüte</button>
+        <button style="top: 70%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'mouth')">Mund</button>
+        <button style="top: 84%" id="tabdown" class="tablinks other MouseHover" onclick="openTab(event, 'accessoires')">Accessoires</button>
     </div>
 
+
     <img src="../img/shop.png" style="width:80%; z-index: 500; position: relative">
-    <h1 class="shopX" style="cursor:pointer; z-index: 501" onclick="closeshop()">X</h1>
+    <h1 class="shopX MouseHover MouseHover" style="z-index: 501" onclick="closeshop()">X</h1>
 
 
 
@@ -124,22 +125,22 @@
     <div class="shopinhalt" id="eyes">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huat</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -157,22 +158,22 @@
     <div class="shopinhalt" id="clothing">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Hklouad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -191,22 +192,22 @@
     <div class="shopinhalt" id="color">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute"> Huat</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -225,22 +226,22 @@
     <div class="shopinhalt" id="costume">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada </span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -259,22 +260,22 @@
     <div class="shopinhalt" id="hat">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppadadashiassn Huat</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -293,22 +294,22 @@
     <div class="shopinhalt" id="mouth">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppadaseas Huat</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -327,22 +328,22 @@
     <div class="shopinhalt" id="accessoires">
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppadagriasdi Huat</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;">Anziehen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
         <div class="shopinhalt_elem">
             <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;">Angezogen</button>
+            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
+            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
             <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
             <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
         </div>
@@ -363,7 +364,7 @@
 
 
 <!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
-<div id="startgamediv"><button id="startgame" onclick="toggleFullscreen()"><h1>Spiel starten!</h1></button></div>
+<div id="startgamediv"><button id="startgame" class="MouseHover" onclick="toggleFullscreen()"><h1 class="MouseHover">Spiel starten!</h1></button></div>
 <span id="wt">Welcome to</span>
 <span id="bl">[BLOBLOGO]</span>
 <span id="pb">presented by</span>
@@ -378,28 +379,28 @@
 <nav>
     <ul>
         <li>
-            <span style="cursor:pointer" class="openBtn" onclick="openNav()">&#9776;</span>
+            <span class="openBtn MouseHover" onclick="openNav()">&#9776;</span>
         </li>
         <li>
-            <span class="coinTxt text" style="cursor:pointer" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
+            <span class="coinTxt text MouseHover" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
         </li>
         <li>
-            <span class="matheTxt text" style="cursor: pointer" onclick="openNav(), mathboxopen()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
+            <span class="matheTxt text MouseHover" onclick="openNav(), mathboxopen()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
         </li>
         <li>
-            <span class="englishTxt text" style="cursor: pointer" onclick="openNav(), vokabelboxopen()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
+            <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
         </li>
         <li>
-            <span class="helpTxt text">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
+            <span class="helpTxt text MouseHover">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
         </li>
         <li>
-            <span class="logoutTxt text">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
+            <span class="logoutTxt text MouseHover">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
         </li>
     </ul>
 </nav>
 <!----------------------------------------------------------------------------------------------------------------------BLOB-->
 <div class="fadeoutdiv">
-    <img src="../img/Blob_basic.png" width="40%" class="blobbox" id="blobbox1">
+    <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1">
 </div>
 <!--------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------->
@@ -441,6 +442,7 @@
         setTimeout(function () {
             $("#startgame:hidden:first").fadeIn(1500)
         }, 4000);
+
     }
 
     //Shop schließen
@@ -578,7 +580,6 @@
         }
 
     }
-    //Shop tabs
     tabs = $(".tablinks");
     tabs.on("click", function () {
         $(this).removeClass("other");
