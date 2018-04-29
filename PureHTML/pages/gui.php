@@ -801,6 +801,16 @@
 
     }
 
+    $('#VokabelQuestInput').keydown(function(e) {
+        if(e.which == 13) { return false; }
+    });
+
+</script>
+
+<!----------------------------------------------------------------------------------------------------------------------blobbounce-->
+
+<script>
+
     //blob
     var element = document.getElementById("blobbox1");
 
