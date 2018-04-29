@@ -52,7 +52,7 @@
             <div><img class="rounded img-fluid image" src="img/logo.png"></div>
 
             <div class="form-group">
-                <input class="form-control form" type="text" name="umail" placeholder="Email">
+                <input class="form-control form" type="text" name="umail" placeholder="Username / Email">
             </div>
             <div class="form-group">
                 <input class="form-control form" type="password" name="psw" placeholder="Password">

@@ -7,8 +7,8 @@ $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
 
-//error_reporting(0);
-ini_set('display_errors',1);
+error_reporting(0);
+//ini_set('display_errors',1);
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -50,16 +50,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($db, $sql);
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-            print_r($row["username"]);
-            echo "<br>";
-            print_r($row["curr_xp"]);
-            echo "<br>";
-            print_r($row["level"]);
-            echo "<br>";
-            print_r($row["blob_name"]);
-            echo "<br>";
-            print_r($row["coins"]);
-            echo "<br>";
+            //For debug
+            /*  print_r($row["username"]);
+                echo "<br>";
+                print_r($row["curr_xp"]);
+                echo "<br>";
+                print_r($row["level"]);
+                echo "<br>";
+                print_r($row["blob_name"]);
+                echo "<br>";
+                print_r($row["coins"]);
+                echo "<br>";*/
 
             $_SESSION['login_user'] = $row["username"];
             $_SESSION['curr_xp'] = $row["curr_xp"];
