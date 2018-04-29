@@ -681,26 +681,26 @@
 
         if (w==1){
             if (x==ergebnis){
-                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
             }else {
-                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "red";
             }
         }else if(w==2){
             if (x==ergebnis){
-                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
             }else {
-                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "red";
             }
         }else {
             if (x==ergebnis){
-                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   richtig!";
+                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
             }else {
-                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis + "   falsch!";
+                document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "red";
             }
         }
@@ -777,19 +777,22 @@
         x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
 
         if(english2!=undefined){
-            if ((x==english) || (x==english2)){
-                document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
+            if (x==english){
+                document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english2;
+                document.getElementById("Vokabelaufgabentext").style.color = "green";
+            }else if (x==english2){
+                document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
             }else {
-                document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
+                document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english + "\n" + "oder: " + english2;
                 document.getElementById("Vokabelaufgabentext").style.color = "red";
             }
         }else{
             if (x==english){
-                document.getElementById("Vokabelaufgabentext").innerText = "Richtig!";
+                document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
             }else {
-                document.getElementById("Vokabelaufgabentext").innerText = "Falsch! Das Wort\nwar: " + english;
+                document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english;
                 document.getElementById("Vokabelaufgabentext").style.color = "red";
             }
         }

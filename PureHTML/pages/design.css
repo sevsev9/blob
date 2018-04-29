@@ -333,10 +333,12 @@ nav{
 #Vokabelaufgabentext{
     position: absolute;
     font-family: "Arial Black";
-    font-size: 5em;
-    top: 20%;
-    left: 30%;
+    font-size: 4em;
+    top: 15%;
+    left: 25%;
     z-index: 501;
+    width: 16em;
+    height: 6em;
 }
 
 #VokabelQuestInput{
