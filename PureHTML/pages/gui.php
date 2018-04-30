@@ -578,6 +578,7 @@
     function closemathe(){
         $(document).ready(function(){
             $("#matheboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -604,6 +605,7 @@
     function closeenglish(){
         $(document).ready(function(){
             $("#vokabelboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -627,6 +629,7 @@
     function closehelp(){
         $(document).ready(function(){
             $("#helpboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
         });
     }
 
