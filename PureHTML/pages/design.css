@@ -42,9 +42,15 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
-    z-index: 10;
+    z-index: 9;
     bottom: 6%;
 }
+
+#tabicon{
+    position: absolute;
+    z-index: 500;
+}
+
 .tab{
     position: absolute;
     left: -4%;
@@ -95,8 +101,8 @@ body{
 
 .shopX{
     position: absolute;
-    left: 73%;
-    top: 32%;
+    left: 76%;
+    top: 31%;
     color: white;
     z-index: 502;
 }
@@ -209,6 +215,7 @@ body{
     position: absolute;
     top: 35%;
     left: 15%;
+    z-index: 10;
 }
 
 .helpTxt{
@@ -263,7 +270,6 @@ nav{
     border-right: ridge saddlebrown 0.6em;
     background-color: #bc7a00;
     position: absolute;
-    z-index: 0;
     left: -9.8%;
     top: 0;
     width: 15%;
@@ -321,6 +327,13 @@ nav{
     z-index: 501;
 }
 
+.matheX{
+    position: absolute;
+    left: 89%;
+    top: 18%;
+    color: grey;
+    z-index: 502;
+}
 
 
 .vokabelbox{
@@ -385,6 +398,15 @@ nav{
     z-index: 501;
 }
 
+.englishX{
+    position: absolute;
+    left: 89%;
+    top: 18%;
+    color: white;
+    z-index: 502;
+}
+
+
 .helpBox{
     position: absolute;
     top: 18%;
@@ -401,6 +423,16 @@ nav{
     z-index: 52;
     size: 300em;
 }
+
+.helpX{
+    position: absolute;
+    left: 89%;
+    top: 18%;
+    color: white;
+    z-index: 502;
+}
+
+
 
 img{
     -webkit-user-drag: none;
