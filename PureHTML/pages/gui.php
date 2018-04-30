@@ -110,6 +110,7 @@
     <br>Geschäft kaufen und anziehen. Pro Level, das dein Blob aufsteigt, bekommst du
     <br>einen neuen Gegenstand im Shop freigeschalten, den du dann mit deinen erspielten
     <br>Münzen kaufen kannst!</span>
+        <span style="position:absolute; top: 23.5em; left: 13em;">Copyright (c) Philipp Kollau 2018</span>
     </p>
 </div>
 
