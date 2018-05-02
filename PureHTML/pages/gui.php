@@ -500,9 +500,13 @@
 <script>
     function hover(element) {
         element.setAttribute('src', '../img/Game_Start_Button_Hover.png');
+        $("#startgame").animate({top: '30%'}, 50);
+        $("#startgame").animate({top: '35%'}, 50);
     }
     function unhover(element) {
         element.setAttribute('src', '../img/Game_Start_Button.png');
+        $("#startgame").animate({top: '30%'}, 50);
+        $("#startgame").animate({top: '35%'}, 50);
     }
 </script>
 
