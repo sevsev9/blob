@@ -456,7 +456,7 @@
     <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
 </div>
 <span id="wt">Welcome to</span>
-<span id="bl">[BLOBLOGO]</span>
+<img src="../img/logo_new.png" id="bl">
 <span id="pb">presented by</span>
 <span id="ts">Team Skrt</span>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
@@ -503,11 +503,11 @@
 <script>
     function hover(element) {
         element.setAttribute('src', '../img/Game_Start_Button_Hover.png');
-        $("#startgameshadow:hidden:first").fadeIn(400);
+        document.getElementById("startgameshadow").style.opacity = 0.8;
     }
     function unhover(element) {
         element.setAttribute('src', '../img/Game_Start_Button.png');
-        $("#startgameshadow").fadeOut(50);
+        document.getElementById("startgameshadow").style.opacity = 0.5;
     }
 </script>
 
@@ -542,6 +542,7 @@
         }, 2500);
         setTimeout(function () {
             $("#startgame:hidden:first").fadeIn(1500)
+            $("#startgameshadow:hidden:first").fadeIn(1500)
         }, 4000);
 
     }

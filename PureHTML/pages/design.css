@@ -175,7 +175,7 @@ body{
     position: absolute;
     width: 35vw;
     top: 15vw;
-    left: 35vw;
+    left: 34vw;
     z-index: 1002;
     display: none;
 }
@@ -184,13 +184,13 @@ body{
     position: absolute;
     width: 35vw;
     top: 33vw;
-    left: 35vw;
+    left: 34vw;
     z-index: 1001;
     display: none;
     opacity: 0.5;
 }
 
-#startgame:hover{
+#startgame{
     a-webkit-animation-name: hovering;
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
@@ -482,12 +482,10 @@ img{
 
 
 #bl{
-    color: black;
     position: absolute;
-    left: 10vw;
-    top: 10vw;
-    font-family: "Arial Black";
-    font-size: 2vw;
+    left: 5vw;
+    top: 6vw;
+    width: 20vw;
     z-index: 1002;
     display: none;
 }
