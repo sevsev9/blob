@@ -451,11 +451,14 @@
 
 
 <!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
-<div id="startgamediv"><img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);"></div>
+<div id="startgamediv">
+    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
+    <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
+</div>
 <span id="wt">Welcome to</span>
 <span id="bl">[BLOBLOGO]</span>
 <span id="pb">presented by</span>
-<span id="srd">some random dudes</span>
+<span id="ts">Team Skrt</span>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
 <!--------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------->
@@ -500,13 +503,11 @@
 <script>
     function hover(element) {
         element.setAttribute('src', '../img/Game_Start_Button_Hover.png');
-        $("#startgame").animate({top: '30%'}, 50);
-        $("#startgame").animate({top: '35%'}, 50);
+        $("#startgameshadow:hidden:first").fadeIn(400);
     }
     function unhover(element) {
         element.setAttribute('src', '../img/Game_Start_Button.png');
-        $("#startgame").animate({top: '30%'}, 50);
-        $("#startgame").animate({top: '35%'}, 50);
+        $("#startgameshadow").fadeOut(50);
     }
 </script>
 
@@ -529,7 +530,7 @@
         helpboxfull.style.display = "none";
 
         document.getElementById("pb").style.display = "block";
-        document.getElementById("srd").style.display = "block";
+        document.getElementById("ts").style.display = "block";
 
         document.getElementById("tabup").style.left = "15%";
 
