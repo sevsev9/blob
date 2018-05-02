@@ -173,11 +173,9 @@ body{
 
 #startgame{
     position: absolute;
-    height: 10%;
     width: 30%;
-    top: 45%;
+    top: 35%;
     left: 35%;
-    background-color: lime;
     z-index: 1001;
     display: none;
 }

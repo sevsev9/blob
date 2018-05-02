@@ -451,7 +451,7 @@
 
 
 <!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
-<div id="startgamediv"><button id="startgame" class="MouseHover" onclick="toggleFullscreen()"><h1 class="MouseHover">Spiel starten!</h1></button></div>
+<div id="startgamediv"><img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);"></div>
 <span id="wt">Welcome to</span>
 <span id="bl">[BLOBLOGO]</span>
 <span id="pb">presented by</span>
@@ -496,6 +496,16 @@
 
 <!----------------------------------------------------------------------------------------------------------------------Javascript und JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    function hover(element) {
+        element.setAttribute('src', '../img/Game_Start_Button_Hover.png');
+    }
+    function unhover(element) {
+        element.setAttribute('src', '../img/Game_Start_Button.png');
+    }
+</script>
+
 <script>
     //Script wird beim Start ausgeführt
 
