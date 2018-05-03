@@ -1,27 +1,27 @@
 <?php
-    require_once "../php/session.php";
+require_once "../php/session.php";
 
-    //Create Javascript Item Array
-        $servername = "localhost";
-        $dbname = "blob_users";
-        $dbuname = "webacc";
-        $dbpassw = "Blob_256!";
+//Create Javascript Item Array
+$servername = "localhost";
+$dbname = "blob_users";
+$dbuname = "webacc";
+$dbpassw = "Blob_256!";
 
-        $db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
+$db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
 
-        if ($db->connect_error) {
-            die("Connection failed: " . $db->connect_error);
-        }
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
 
-        $sql = "SELECT * FROM items";
-        $result = mysqli_query($db, $sql);
-        $rows = array();
-        while($row = mysqli_fetch_array($result)){
-            array_push($rows, $row);
-        }
-        echo "<p>".json_encode($rows)."</p>";
+$sql = "SELECT * FROM items";
+$result = mysqli_query($db, $sql);
+$rows = array();
+while($row = mysqli_fetch_array($result)){
+    array_push($rows, $row);
+}
+echo "<p>".json_encode($rows)."</p>";
 
-    echo  "
+echo  "
 <script type='text/javascript'>
 //Item Name Array
     var names = [];
@@ -34,6 +34,7 @@
 </script>
     ";
 ?>
+
 <!doctype html>
 <html lang="">
 <head>
@@ -465,6 +466,7 @@
 <span id="pb">presented by</span>
 <span id="ts">Team Skrt</span>
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
+<img src="../img/loading_final.gif" id="loadingGIF">
 <!--------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------->
 
@@ -549,6 +551,10 @@
             $("#startgame:hidden:first").fadeIn(1500)
             $("#startgameshadow:hidden:first").fadeIn(1500)
         }, 4000);
+        setTimeout(function () {
+            $("#loadingGIF").fadeOut(1000)
+        }, 4500);
+
 
     }
 
