@@ -1,5 +1,38 @@
 <?php
     require_once "../php/session.php";
+
+    //Create Javascript Item Array
+        $servername = "localhost";
+        $dbname = "blob_users";
+        $dbuname = "webacc";
+        $dbpassw = "Blob_256!";
+
+        $db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
+
+        if ($db->connect_error) {
+            die("Connection failed: " . $db->connect_error);
+        }
+
+        $sql = "SELECT * FROM items";
+        $result = mysqli_query($db, $sql);
+        $rows = array();
+        while($row = mysqli_fetch_array($result)){
+            array_push($rows, $row);
+        }
+        echo "<p>".json_encode($rows)."</p>";
+
+    echo  "
+<script type='text/javascript'>
+//Item Name Array
+    var names = [];
+//Item Price Array
+    var prices = [];
+//Item Image Path Array
+    var imgpaths = [];
+    
+    
+</script>
+    ";
 ?>
 <!doctype html>
 <html lang="">
@@ -140,35 +173,7 @@
 
     <!----------------------------------------------------------------------------------------------------------------------AUGEN-->
     <div class="shopinhalt" id="eyes">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Auge</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
+        //Generate Eyes
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
     <!----------------------------------------------------------------------------------------------------------------------KLEIDUNG-->

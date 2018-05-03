@@ -1,11 +1,12 @@
+function createItem(id, itemname, itemimage, cost, bought, wearing) {
 
-function createItem() {
-    var shop = document.getElementById("");
-    var itemname = "seas";
-    var itemimage = "path";
-    var cost = 25;
-    var bought = false;
-    var wearing = false;
+    //Testing
+    shop = document.getElementById("");
+    itemname = "seas";
+    itemimage = "path";
+    cost = 25;
+    bought = false;
+    wearing = false;
 
     var element = "<div class='shopinhalt_elem'>";
 
