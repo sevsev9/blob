@@ -30,6 +30,7 @@ body{
     background-color: white;
     margin: 6px 0;
     transition: 0.4s;
+    border-radius: 1em;
 }
 
 .change .bar1 {
@@ -42,6 +43,17 @@ body{
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#navbaropeniconoverlay{
+    background-color: grey;
+    opacity: 0;
+    z-index: 11;
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    left: 14.75em;
+    top: 2.5em;
 }
 
 .xp {
@@ -132,7 +144,7 @@ body{
 
 .shopinhalt{
     position: absolute;
-    width: 76%;
+    width: 77%;
     height: 55%;
     left: 1.9%;
     top: 41%;

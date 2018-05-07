@@ -477,7 +477,8 @@ echo  "
 <nav>
     <ul>
         <li>
-            <span class="openBtn MouseHover" id="navopenicon" onclick="openNav()">
+            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav()"></div>
+            <span class="openBtn" id="navopenicon">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
