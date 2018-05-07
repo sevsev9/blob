@@ -1,4 +1,5 @@
 <?php
+/*
 require_once "../php/session.php";
 
 //Create Javascript Item Array
@@ -32,7 +33,7 @@ echo  "
     
     
 </script>
-    ";
+    ";*/
 ?>
 
 <!doctype html>
@@ -476,7 +477,12 @@ echo  "
 <nav>
     <ul>
         <li>
-            <span class="openBtn MouseHover" onclick="openNav()">&#9776;</span>
+            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav()"></div>
+            <span class="openBtn" id="navopenicon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+            </span>
         </li>
         <li>
             <span class="coinTxt text MouseHover" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
@@ -567,12 +573,16 @@ echo  "
 
     //Shop öffnen
     function shop() {
+
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $(".shop").animate({top: '-17%'}, 1000);
             doBounce($(".shop"), 1, '1%', 180);
             navCount = 1;
         });
+
+        document.getElementById("navopenicon").classList.remove("change");
+
     }
 
     //Bounce-Animation
@@ -593,13 +603,9 @@ echo  "
             navCount = 1;
         });
 
+        document.getElementById("navopenicon").classList.remove("change");
+
         document.getElementById("okBtn").style.opacity = 0;
-    }
-    function mathboxclose() {
-        $(document).ready(function(){
-            $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
-            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
-        });
     }
 
     //Mathe schließen
@@ -619,14 +625,10 @@ echo  "
             navCount = 1;
         });
 
+        document.getElementById("navopenicon").classList.remove("change");
+
         document.getElementById("VokabelNextBtn").style.opacity = 0;
         document.getElementById("VokabelOkBtn").style.opacity = 0;
-    }
-    function vokabelboxclose() {
-        $(document).ready(function(){
-            $('#vokabelboxfull').css({zIndex:10}).fadeOut(1000);
-            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
-        });
     }
 
     //Englisch schließen
@@ -645,12 +647,8 @@ echo  "
             $('#helpboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
-    }
-    function helpboxclose() {
-        $(document).ready(function(){
-            $('#helpboxfull').css({zIndex:10}).fadeOut(1000);
-            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
-        });
+
+        document.getElementById("navopenicon").classList.remove("change");
     }
 
     //Help schließen
@@ -733,7 +731,10 @@ echo  "
             navCount=1;
         }
 
+        document.getElementById("navopenicon").classList.toggle("change");
+
     }
+
     tabs = $(".tablinks");
     tabs.on("click", function () {
         $(this).removeClass("other");
