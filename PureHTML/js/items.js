@@ -1,3 +1,14 @@
+
+
+
+//Usage:
+//  * id - document.getElementById("");
+//  * itemname
+//  * itemimage
+//  * cost
+//  * bought
+//  * wearing
+
 function createItem(id, itemname, itemimage, cost, bought, wearing) {
 
     //Testing
