@@ -13,8 +13,34 @@
             padding: 0;
         }
 
-        ::-webkit-scrollbar { width: 10px; background: sandybrown; }
-        ::-webkit-scrollbar-thumb { background: saddlebrown; border-radius: 5px; }
+        .agbBox{
+            position: absolute;
+            top: 18%;
+            left: 18%;
+            z-index: 50;
+        }
+
+        .agbText{
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            font-size: 1.5em;
+            font-family: "Arial Black";
+            z-index: 52;
+            size: 300em;
+            height: 21em;
+            width: 50em;
+            overflow: auto;
+            color: dimgrey;
+        }
+
+        .agbX{
+            position: absolute;
+            left: 89%;
+            top: 18%;
+            color: white;
+            z-index: 502;
+        }
 
 
     </style>
@@ -22,179 +48,66 @@
 </head>
 <body>
 
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-<br>h
-
-
-
+<div id="agbboxfull" class="fadeindiv">
+    <h1 class="agbX MouseHover" style="z-index: 501" onclick="closehelp()">X</h1>
+    <img src="img/helpBox.png" width="73.75%" class="agbBox">
+    <p class="agbText">
+        Impressum
+        <span style="color: white">
+            <br>Angaben gemäß § 5 TMG:
+            <br>Skrrt
+            <br>Fischergasse 30
+            <br>4600 Wels
+            <br>Österreich
+            <br>
+            <br>Projektleiter:
+            <br>Philipp Kollau
+            <br>
+            <br>Kontakt:
+            <br>Email: supp.blob.click@gmail.com
+            <br>
+            <br>Haftungsausschluss (Disclaimer)
+            <br><span style="color: dimgrey">Haftung für Inhalte</span>
+            <br>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf
+            <br>diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG
+            <br>sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte
+            <br>oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
+            <br>forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            <br>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
+            <br>nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche
+            <br>Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
+            <br>Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
+            <br>Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+            <br>
+            <br><span style="color: dimgrey">Haftung für Links</span>
+            <br>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte
+            <br>wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
+            <br>keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der
+            <br>jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten
+            <br>Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+            <br>überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+            <br>erkennbar.
+            <br>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+            <br>konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+            <br>entfernen.
+            <br>
+            <br><span style="color: dimgrey">Urheberrecht</span>
+            <br>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+            <br>unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+            <br>Verbreitung und jede Art der Verwertung außerhalb der Grenzen des
+            <br>Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
+            <br>bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten,
+            <br>nicht kommerziellen Gebrauch gestattet.
+            <br>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden
+            <br>die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als
+            <br>solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung
+            <br>aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei
+            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
+            <br>umgehend entfernen.
+        </span>
+    </p>
+</div>
 
 </body>
 </html>
