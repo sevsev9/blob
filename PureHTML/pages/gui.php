@@ -545,6 +545,8 @@ echo  "
         document.getElementById("pb").style.display = "block";
         document.getElementById("ts").style.display = "block";
 
+        $("#loadingGIF").fadeOut(1000);
+
         document.getElementById("tabup").style.left = "15%";
 
         setTimeout(function () {
@@ -557,11 +559,6 @@ echo  "
             $("#startgame:hidden:first").fadeIn(1500)
             $("#startgameshadow:hidden:first").fadeIn(1500)
         }, 4000);
-        setTimeout(function () {
-            $("#loadingGIF").fadeOut(1000)
-        }, 100);
-
-
     }
 
     //Shop schließen

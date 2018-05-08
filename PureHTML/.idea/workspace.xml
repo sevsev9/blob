@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b759f0e-16c8-4c7b-94dc-4b4a51363462" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/pages/gui.php" afterPath="$PROJECT_DIR$/pages/gui.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="gui.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/gui.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="561" column="12" lean-forward="false" selection-start-line="561" selection-start-column="12" selection-end-line="561" selection-end-column="12" />
+            <state relative-caret-position="490">
+              <caret line="547" column="39" lean-forward="false" selection-start-line="547" selection-start-column="39" selection-end-line="547" selection-end-column="39" />
               <folding>
                 <element signature="e#6#708#0#PHP" expanded="true" />
               </folding>
@@ -180,16 +179,15 @@
       <workItem from="1525686035363" duration="1205000" />
       <workItem from="1525763303514" duration="455000" />
       <workItem from="1525763994597" duration="1018000" />
-      <workItem from="1525768606802" duration="153000" />
+      <workItem from="1525768606802" duration="452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31939000" />
+    <option name="totallyTimeSpent" value="32238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -643,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/gui.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="561" column="12" lean-forward="false" selection-start-line="561" selection-start-column="12" selection-end-line="561" selection-end-column="12" />
+        <state relative-caret-position="490">
+          <caret line="547" column="39" lean-forward="false" selection-start-line="547" selection-start-column="39" selection-end-line="547" selection-end-column="39" />
           <folding>
             <element signature="e#6#708#0#PHP" expanded="true" />
           </folding>
