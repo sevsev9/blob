@@ -981,6 +981,19 @@ echo  "
         element.classList.add("animation-target");
     }, false);
 
+    //blobload
+    var elementload = document.getElementById("loadingGIF");
+
+    elementload.addEventListener("click", function(e){
+        e.preventDefault;
+
+        elementload.classList.remove("animation-target");
+
+        void elementload.offsetWidth;
+
+        elementload.classList.add("animation-target");
+    }, false);
+
 </script>
 
 <!--------------------------------------------------------------------------------------------------------------------->
