@@ -559,7 +559,7 @@ echo  "
         }, 4000);
         setTimeout(function () {
             $("#loadingGIF").fadeOut(1000)
-        }, 4500);
+        }, 100);
 
 
     }
