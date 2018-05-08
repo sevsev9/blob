@@ -2,8 +2,18 @@
     cursor: url("../img/mouse/blobzeiger.png") 0 0, default;
 }
 
-::-webkit-scrollbar { width: 10px; background: sandybrown; border-radius: 5px; }
-::-webkit-scrollbar-thumb { background: saddlebrown; border-radius: 5px; }
+::-webkit-scrollbar {
+    width: 10px;
+    background: sandybrown;
+    border-radius: 5px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: saddlebrown;
+    border-radius: 5px;
+
+}
 
 .MouseHover:hover{
     cursor: url("../img/mouse/blobpointer.png") 0 0, default;
