@@ -115,12 +115,80 @@
     <br>Geschäft kaufen und anziehen. Pro Level, das dein Blob aufsteigt, bekommst du
     <br>einen neuen Gegenstand im Shop freigeschalten, den du dann mit deinen erspielten
     <br>Münzen kaufen kannst!</span>
-        <span style="position:absolute; top: 23.5em; left: 13em;">Copyright (c) Philipp Kollau 2018</span>
     </p>
 </div>
 
 
 <!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------infobox-->
+
+
+<div id="infoboxfull" class="fadeindiv">
+    <h1 class="infoX MouseHover" style="z-index: 501" onclick="closeinfo()">X</h1>
+    <img src="../img/infoBox.png" width="73.75%" class="infoBox">
+    <p class="infoText">
+        Impressum
+        <span style="color: white">
+            <br>Angaben gemäß § 5 TMG:
+            <br>Skrrt
+            <br>Fischergasse 30
+            <br>4600 Wels
+            <br>Österreich
+            <br>
+            <br>Projektleiter:
+            <br>Philipp Kollau
+            <br>
+            <br>Kontakt:
+            <br>Email: supp.blob.click@gmail.com
+            <br>
+            <br>Haftungsausschluss (Disclaimer)
+            <br><span style="color: #333">Haftung für Inhalte</span>
+            <br>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf
+            <br>diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG
+            <br>sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte
+            <br>oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
+            <br>forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            <br>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
+            <br>nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche
+            <br>Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
+            <br>Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
+            <br>Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+            <br>
+            <br><span style="color: #333">Haftung für Links</span>
+            <br>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte
+            <br>wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
+            <br>keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der
+            <br>jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten
+            <br>Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+            <br>überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+            <br>erkennbar.
+            <br>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+            <br>konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+            <br>entfernen.
+            <br>
+            <br><span style="color: #333">Urheberrecht</span>
+            <br>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+            <br>unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+            <br>Verbreitung und jede Art der Verwertung außerhalb der Grenzen des
+            <br>Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
+            <br>bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten,
+            <br>nicht kommerziellen Gebrauch gestattet.
+            <br>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden
+            <br>die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als
+            <br>solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung
+            <br>aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei
+            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
+            <br>umgehend entfernen.
+        </span>
+    </p>
+    <span style="color: white; font-size: 2em; opacity: 0.6; position:absolute; top: 30.65em; left: 28em; z-index: 52;">Copyright (c) Philipp Kollau 2018</span>
+</div>
+
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
 
 
@@ -378,6 +446,9 @@ echo  "
             <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
         </li>
         <li>
+            <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
+        </li>
+        <li>
             <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
         </li>
         <li>
@@ -425,6 +496,8 @@ echo  "
         vokabelboxfull.style.display = "none";
         helpboxfull = document.getElementById("helpboxfull");
         helpboxfull.style.display = "none";
+        infoboxfull = document.getElementById("infoboxfull");
+        infoboxfull.style.display = "none";
 
         document.getElementById("pb").style.display = "block";
         document.getElementById("ts").style.display = "block";
@@ -540,6 +613,26 @@ echo  "
         });
     }
 
+    //Helpbox
+    function infoboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('#infoboxfull').css({zIndex:9}).fadeIn(1000);
+            navCount = 1;
+        });
+
+        document.getElementById("navopenicon").classList.remove("change");
+    }
+
+    //Help schließen
+    function closeinfo(){
+        $(document).ready(function(){
+            $("#infoboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+        });
+    }
+
     //Wechseln in den Fullscreenmodus
     function toggleFullscreen(elem) {
         document.getElementById("wt").style.display = "none";
@@ -602,6 +695,7 @@ echo  "
                 $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#vokabelboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#helpboxfull').css({zIndex:10}).fadeOut(1000);
+                $('#infoboxfull').css({zIndex:10}).fadeOut(1000);
                 $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             });
             navCount=0;
