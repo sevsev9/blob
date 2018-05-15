@@ -2,40 +2,17 @@
     cursor: url("../img/mouse/blobzeiger.png") 0 0, default;
 }
 
-.infoText::-webkit-scrollbar {
-    width: 10px;
-    background: violet;
-    border-radius: 5px;
-
-}
-
-.infoText::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1);
-    border-radius: 5px;
-}
-
-.infoText::-webkit-scrollbar-thumb {
-    background: darkviolet;
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1);
-}
-
-.shop::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
     background: sandybrown;
     border-radius: 5px;
 
 }
 
-.shop::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1);
-    border-radius: 5px;
-}
-
-.shop::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: saddlebrown;
     border-radius: 5px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1);
+
 }
 
 .MouseHover:hover{
@@ -327,13 +304,6 @@ body{
     z-index: 10;
 }
 
-.infoTxt{
-    position: absolute;
-    top: 70%;
-    left: 15%;
-    z-index: 10;
-}
-
 .helpTxt{
     position: absolute;
     top: 80%;
@@ -366,13 +336,6 @@ body{
     position: absolute;
     top: 34%;
     left: 70%;
-}
-
-.infoBtn{
-    position: absolute;
-    top: 68%;
-    left: 70%;
-    z-index: 10;
 }
 
 .helpBtn{
@@ -555,34 +518,7 @@ nav{
     z-index: 502;
 }
 
-.infoBox{
-    position: absolute;
-    top: 18%;
-    left: 18%;
-    z-index: 50;
-}
 
-.infoText{
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    font-size: 1.6em;
-    font-family: "Arial Black";
-    z-index: 52;
-    size: 300em;
-    height: 25em;
-    width: 55.65em;
-    overflow: auto;
-    color: #333;
-}
-
-.infoX{
-    position: absolute;
-    left: 89%;
-    top: 18%;
-    color: white;
-    z-index: 502;
-}
 
 img{
     -webkit-user-drag: none;
