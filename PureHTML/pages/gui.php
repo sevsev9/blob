@@ -488,7 +488,7 @@ echo  "
         $(document).ready(function(){
             $(".shop").animate({top: '-17%'}, 100);
             $(".shop").animate({top: '-120%'}, 100);
-            openTab(event, 'eyes');
+            openTab(event, 'color');
         });
         mathebox = document.getElementById("matheboxfull");
         mathebox.style.display = "none";
