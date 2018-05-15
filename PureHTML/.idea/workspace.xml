@@ -2,53 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b759f0e-16c8-4c7b-94dc-4b4a51363462" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Organisation/arbeitsprotokoll.docx" afterPath="$PROJECT_DIR$/../Organisation/arbeitsprotokoll.docx" />
-      <change beforePath="$PROJECT_DIR$/../Pics/All Exported Pics/clothing/clothing_latzhose.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Pics/All Exported Pics/schokolade.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/img/accessoires/1_Sonnenbrille.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/accessoires/2_Galaxienbrille.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/accessoires/3_Riesenkolben.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/1_lila.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/2_pink.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/3_cyan.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/4_gelb.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/5_cyanPremium.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/6_gelbPremium.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/background/7_Seifenblasen.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/clothing/1_GrauerAnzugMitFliege.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/clothing/2_GrauerAnzugMitKrawatte.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/clothing/3_WeißerAnzugMitFliege.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/clothing/4_WeißerAnzugMitKrawatte.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/clothing/5_SchwarzerAnzugMitFliege.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/clothing/6_SchwarzerAnzugMitKrawatte.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/10_gelb.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/11_braun.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/1_Standard.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/2_blau.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/3_grün.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/4_grau.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/5_cyan.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/6_orange.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/7_pink.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/8_lila.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/color/9_rot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/costume/1_DarthVader.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/costume/2_Naruto.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/costume/3_Superman.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/eyes/1_erstaunt.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/eyes/2_glücklich.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/eyes/3_zwinkernd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/eyes/4_ko.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/eyes/5_zyklop.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/hat/1_Beanie.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/hat/2_Cowboyhut.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/merkmale/1_GraueRinge.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/mouth/1_grinsend.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/mouth/2_pfeifend.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/mouth/3_schreiend.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/mouth/4_lächelnd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/mouth/5_lachend.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/img/clothing/adiblob_Три-полосы.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/img/eyes/augen_mit_augenringe.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/img/mouth/kawaii_mouth.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/img/mouth/kawaii_mouth2.png" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,11 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gui.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gui.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/gui.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
+            <state relative-caret-position="15028">
               <caret line="884" column="0" lean-forward="false" selection-start-line="884" selection-start-column="0" selection-end-line="884" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -211,20 +178,19 @@
       <workItem from="1525768606802" duration="452000" />
       <workItem from="1525848751498" duration="2889000" />
       <workItem from="1526369133559" duration="60000" />
+      <workItem from="1526370289985" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35628000" />
+    <option name="totallyTimeSpent" value="35632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -235,6 +201,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -577,7 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="file://$PROJECT_DIR$/navbartemp.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -602,8 +568,16 @@
     <entry file="file://C:/xampp/htdocs/kaser_ue5.php" />
     <entry file="file://$PROJECT_DIR$/pages/gui.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
+        <state relative-caret-position="15028">
           <caret line="884" column="0" lean-forward="false" selection-start-line="884" selection-start-column="0" selection-end-line="884" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
