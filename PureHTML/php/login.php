@@ -42,7 +42,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<br>";
                 print_r($row);
                 echo "<br>";
-                echo $count;*/
+                echo $count;
+        */
 
         // If result matched $username and $password, table row must be 1 row
         if ($count == 1) {

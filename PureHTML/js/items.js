@@ -3,21 +3,13 @@
 
 //Usage:
 //  * id - document.getElementById("");
-//  * itemname
-//  * itemimage
-//  * cost
-//  * bought
-//  * wearing
+//  * itemname - "name of the item"
+//  * itemimage - "path of itemimage"
+//  * cost - int
+//  * bought - boolean
+//  * wearing - boolean
 
 function createItem(id, itemname, itemimage, cost, bought, wearing) {
-
-    //Testing
-    shop = document.getElementById("");
-    itemname = "seas";
-    itemimage = "path";
-    cost = 25;
-    bought = false;
-    wearing = false;
 
     var element = "<div class='shopinhalt_elem'>";
 
@@ -46,5 +38,5 @@ function createItem(id, itemname, itemimage, cost, bought, wearing) {
     //Element complete
     element += "</div>";
 
-    return element;
+    id.innerHTML += element;
 }

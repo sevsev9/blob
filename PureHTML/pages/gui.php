@@ -1,41 +1,8 @@
 <?php
-/*
-require_once "../php/session.php";
-
-//Create Javascript Item Array
-$servername = "localhost";
-$dbname = "blob_users";
-$dbuname = "webacc";
-$dbpassw = "Blob_256!";
-
-$db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
-
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-}
-
-$sql = "SELECT * FROM items";
-$result = mysqli_query($db, $sql);
-$rows = array();
-while($row = mysqli_fetch_array($result)){
-    array_push($rows, $row);
-}
-echo "<p>".json_encode($rows)."</p>";
-
-echo  "
-<script type='text/javascript'>
-//Item Name Array
-    var names = [];
-//Item Price Array
-    var prices = [];
-//Item Image Path Array
-    var imgpaths = [];
-    
-    
-</script>
-    ";*/
+    require_once "../php/session.php";
+    error_reporting(0);
+    //ini_set('display_errors',1);
 ?>
-
 <!doctype html>
 <html lang="">
 <head>
@@ -58,6 +25,7 @@ echo  "
     <!-- Javascripts -->
     <script type="text/javascript" src="../js/fscreen.js" ></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script src="../js/items.js"></script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -66,6 +34,8 @@ echo  "
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+
 </head>
 <body onload="startscript()">
 <!--[if lte IE 9]>
@@ -145,12 +115,80 @@ echo  "
     <br>Geschäft kaufen und anziehen. Pro Level, das dein Blob aufsteigt, bekommst du
     <br>einen neuen Gegenstand im Shop freigeschalten, den du dann mit deinen erspielten
     <br>Münzen kaufen kannst!</span>
-        <span style="position:absolute; top: 23.5em; left: 13em;">Copyright (c) Philipp Kollau 2018</span>
     </p>
 </div>
 
 
 <!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------infobox-->
+
+
+<div id="infoboxfull" class="fadeindiv">
+    <h1 class="infoX MouseHover" style="z-index: 501" onclick="closeinfo()">X</h1>
+    <img src="../img/infoBox.png" width="73.75%" class="infoBox">
+    <p class="infoText">
+        Impressum
+        <span style="color: white">
+            <br>Angaben gemäß § 5 TMG:
+            <br>Skrrt
+            <br>Fischergasse 30
+            <br>4600 Wels
+            <br>Österreich
+            <br>
+            <br>Projektleiter:
+            <br>Philipp Kollau
+            <br>
+            <br>Kontakt:
+            <br>Email: supp.blob.click@gmail.com
+            <br>
+            <br>Haftungsausschluss (Disclaimer)
+            <br><span style="color: #333">Haftung für Inhalte</span>
+            <br>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf
+            <br>diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG
+            <br>sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte
+            <br>oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
+            <br>forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            <br>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
+            <br>nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche
+            <br>Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
+            <br>Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
+            <br>Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+            <br>
+            <br><span style="color: #333">Haftung für Links</span>
+            <br>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte
+            <br>wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
+            <br>keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der
+            <br>jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten
+            <br>Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+            <br>überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+            <br>erkennbar.
+            <br>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+            <br>konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+            <br>entfernen.
+            <br>
+            <br><span style="color: #333">Urheberrecht</span>
+            <br>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+            <br>unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+            <br>Verbreitung und jede Art der Verwertung außerhalb der Grenzen des
+            <br>Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
+            <br>bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten,
+            <br>nicht kommerziellen Gebrauch gestattet.
+            <br>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden
+            <br>die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als
+            <br>solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung
+            <br>aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei
+            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
+            <br>umgehend entfernen.
+        </span>
+    </p>
+    <span style="color: white; font-size: 2em; opacity: 0.6; position:absolute; top: 30.65em; left: 28em; z-index: 52;">Copyright (c) Philipp Kollau 2018</span>
+</div>
+
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
 
 
@@ -175,283 +213,197 @@ echo  "
 
     <!----------------------------------------------------------------------------------------------------------------------AUGEN-->
     <div class="shopinhalt" id="eyes">
-        //Generate Eyes
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
     <!----------------------------------------------------------------------------------------------------------------------KLEIDUNG-->
     <div class="shopinhalt" id="clothing">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Anzug</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------FARBE-->
     <div class="shopinhalt" id="color">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Blau</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------KOSTÜM-->
     <div class="shopinhalt" id="costume">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Batman</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------HUT-->
     <div class="shopinhalt" id="hat">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Huat</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------MUND-->
     <div class="shopinhalt" id="mouth">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Mund</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------ACCESSOIRES-->
     <div class="shopinhalt" id="accessoires">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Brün</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------MERKMALE-->
     <div class="shopinhalt" id="merkmale">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Ringe</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------WALLPAPER-->
     <div class="shopinhalt" id="wallpaper">
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">blau gestreift</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: red; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: dodgerblue; font-size: 2em;" class="MouseHover">Anziehen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem">
-            <span style="margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute">Deppada Huad</span>
-            <button style="margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;" class="MouseHover">Kaufen</button>
-            <button style="margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;" class="MouseHover">Angezogen</button>
-            <span style="margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em">300 Coins</span>
-            <img src="../img/Blob_basic.png" style="width: 13.5em; margin-left: 84em; position: absolute; margin-top: 0.3em;"/>
-        </div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
-        <div class="shopinhalt_elem"></div>
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
 </div>
 
+<!--Shop Item Script-->
+<?php
+//Create Javascript Item Array
+$servername = "localhost";
+$dbname = "blob_users";
+$dbuname = "webacc";
+$dbpassw = "Blob_256!";
+
+$db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
+
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+
+$sql = "SELECT * FROM items";
+$result = mysqli_query($db, $sql);
+$rows = array();
+$ctr = 0;
+
+while($row = mysqli_fetch_array($result)){
+    array_push($rows, $row);
+
+    echo "<script type='text/javascript'>";
+
+    //createItem(id, itemname, itemimage, cost, bought, wearing)
+//Augen
+    //document.getElementById('eyes')
+    while ($rows[$ctr] != null){
+        if ($rows[$ctr]['item_class'] == "eyes") {
+            echo "createItem(document.getElementById('eyes'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Kleidung
+        //document.getElementById('clothing')
+        elseif ($rows[$ctr]['item_class'] == "clothing") {
+            echo "createItem(document.getElementById('clothing'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Farbe
+        //document.getElementById('color')
+        elseif ($rows[$ctr]['item_class'] == "color") {
+            echo "createItem(document.getElementById('color'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Kostüm
+        //document.getElementById('costume')
+        elseif ($rows[$ctr]['item_class'] == "costume") {
+            echo "createItem(document.getElementById('costume'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Hut
+        //document.getElementById('hat')
+        elseif ($rows[$ctr]['item_class'] == "hat") {
+            echo "createItem(document.getElementById('hat'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Mund
+        //document.getElementById('mouth')
+        elseif ($rows[$ctr]['item_class'] == "mouth") {
+            echo "createItem(document.getElementById('mouth'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Accessoirs
+        //document.getElementById('accessoires')
+        elseif ($rows[$ctr]['item_class'] == "accessoires") {
+            echo "createItem(document.getElementById('accessoires'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Merkmale
+        //document.getElementById('merkmale')
+        elseif ($rows[$ctr]['item_class'] == "merkmale") {
+            echo "createItem(document.getElementById('merkmale'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+//Wallpaper
+        //document.getElementById('wallpapers')
+        elseif ($rows[$ctr]['item_class'] == "wallpapers") {
+            echo "createItem(document.getElementById('wallpapers'),
+                            '".$rows[$ctr]['name']."',
+                            '".$rows[$ctr]['path']."',
+                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['bought']."',
+                            '".$rows[$ctr]['wearing']."'
+               );";
+        }
+
+        $ctr++;
+    }
+
+    echo"</script>";
+}
+//echo "<p>".json_encode($rows)."</p>";
+//echo "<p>".json_encode($rows[0]["id"])."</p>";
+
+echo  "
+<script type='text/javascript'>
+//Item Name Array
+    var names = [];
+//Item Price Array
+    var prices = [];
+//Item Image Path Array
+    var imgpaths = [];
+    
+    
+</script>
+    ";
+?>
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
@@ -492,6 +444,9 @@ echo  "
         </li>
         <li>
             <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
+        </li>
+        <li>
+            <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
         </li>
         <li>
             <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
@@ -541,6 +496,8 @@ echo  "
         vokabelboxfull.style.display = "none";
         helpboxfull = document.getElementById("helpboxfull");
         helpboxfull.style.display = "none";
+        infoboxfull = document.getElementById("infoboxfull");
+        infoboxfull.style.display = "none";
 
         document.getElementById("pb").style.display = "block";
         document.getElementById("ts").style.display = "block";
@@ -656,6 +613,26 @@ echo  "
         });
     }
 
+    //Helpbox
+    function infoboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('#infoboxfull').css({zIndex:9}).fadeIn(1000);
+            navCount = 1;
+        });
+
+        document.getElementById("navopenicon").classList.remove("change");
+    }
+
+    //Help schließen
+    function closeinfo(){
+        $(document).ready(function(){
+            $("#infoboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+        });
+    }
+
     //Wechseln in den Fullscreenmodus
     function toggleFullscreen(elem) {
         document.getElementById("wt").style.display = "none";
@@ -718,6 +695,7 @@ echo  "
                 $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#vokabelboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#helpboxfull').css({zIndex:10}).fadeOut(1000);
+                $('#infoboxfull').css({zIndex:10}).fadeOut(1000);
                 $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             });
             navCount=0;
