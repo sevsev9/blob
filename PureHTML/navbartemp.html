@@ -7,107 +7,273 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <style>
-        body {
-            font-family: "Arial Black";
-            margin: 0;
-            padding: 0;
-        }
 
-        .agbBox{
+        .musicbox{
             position: absolute;
             top: 18%;
             left: 18%;
-            z-index: 50;
+            z-index: 500;
         }
 
-        .agbText{
-            position: absolute;
-            top: 25%;
-            left: 25%;
-            font-size: 1.5em;
-            font-family: "Arial Black";
-            z-index: 52;
-            size: 300em;
-            height: 21em;
-            width: 50em;
-            overflow: auto;
-            color: dimgrey;
-        }
-
-        .agbX{
+        .musicX{
             position: absolute;
             left: 89%;
             top: 18%;
-            color: white;
+            color: grey;
             z-index: 502;
         }
 
+        #mbox1{
+            width: 14em;
+            height: 14em;
+            background-color: #ff3300;
+            position: absolute;
+            top: 18em;
+            right: 46em;
+            z-index: 502;
+            border: ridge 0.8em;
+            border-right-color: #cc2900;
+            border-bottom-color: #cc2900;
+            border-left-color: #ff5c33;
+            border-top-color: #ff5c33;
+            border-radius: 2em;
+        }
+
+        #mbox2{
+            width: 14em;
+            height: 14em;
+            background-color: dodgerblue;
+            position: absolute;
+            top: 18em;
+            right: 29em;
+            z-index: 502;
+            border: ridge 0.8em;
+            border-right-color: royalblue;
+            border-bottom-color: royalblue;
+            border-left-color: deepskyblue;
+            border-top-color: deepskyblue;
+            border-radius: 2em;
+        }
+
+        #mbox3{
+            width: 14em;
+            height: 14em;
+            background-color: #009933;
+            position: absolute;
+            top: 35em;
+            right: 46em;
+            z-index: 502;
+            border: ridge 0.8em;
+            border-right-color: #006622;
+            border-bottom-color: #006622;
+            border-left-color: #00cc44;
+            border-top-color: #00cc44;
+            border-radius: 2em;
+        }
+
+        #mbox4{
+            width: 14em;
+            height: 14em;
+            background-color: #cc00cc;
+            position: absolute;
+            top: 35em;
+            right: 29em;
+            z-index: 502;
+            border: ridge 0.8em;
+            border-right-color: #990099;
+            border-bottom-color: #990099;
+            border-left-color: #ff00ff;
+            border-top-color: #ff00ff;
+            border-radius: 2em;
+        }
+
+        #musicstartbutton{
+            font-family: "Arial Black";
+            font-size: 2em;
+            position: absolute;
+            left: 23em;
+            top: 16em;
+            z-index: 502;
+        }
 
     </style>
 
 </head>
 <body>
 
-<div id="agbboxfull" class="fadeindiv">
-    <h1 class="agbX MouseHover" style="z-index: 501" onclick="closehelp()">X</h1>
-    <img src="img/helpBox.png" width="73.75%" class="agbBox">
-    <p class="agbText">
-        Impressum
-        <span style="color: white">
-            <br>Angaben gemäß § 5 TMG:
-            <br>Skrrt
-            <br>Fischergasse 30
-            <br>4600 Wels
-            <br>Österreich
-            <br>
-            <br>Projektleiter:
-            <br>Philipp Kollau
-            <br>
-            <br>Kontakt:
-            <br>Email: supp.blob.click@gmail.com
-            <br>
-            <br>Haftungsausschluss (Disclaimer)
-            <br><span style="color: dimgrey">Haftung für Inhalte</span>
-            <br>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf
-            <br>diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG
-            <br>sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte
-            <br>oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
-            <br>forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-            <br>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
-            <br>nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche
-            <br>Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
-            <br>Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
-            <br>Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-            <br>
-            <br><span style="color: dimgrey">Haftung für Links</span>
-            <br>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte
-            <br>wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
-            <br>keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der
-            <br>jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten
-            <br>Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
-            <br>überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
-            <br>erkennbar.
-            <br>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
-            <br>konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
-            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
-            <br>entfernen.
-            <br>
-            <br><span style="color: dimgrey">Urheberrecht</span>
-            <br>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
-            <br>unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
-            <br>Verbreitung und jede Art der Verwertung außerhalb der Grenzen des
-            <br>Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
-            <br>bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten,
-            <br>nicht kommerziellen Gebrauch gestattet.
-            <br>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden
-            <br>die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als
-            <br>solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung
-            <br>aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei
-            <br>Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
-            <br>umgehend entfernen.
-        </span>
-    </p>
+<div id="musicboxfull" class="fadeindiv">
+    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic()">X</h1>
+    <div class="musicbox">
+        <img src="./img/aufgabenbox.png" width="90%"/>
+    </div>
+    <div id="mbox1" onmouseover="m1hover(this)" onmouseout="m1unhover(this)"></div>
+    <div id="mbox2" onmouseover="m2hover(this)" onmouseout="m2unhover(this)"></div>
+    <div id="mbox3" onmouseover="m3hover(this)" onmouseout="m3unhover(this)"></div>
+    <div id="mbox4" onmouseover="m4hover(this)" onmouseout="m4unhover(this)"></div>
+    <button id="musicstartbutton" onclick="createMusicQuest()">Start</button>
 </div>
+
+<script>
+
+    notenzusammensetzung = 0;
+    musicquestcounter = 1;
+
+
+    function createMusicQuest() {
+
+        bt1 = 6;
+        bt2 = 77;
+        bt3 = 888;
+        bt4 = 9999;
+
+        musicquestcounter++;
+        i=0;
+
+        while(i <= musicquestcounter){
+
+            wahl = (Math.random() * (4 - 1)) + 1;
+            wahl = Math.round(wahl);
+
+            if (wahl==1){
+
+                notenzusammensetzung += bt1;
+
+                m1hover(document.getElementById("mbox1"));
+                setTimeout(function () {
+                    element = document.getElementById("mbox1");
+                    element.style.backgroundColor = "#ff3300";
+                    element.style.borderRightColor = "#cc2900";
+                    element.style.borderBottomColor = "#cc2900";
+                    element.style.borderLeftColor = "#ff5c33";
+                    element.style.borderTopColor = "#ff5c33";
+
+                    createMusicQuest();
+                }, 1000);
+
+            }else if (wahl==2){
+
+                notenzusammensetzung += bt2;
+
+                m2hover(document.getElementById("mbox2"));
+                setTimeout(function () {
+                    element = document.getElementById("mbox2");
+                    element.style.backgroundColor = "dodgerblue";
+                    element.style.borderRightColor = "royalblue";
+                    element.style.borderBottomColor = "royalblue";
+                    element.style.borderLeftColor = "deepskyblue";
+                    element.style.borderTopColor = "deepskyblue";
+
+                    createMusicQuest();
+                }, 1000);
+
+
+            }else if (wahl==3){
+
+                notenzusammensetzung += bt3;
+
+                m3hover(document.getElementById("mbox3"));
+                setTimeout(function () {
+                    element = document.getElementById("mbox3");
+                    element.style.backgroundColor = "#009933";
+                    element.style.borderRightColor = "#006622";
+                    element.style.borderBottomColor = "#006622";
+                    element.style.borderLeftColor = "#00cc44";
+                    element.style.borderTopColor = "#00cc44";
+
+                    createMusicQuest();
+                }, 1000);
+
+            }else if (wahl==4){
+
+                notenzusammensetzung += bt4;
+
+                m4hover(document.getElementById("mbox4"));
+                setTimeout(function () {
+                    element = document.getElementById("mbox4");
+                    element.style.backgroundColor = "#cc00cc";
+                    element.style.borderRightColor = "#990099";
+                    element.style.borderBottomColor = "#990099";
+                    element.style.borderLeftColor = "#ff00ff";
+                    element.style.borderTopColor = "#ff00ff";
+
+                    createMusicQuest();
+                }, 1000);
+
+            }
+
+            i++;
+
+        }
+    }
+
+    function answerMusicQuest() {
+
+    }
+
+    function m1hover(element) {
+        element.style.backgroundColor = "#b30000";
+        element.style.borderRightColor = "#e60000";
+        element.style.borderBottomColor = "#e60000";
+        element.style.borderLeftColor = "#800000";
+        element.style.borderTopColor = "#800000";
+    }
+
+    function m1unhover(element) {
+        element.style.backgroundColor = "#ff3300";
+        element.style.borderRightColor = "#cc2900";
+        element.style.borderBottomColor = "#cc2900";
+        element.style.borderLeftColor = "#ff5c33";
+        element.style.borderTopColor = "#ff5c33";
+    }
+
+    function m2hover(element) {
+        element.style.backgroundColor = "#6666ff";
+        element.style.borderRightColor = "#8080ff";
+        element.style.borderBottomColor = "#8080ff";
+        element.style.borderLeftColor = "#4d4dff";
+        element.style.borderTopColor = "#4d4dff";
+    }
+
+    function m2unhover(element) {
+        element.style.backgroundColor = "dodgerblue";
+        element.style.borderRightColor = "royalblue";
+        element.style.borderBottomColor = "royalblue";
+        element.style.borderLeftColor = "deepskyblue";
+        element.style.borderTopColor = "deepskyblue";
+    }
+
+    function m3hover(element) {
+        element.style.backgroundColor = "#008000";
+        element.style.borderRightColor = "#009900";
+        element.style.borderBottomColor = "#009900";
+        element.style.borderLeftColor = "#004d00";
+        element.style.borderTopColor = "#004d00";
+    }
+
+    function m3unhover(element) {
+        element.style.backgroundColor = "#009933";
+        element.style.borderRightColor = "#006622";
+        element.style.borderBottomColor = "#006622";
+        element.style.borderLeftColor = "#00cc44";
+        element.style.borderTopColor = "#00cc44";
+    }
+
+    function m4hover(element) {
+        element.style.backgroundColor = "#993399";
+        element.style.borderRightColor = "#bf40bf";
+        element.style.borderBottomColor = "#bf40bf";
+        element.style.borderLeftColor = "#732673";
+        element.style.borderTopColor = "#732673";
+    }
+
+    function m4unhover(element) {
+        element.style.backgroundColor = "#cc00cc";
+        element.style.borderRightColor = "#990099";
+        element.style.borderBottomColor = "#990099";
+        element.style.borderLeftColor = "#ff00ff";
+        element.style.borderTopColor = "#ff00ff";
+    }
+</script>
 
 </body>
 </html>
