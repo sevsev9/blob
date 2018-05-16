@@ -106,37 +106,43 @@
     <div class="musicbox">
         <img src="./img/aufgabenbox.png" width="90%"/>
     </div>
-    <div id="mbox1" onmouseover="m1hover(this)" onmouseout="m1unhover(this)"></div>
-    <div id="mbox2" onmouseover="m2hover(this)" onmouseout="m2unhover(this)"></div>
-    <div id="mbox3" onmouseover="m3hover(this)" onmouseout="m3unhover(this)"></div>
-    <div id="mbox4" onmouseover="m4hover(this)" onmouseout="m4unhover(this)"></div>
+    <div id="mbox1" onmouseover="m1hover(this)" onmouseout="m1unhover(this)" onclick="answerMusicQuest(1)"></div>
+    <div id="mbox2" onmouseover="m2hover(this)" onmouseout="m2unhover(this)" onclick="answerMusicQuest(2)"></div>
+    <div id="mbox3" onmouseover="m3hover(this)" onmouseout="m3unhover(this)" onclick="answerMusicQuest(3)"></div>
+    <div id="mbox4" onmouseover="m4hover(this)" onmouseout="m4unhover(this)" onclick="answerMusicQuest(4)"></div>
     <button id="musicstartbutton" onclick="createMusicQuest()">Start</button>
 </div>
 
 <script>
 
-    notenzusammensetzung = 0;
+    notenzusammensetzung = [];
+    notenuserzusammensetzung = [];
     musicquestcounter = 1;
+    musicquestrightcounter = 0;
 
+    musictime = 1000;
+
+    answerMusicQuestcounter = 0;
 
     function createMusicQuest() {
 
-        bt1 = 6;
-        bt2 = 77;
-        bt3 = 888;
-        bt4 = 9999;
+        bt1 = 1;
+        bt2 = 2;
+        bt3 = 3;
+        bt4 = 4;
+
+        musictime += 1000;
 
         musicquestcounter++;
         i=0;
 
-        while(i <= musicquestcounter){
-
+        musicinterval = setInterval(function () {
             wahl = (Math.random() * (4 - 1)) + 1;
             wahl = Math.round(wahl);
 
             if (wahl==1){
 
-                notenzusammensetzung += bt1;
+                notenzusammensetzung[i] = bt1;
 
                 m1hover(document.getElementById("mbox1"));
                 setTimeout(function () {
@@ -147,12 +153,12 @@
                     element.style.borderLeftColor = "#ff5c33";
                     element.style.borderTopColor = "#ff5c33";
 
-                    createMusicQuest();
-                }, 1000);
+
+                }, 500);
 
             }else if (wahl==2){
 
-                notenzusammensetzung += bt2;
+                notenzusammensetzung[i] = bt2;
 
                 m2hover(document.getElementById("mbox2"));
                 setTimeout(function () {
@@ -163,13 +169,13 @@
                     element.style.borderLeftColor = "deepskyblue";
                     element.style.borderTopColor = "deepskyblue";
 
-                    createMusicQuest();
-                }, 1000);
+
+                }, 500);
 
 
             }else if (wahl==3){
 
-                notenzusammensetzung += bt3;
+                notenzusammensetzung[i] = bt3;
 
                 m3hover(document.getElementById("mbox3"));
                 setTimeout(function () {
@@ -180,12 +186,12 @@
                     element.style.borderLeftColor = "#00cc44";
                     element.style.borderTopColor = "#00cc44";
 
-                    createMusicQuest();
-                }, 1000);
+
+                }, 500);
 
             }else if (wahl==4){
 
-                notenzusammensetzung += bt4;
+                notenzusammensetzung[i] = bt4;
 
                 m4hover(document.getElementById("mbox4"));
                 setTimeout(function () {
@@ -196,17 +202,39 @@
                     element.style.borderLeftColor = "#ff00ff";
                     element.style.borderTopColor = "#ff00ff";
 
-                    createMusicQuest();
-                }, 1000);
 
+                }, 500);
             }
 
             i++;
 
-        }
+        },1000);
+
+        setTimeout(function () {
+            clearInterval(musicinterval);
+            i = 0;
+            musicquestrightcounter = 0;
+            answerMusicQuestcounter = 0;
+        }, musictime);
+
     }
 
-    function answerMusicQuest() {
+    function answerMusicQuest(userbtn) {
+
+        notenuserzusammensetzung[answerMusicQuestcounter] = userbtn.valueOf();
+
+        if (notenuserzusammensetzung[answerMusicQuestcounter] == notenzusammensetzung[answerMusicQuestcounter]){
+            i++;
+            musicquestrightcounter++;
+            answerMusicQuestcounter++;
+        }else {
+            alert("IDIOT!");
+            alert(notenzusammensetzung + "wärs gwesn ow du host ds: " + notenuserzusammensetzung)
+        }
+
+        if (musicquestcounter == musicquestrightcounter){
+            alert("Gschofft du Saubua!")
+        }
 
     }
 
