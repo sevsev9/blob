@@ -121,15 +121,45 @@
     <div class="musicbox">
         <img src="./img/musicBox.png" width="90%"/>
     </div>
-    <div id="mbox1" onmouseover="m1hover(this)" onmouseout="m1unhover(this)" onclick="answerMusicQuest(1)"></div>
-    <div id="mbox2" onmouseover="m2hover(this)" onmouseout="m2unhover(this)" onclick="answerMusicQuest(2)"></div>
-    <div id="mbox3" onmouseover="m3hover(this)" onmouseout="m3unhover(this)" onclick="answerMusicQuest(3)"></div>
-    <div id="mbox4" onmouseover="m4hover(this)" onmouseout="m4unhover(this)" onclick="answerMusicQuest(4)"></div>
+    <div id="mbox1" onmouseover="m1hoverbtn(this)" onmouseout="m1unhoverbtn(this)" onclick="answerMusicQuest(1), PlaySound1"></div>
+    <div id="mbox2" onmouseover="m2hoverbtn(this)" onmouseout="m2unhoverbtn(this)" onclick="answerMusicQuest(2), PlaySound2"></div>
+    <div id="mbox3" onmouseover="m3hoverbtn(this)" onmouseout="m3unhoverbtn(this)" onclick="answerMusicQuest(3), PlaySound3"></div>
+    <div id="mbox4" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), PlaySound4"></div>
     <div id="musicbereittext">Bereit?</div>
     <button id="musicstartbutton" onclick="createMusicQuest(), startmusicgame()">Start</button>
+    <audio id="musicgamesound1"> </audio>
+    <audio id="musicgamesound2"> </audio>
+    <audio id="musicgamesound3"> </audio>
+    <audio id="musicgamesound4"> </audio>
 </div>
 
 <script>
+
+    function PlaySound1() {
+        musicgamesound1 = new Audio();
+        musicgamesound1.src = "./music/musicgamesound1.mp3";
+        musicgamesound1.play();
+    }
+
+    function PlaySound2() {
+        musicgamesound2 = new Audio();
+        musicgamesound2.src = "./music/musicgamesound2.mp3";
+        musicgamesound2.play();
+    }
+
+    function PlaySound3() {
+        musicgamesound3 = new Audio();
+        musicgamesound3.src = "./music/musicgamesound3.mp3";
+        musicgamesound3.play();
+    }
+
+    function PlaySound4() {
+        musicgamesound4 = new Audio();
+        musicgamesound4.src = "./music/musicgamesound4.mp3";
+        musicgamesound4.play();
+    }
+
+    hoverstatus = 0;
 
     notenzusammensetzung = [];
     notenuserzusammensetzung = [];
@@ -141,6 +171,8 @@
     answerMusicQuestcounter = 0;
 
     function createMusicQuest() {
+
+        hoverstatus = 1;
 
         bt1 = 1;
         bt2 = 2;
@@ -231,6 +263,11 @@
             i = 0;
             musicquestrightcounter = 0;
             answerMusicQuestcounter = 0;
+
+            setTimeout(function () {
+                hoverstatus = 0;
+            },800);
+
         }, musictime);
 
     }
@@ -249,6 +286,34 @@
 
         if (musicquestcounter == musicquestrightcounter){
             createMusicQuest();
+
+            element = document.getElementById("mbox1");
+            element.style.backgroundColor = "#ff3300";
+            element.style.borderRightColor = "#cc2900";
+            element.style.borderBottomColor = "#cc2900";
+            element.style.borderLeftColor = "#ff5c33";
+            element.style.borderTopColor = "#ff5c33";
+
+            element = document.getElementById("mbox2");
+            element.style.backgroundColor = "dodgerblue";
+            element.style.borderRightColor = "royalblue";
+            element.style.borderBottomColor = "royalblue";
+            element.style.borderLeftColor = "deepskyblue";
+            element.style.borderTopColor = "deepskyblue";
+
+            element = document.getElementById("mbox3");
+            element.style.backgroundColor = "#009933";
+            element.style.borderRightColor = "#006622";
+            element.style.borderBottomColor = "#006622";
+            element.style.borderLeftColor = "#00cc44";
+            element.style.borderTopColor = "#00cc44";
+
+            element = document.getElementById("mbox4");
+            element.style.backgroundColor = "#cc00cc";
+            element.style.borderRightColor = "#990099";
+            element.style.borderBottomColor = "#990099";
+            element.style.borderLeftColor = "#ff00ff";
+            element.style.borderTopColor = "#ff00ff";
         }
 
     }
@@ -271,72 +336,162 @@
         document.getElementById("mbox2").style.display = "none";
         document.getElementById("mbox3").style.display = "none";
         document.getElementById("mbox4").style.display = "none";
+        musictime = 1000;
+        answerMusicQuestcounter = 0;
+        musicquestcounter = 1;
+        musicquestrightcounter = 0;
     }
 
 
     function m1hover(element) {
-        element.style.backgroundColor = "#b30000";
-        element.style.borderRightColor = "#e60000";
-        element.style.borderBottomColor = "#e60000";
-        element.style.borderLeftColor = "#800000";
-        element.style.borderTopColor = "#800000";
+            element.style.backgroundColor = "#b30000";
+            element.style.borderRightColor = "#e60000";
+            element.style.borderBottomColor = "#e60000";
+            element.style.borderLeftColor = "#800000";
+            element.style.borderTopColor = "#800000";
     }
 
     function m1unhover(element) {
-        element.style.backgroundColor = "#ff3300";
-        element.style.borderRightColor = "#cc2900";
-        element.style.borderBottomColor = "#cc2900";
-        element.style.borderLeftColor = "#ff5c33";
-        element.style.borderTopColor = "#ff5c33";
+            element.style.backgroundColor = "#ff3300";
+            element.style.borderRightColor = "#cc2900";
+            element.style.borderBottomColor = "#cc2900";
+            element.style.borderLeftColor = "#ff5c33";
+            element.style.borderTopColor = "#ff5c33";
     }
 
     function m2hover(element) {
-        element.style.backgroundColor = "#6666ff";
-        element.style.borderRightColor = "#8080ff";
-        element.style.borderBottomColor = "#8080ff";
-        element.style.borderLeftColor = "#4d4dff";
-        element.style.borderTopColor = "#4d4dff";
+            element.style.backgroundColor = "#6666ff";
+            element.style.borderRightColor = "#8080ff";
+            element.style.borderBottomColor = "#8080ff";
+            element.style.borderLeftColor = "#4d4dff";
+            element.style.borderTopColor = "#4d4dff";
     }
 
     function m2unhover(element) {
-        element.style.backgroundColor = "dodgerblue";
-        element.style.borderRightColor = "royalblue";
-        element.style.borderBottomColor = "royalblue";
-        element.style.borderLeftColor = "deepskyblue";
-        element.style.borderTopColor = "deepskyblue";
+            element.style.backgroundColor = "dodgerblue";
+            element.style.borderRightColor = "royalblue";
+            element.style.borderBottomColor = "royalblue";
+            element.style.borderLeftColor = "deepskyblue";
+            element.style.borderTopColor = "deepskyblue";
     }
 
     function m3hover(element) {
-        element.style.backgroundColor = "#008000";
-        element.style.borderRightColor = "#009900";
-        element.style.borderBottomColor = "#009900";
-        element.style.borderLeftColor = "#004d00";
-        element.style.borderTopColor = "#004d00";
+            element.style.backgroundColor = "#008000";
+            element.style.borderRightColor = "#009900";
+            element.style.borderBottomColor = "#009900";
+            element.style.borderLeftColor = "#004d00";
+            element.style.borderTopColor = "#004d00";
     }
 
     function m3unhover(element) {
-        element.style.backgroundColor = "#009933";
-        element.style.borderRightColor = "#006622";
-        element.style.borderBottomColor = "#006622";
-        element.style.borderLeftColor = "#00cc44";
-        element.style.borderTopColor = "#00cc44";
+            element.style.backgroundColor = "#009933";
+            element.style.borderRightColor = "#006622";
+            element.style.borderBottomColor = "#006622";
+            element.style.borderLeftColor = "#00cc44";
+            element.style.borderTopColor = "#00cc44";
     }
 
     function m4hover(element) {
-        element.style.backgroundColor = "#993399";
-        element.style.borderRightColor = "#bf40bf";
-        element.style.borderBottomColor = "#bf40bf";
-        element.style.borderLeftColor = "#732673";
-        element.style.borderTopColor = "#732673";
+            element.style.backgroundColor = "#993399";
+            element.style.borderRightColor = "#bf40bf";
+            element.style.borderBottomColor = "#bf40bf";
+            element.style.borderLeftColor = "#732673";
+            element.style.borderTopColor = "#732673";
     }
 
     function m4unhover(element) {
-        element.style.backgroundColor = "#cc00cc";
-        element.style.borderRightColor = "#990099";
-        element.style.borderBottomColor = "#990099";
-        element.style.borderLeftColor = "#ff00ff";
-        element.style.borderTopColor = "#ff00ff";
+            element.style.backgroundColor = "#cc00cc";
+            element.style.borderRightColor = "#990099";
+            element.style.borderBottomColor = "#990099";
+            element.style.borderLeftColor = "#ff00ff";
+            element.style.borderTopColor = "#ff00ff";
     }
+
+
+    //----------------------------------------------------------------------------------
+
+    function m1hoverbtn(element) {
+        if (hoverstatus == 0){
+            element.style.backgroundColor = "#b30000";
+            element.style.borderRightColor = "#e60000";
+            element.style.borderBottomColor = "#e60000";
+            element.style.borderLeftColor = "#800000";
+            element.style.borderTopColor = "#800000";
+        }
+    }
+
+    function m1unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#ff3300";
+            element.style.borderRightColor = "#cc2900";
+            element.style.borderBottomColor = "#cc2900";
+            element.style.borderLeftColor = "#ff5c33";
+            element.style.borderTopColor = "#ff5c33";
+        }
+    }
+
+    function m2hoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#6666ff";
+            element.style.borderRightColor = "#8080ff";
+            element.style.borderBottomColor = "#8080ff";
+            element.style.borderLeftColor = "#4d4dff";
+            element.style.borderTopColor = "#4d4dff";
+        }
+    }
+
+    function m2unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "dodgerblue";
+            element.style.borderRightColor = "royalblue";
+            element.style.borderBottomColor = "royalblue";
+            element.style.borderLeftColor = "deepskyblue";
+            element.style.borderTopColor = "deepskyblue";
+        }
+    }
+
+    function m3hoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#008000";
+            element.style.borderRightColor = "#009900";
+            element.style.borderBottomColor = "#009900";
+            element.style.borderLeftColor = "#004d00";
+            element.style.borderTopColor = "#004d00";
+        }
+    }
+
+    function m3unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#009933";
+            element.style.borderRightColor = "#006622";
+            element.style.borderBottomColor = "#006622";
+            element.style.borderLeftColor = "#00cc44";
+            element.style.borderTopColor = "#00cc44";
+        }
+    }
+
+    function m4hoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#993399";
+            element.style.borderRightColor = "#bf40bf";
+            element.style.borderBottomColor = "#bf40bf";
+            element.style.borderLeftColor = "#732673";
+            element.style.borderTopColor = "#732673";
+        }
+    }
+
+    function m4unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#cc00cc";
+            element.style.borderRightColor = "#990099";
+            element.style.borderBottomColor = "#990099";
+            element.style.borderLeftColor = "#ff00ff";
+            element.style.borderTopColor = "#ff00ff";
+        }
+    }
+
+
+
 </script>
 
 </body>
