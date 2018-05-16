@@ -37,6 +37,7 @@
             border-left-color: #ff5c33;
             border-top-color: #ff5c33;
             border-radius: 2em;
+            display: none;
         }
 
         #mbox2{
@@ -53,6 +54,7 @@
             border-left-color: deepskyblue;
             border-top-color: deepskyblue;
             border-radius: 2em;
+            display: none;
         }
 
         #mbox3{
@@ -69,6 +71,7 @@
             border-left-color: #00cc44;
             border-top-color: #00cc44;
             border-radius: 2em;
+            display: none;
         }
 
         #mbox4{
@@ -85,15 +88,27 @@
             border-left-color: #ff00ff;
             border-top-color: #ff00ff;
             border-radius: 2em;
+            display: none;
         }
 
         #musicstartbutton{
-            font-family: "Arial Black";
-            font-size: 2em;
+            padding: 0.3em;
             position: absolute;
-            left: 23em;
-            top: 16em;
-            z-index: 502;
+            top: 60%;
+            left: 57%;
+            font-size: 3em;
+            font-family: "Arial Black";
+            border-radius: 1em;
+            z-index: 501;
+        }
+
+        #musicbereittext{
+            position: absolute;
+            top: 40%;
+            left: 51%;
+            font-size: 7em;
+            font-family: "Arial Black";
+            z-index: 501;
         }
 
     </style>
@@ -102,15 +117,16 @@
 <body>
 
 <div id="musicboxfull" class="fadeindiv">
-    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic()">X</h1>
+    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame()">X</h1>
     <div class="musicbox">
-        <img src="./img/aufgabenbox.png" width="90%"/>
+        <img src="./img/musicBox.png" width="90%"/>
     </div>
     <div id="mbox1" onmouseover="m1hover(this)" onmouseout="m1unhover(this)" onclick="answerMusicQuest(1)"></div>
     <div id="mbox2" onmouseover="m2hover(this)" onmouseout="m2unhover(this)" onclick="answerMusicQuest(2)"></div>
     <div id="mbox3" onmouseover="m3hover(this)" onmouseout="m3unhover(this)" onclick="answerMusicQuest(3)"></div>
     <div id="mbox4" onmouseover="m4hover(this)" onmouseout="m4unhover(this)" onclick="answerMusicQuest(4)"></div>
-    <button id="musicstartbutton" onclick="createMusicQuest()">Start</button>
+    <div id="musicbereittext">Bereit?</div>
+    <button id="musicstartbutton" onclick="createMusicQuest(), startmusicgame()">Start</button>
 </div>
 
 <script>
@@ -228,15 +244,35 @@
             musicquestrightcounter++;
             answerMusicQuestcounter++;
         }else {
-            alert("IDIOT!");
-            alert(notenzusammensetzung + "wärs gwesn ow du host ds: " + notenuserzusammensetzung)
+            endmusicgame();
         }
 
         if (musicquestcounter == musicquestrightcounter){
-            alert("Gschofft du Saubua!")
+            createMusicQuest();
         }
 
     }
+
+    function startmusicgame() {
+        document.getElementById("musicstartbutton").style.display = "none";
+        document.getElementById("musicbereittext").style.display = "none";
+
+        document.getElementById("mbox1").style.display = "block";
+        document.getElementById("mbox2").style.display = "block";
+        document.getElementById("mbox3").style.display = "block";
+        document.getElementById("mbox4").style.display = "block";
+    }
+
+    function endmusicgame() {
+        document.getElementById("musicstartbutton").style.display = "block";
+        document.getElementById("musicbereittext").style.display = "block";
+
+        document.getElementById("mbox1").style.display = "none";
+        document.getElementById("mbox2").style.display = "none";
+        document.getElementById("mbox3").style.display = "none";
+        document.getElementById("mbox4").style.display = "none";
+    }
+
 
     function m1hover(element) {
         element.style.backgroundColor = "#b30000";
