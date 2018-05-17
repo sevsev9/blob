@@ -558,12 +558,12 @@ nav{
 }
 
 #mbox1{
-    width: 14em;
+    width: 20em;
     height: 14em;
     background-color: #ff3300;
     position: absolute;
-    top: 18em;
-    right: 46em;
+    top: 23.5em;
+    right: 52.6em;
     z-index: 502;
     border: ridge 0.8em;
     border-right-color: #cc2900;
@@ -575,12 +575,12 @@ nav{
 }
 
 #mbox2{
-    width: 14em;
+    width: 20em;
     height: 14em;
     background-color: dodgerblue;
     position: absolute;
-    top: 18em;
-    right: 29em;
+    top: 23.5em;
+    right: 30em;
     z-index: 502;
     border: ridge 0.8em;
     border-right-color: royalblue;
@@ -592,12 +592,12 @@ nav{
 }
 
 #mbox3{
-    width: 14em;
+    width: 20em;
     height: 14em;
     background-color: #009933;
     position: absolute;
-    top: 35em;
-    right: 46em;
+    top: 40.5em;
+    right: 52.6em;
     z-index: 502;
     border: ridge 0.8em;
     border-right-color: #006622;
@@ -609,12 +609,12 @@ nav{
 }
 
 #mbox4{
-    width: 14em;
+    width: 20em;
     height: 14em;
     background-color: #cc00cc;
     position: absolute;
-    top: 35em;
-    right: 29em;
+    top: 40.5em;
+    right: 30em;
     z-index: 502;
     border: ridge 0.8em;
     border-right-color: #990099;

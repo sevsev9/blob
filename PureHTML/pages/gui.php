@@ -56,9 +56,8 @@
 
 <!----------------------------------------------------------------------------------------------------------------------mathebox-->
 
-
 <div id="matheboxfull" class="fadeindiv">
-    <h1 class="matheX MouseHover" style="z-index: 501" onclick="closemathe()">X</h1>
+    <h1 class="matheX MouseHover" style="z-index: 501" onclick="closemathe(), boxoutmusic()">X</h1>
     <div class="mathebox">
     <img src="../img/aufgabenbox.png" width="90%"/>
     <button onclick="createQuest()" id="nextBtn" class="MouseHover">Nächste Aufgabe</button>
@@ -74,9 +73,8 @@
 
 <!----------------------------------------------------------------------------------------------------------------------englishbox-->
 
-
 <div id="vokabelboxfull" class="fadeindiv">
-    <h1 class="englishX MouseHover" style="z-index: 501" onclick="closeenglish()">X</h1>
+    <h1 class="englishX MouseHover" style="z-index: 501" onclick="closeenglish(), boxoutmusic()">X</h1>
     <div class="vokabelbox">
         <img src="../img/Vokabelaufgabenbox.png" width="90%"/>
         <button onclick="createVokabelQuest()" class="MouseHover" id="VokabelNextBtn">Next word</button>
@@ -89,14 +87,12 @@
     </form>
 </div>
 
-
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------musicbox-->
 
-
 <div id="musicboxfull" class="fadeindiv">
-    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame(), playbackgroundmusic()">X</h1>
+    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame(), playbackgroundmusic(), boxoutmusic()">X</h1>
     <div class="musicbox">
         <img src="../img/musicBox.png" width="90%"/>
     </div>
@@ -121,14 +117,12 @@
     </audio>
 </div>
 
-
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------helpbox-->
 
-
 <div id="helpboxfull" class="fadeindiv">
-    <h1 class="helpX MouseHover" style="z-index: 501" onclick="closehelp()">X</h1>
+    <h1 class="helpX MouseHover" style="z-index: 501" onclick="closehelp(), boxoutmusic()">X</h1>
     <img src="../img/helpBox.png" width="73.75%" class="helpBox">
     <span style="position: absolute;left: 64%;top: 2%;font-family: 'Arial Black';font-size: 50em;z-index: 51;opacity: 0.3;">?</span>
     <p class="helpText">
@@ -150,14 +144,12 @@
     </p>
 </div>
 
-
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------infobox-->
 
-
 <div id="infoboxfull" class="fadeindiv">
-    <h1 class="infoX MouseHover" style="z-index: 501" onclick="closeinfo()">X</h1>
+    <h1 class="infoX MouseHover" style="z-index: 501" onclick="closeinfo(), boxoutmusic()">X</h1>
     <img src="../img/infoBox.png" width="73.75%" class="infoBox">
     <p class="infoText">
         Impressum
@@ -218,11 +210,9 @@
     <span style="color: white; font-size: 2em; opacity: 0.6; position:absolute; top: 30.65em; left: 28em; z-index: 52;">Copyright (c) Philipp Kollau 2018</span>
 </div>
 
-
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------SHOP-->
-
 
 <div class="shop">
     <div class="tab" style="z-index: 499">
@@ -239,7 +229,7 @@
 
 
     <img src="../img/shop.png" style="width:80%; z-index: 500; position: relative">
-    <h1 class="shopX MouseHover" style="z-index: 501" onclick="closeshop()">X</h1>
+    <h1 class="shopX MouseHover" style="z-index: 501" onclick="closeshop(), shopoutmusic()">X</h1>
 
 
 
@@ -440,7 +430,6 @@ echo  "
 <!--------------------------------------------------------------------------------------------------------------------->
 
 
-
 <!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
 <div id="startgamediv">
     <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), playbackgroundmusic()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
@@ -470,7 +459,7 @@ echo  "
             </span>
         </li>
         <li>
-            <span class="coinTxt text MouseHover" onclick="openNav(), shop(),shopopenmusic()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
+            <span class="coinTxt text MouseHover" onclick="openNav(), shop(), shopmusic()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
         </li>
         <li>
             <span class="matheTxt text MouseHover" onclick="openNav(), mathboxopen(), boxopenmusic()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
@@ -498,7 +487,7 @@ echo  "
 <!----------------------------------------------------------------------------------------------------------------------BLOB-->
 
 <div class="fadeoutdiv">
-    <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1">
+    <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1" onclick="blobmusic()">
 </div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -506,7 +495,7 @@ echo  "
 <!----------------------------------------------------------------------------------------------------------------------MUSIC-->
 
 <audio loop id="backgroundmusic">
-    <source src="../music/Backgroundmusic.mp3" type="audio/mp3">
+    <source src="../music/backgroundmusic.mp3" type="audio/mp3">
 </audio>
 
 <audio id="navopenmusic">
@@ -517,8 +506,16 @@ echo  "
     <source src="../music/boxopenmusic.mp3" type="audio/mp3">
 </audio>
 
-<audio id="shopopenmusic">
-    <source src="../music/shopopenmusic.mp3" type="audio/mp3">
+<audio id="boxoutmusic">
+    <source src="../music/boxoutmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="shopmusic">
+    <source src="../music/shopmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="shopoutmusic">
+    <source src="../music/shopoutmusic.mp3" type="audio/mp3">
 </audio>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -829,8 +826,27 @@ echo  "
         x.play();
     }
 
-    function shopopenmusic() {
-        x = document.getElementById("shopopenmusic");
+    function boxoutmusic() {
+        x = document.getElementById("boxoutmusic");
+        x.volume = 0.6;
+        x.play();
+    }
+
+    function shopmusic() {
+        x = document.getElementById("shopmusic");
+        x.volume = 0.6;
+        x.play();
+    }
+
+    function shopoutmusic() {
+        x = document.getElementById("shopoutmusic");
+        x.volume = 0.6;
+        x.play();
+    }
+
+    function blobmusic() {
+        x = new Audio();
+        x.src = "../music/blobsound.mp3";
         x.volume = 0.6;
         x.play();
     }
