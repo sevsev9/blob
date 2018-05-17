@@ -13,7 +13,7 @@ error_reporting(0);
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if($_SESSION['login_user'] == '') {
+    if($_SESSION['login_user'] == null || $_SESSION['login_user'] == '') {
         $db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
 
         if ($db->connect_error) {
