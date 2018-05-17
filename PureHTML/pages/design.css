@@ -327,6 +327,13 @@ body{
     z-index: 10;
 }
 
+.musicTxt{
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    z-index: 10;
+}
+
 .infoTxt{
     position: absolute;
     top: 70%;
@@ -365,6 +372,12 @@ body{
 .englishBtn{
     position: absolute;
     top: 34%;
+    left: 70%;
+}
+
+.musicBtn{
+    position: absolute;
+    top: 44.5%;
     left: 70%;
 }
 
@@ -528,6 +541,114 @@ nav{
     color: white;
     z-index: 502;
 }
+
+.musicbox{
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    z-index: 500;
+}
+
+.musicX{
+    position: absolute;
+    left: 89%;
+    top: 18%;
+    color: white;
+    z-index: 502;
+}
+
+#mbox1{
+    width: 14em;
+    height: 14em;
+    background-color: #ff3300;
+    position: absolute;
+    top: 18em;
+    right: 46em;
+    z-index: 502;
+    border: ridge 0.8em;
+    border-right-color: #cc2900;
+    border-bottom-color: #cc2900;
+    border-left-color: #ff5c33;
+    border-top-color: #ff5c33;
+    border-radius: 2em;
+    display: none;
+}
+
+#mbox2{
+    width: 14em;
+    height: 14em;
+    background-color: dodgerblue;
+    position: absolute;
+    top: 18em;
+    right: 29em;
+    z-index: 502;
+    border: ridge 0.8em;
+    border-right-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: deepskyblue;
+    border-top-color: deepskyblue;
+    border-radius: 2em;
+    display: none;
+}
+
+#mbox3{
+    width: 14em;
+    height: 14em;
+    background-color: #009933;
+    position: absolute;
+    top: 35em;
+    right: 46em;
+    z-index: 502;
+    border: ridge 0.8em;
+    border-right-color: #006622;
+    border-bottom-color: #006622;
+    border-left-color: #00cc44;
+    border-top-color: #00cc44;
+    border-radius: 2em;
+    display: none;
+}
+
+#mbox4{
+    width: 14em;
+    height: 14em;
+    background-color: #cc00cc;
+    position: absolute;
+    top: 35em;
+    right: 29em;
+    z-index: 502;
+    border: ridge 0.8em;
+    border-right-color: #990099;
+    border-bottom-color: #990099;
+    border-left-color: #ff00ff;
+    border-top-color: #ff00ff;
+    border-radius: 2em;
+    display: none;
+}
+
+#musicstartbutton{
+    padding: 0.3em;
+    position: absolute;
+    top: 60%;
+    left: 57%;
+    font-size: 3em;
+    font-family: "Arial Black";
+    border-radius: 1em;
+    z-index: 501;
+}
+
+#musicbereittext{
+    position: absolute;
+    top: 40%;
+    left: 51%;
+    font-size: 7em;
+    font-family: "Arial Black";
+    z-index: 501;
+}
+
+
+
+
+
 
 
 .helpBox{

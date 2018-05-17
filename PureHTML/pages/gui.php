@@ -92,6 +92,38 @@
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------musicbox-->
+
+
+<div id="musicboxfull" class="fadeindiv">
+    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame(), playbackgroundmusic()">X</h1>
+    <div class="musicbox">
+        <img src="../img/musicBox.png" width="90%"/>
+    </div>
+    <div id="mbox1" class="MouseHover" onmouseover="m1hoverbtn(this)" onmouseout="m1unhoverbtn(this)" onclick="answerMusicQuest(1), playmusicgame1music()"></div>
+    <div id="mbox2" class="MouseHover" onmouseover="m2hoverbtn(this)" onmouseout="m2unhoverbtn(this)" onclick="answerMusicQuest(2), playmusicgame2music()"></div>
+    <div id="mbox3" class="MouseHover" onmouseover="m3hoverbtn(this)" onmouseout="m3unhoverbtn(this)" onclick="answerMusicQuest(3), playmusicgame3music()"></div>
+    <div id="mbox4" class="MouseHover" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), playmusicgame4music()"></div>
+    <div id="musicbereittext">Bereit?</div>
+    <button id="musicstartbutton" class="MouseHover" onclick="createMusicQuest(), startmusicgame()">Start</button>
+
+    <audio id="musicgame1music">
+        <source src="../music/musicgame1music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="musicgame2music">
+        <source src="../music/musicgame2music.wav" type="audio/wav">
+    </audio>
+    <audio id="musicgame3music">
+        <source src="../music/musicgame3music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="musicgame4music">
+        <source src="../music/musicgame4music.wav" type="audio/mp3">
+    </audio>
+</div>
+
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 <!----------------------------------------------------------------------------------------------------------------------helpbox-->
 
 
@@ -411,7 +443,7 @@ echo  "
 
 <!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
 <div id="startgamediv">
-    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
+    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), playbackgroundmusic()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
     <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
 </div>
 <span id="wt">Welcome to</span>
@@ -426,10 +458,11 @@ echo  "
 
 
 <!----------------------------------------------------------------------------------------------------------------------NAVBAR-->
+
 <nav>
     <ul>
         <li>
-            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav()"></div>
+            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav(), playbackgroundmusic(), navopenmusic()"></div>
             <span class="openBtn" id="navopenicon">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -437,33 +470,58 @@ echo  "
             </span>
         </li>
         <li>
-            <span class="coinTxt text MouseHover" onclick="openNav(), shop()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
+            <span class="coinTxt text MouseHover" onclick="openNav(), shop(),shopopenmusic()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
         </li>
         <li>
-            <span class="matheTxt text MouseHover" onclick="openNav(), mathboxopen()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
+            <span class="matheTxt text MouseHover" onclick="openNav(), mathboxopen(), boxopenmusic()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
         </li>
         <li>
-            <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
+            <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen(), boxopenmusic()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
         </li>
         <li>
-            <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
+            <span class="musicTxt text MouseHover" onclick="openNav(), musicboxopen(), pausebackgroundmusic(), boxopenmusic()">Musik</span><img src="../img/music.png" width="25%" class="musicBtn">
         </li>
         <li>
-            <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
+            <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen(), boxopenmusic()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
         </li>
         <li>
-            <span class="logoutTxt text MouseHover" onclick="openNav(), logout()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
+            <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen(), boxopenmusic()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
+        </li>
+        <li>
+            <span class="logoutTxt text MouseHover" onclick="openNav(), logout(), pausebackgroundmusic()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
         </li>
     </ul>
 </nav>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 <!----------------------------------------------------------------------------------------------------------------------BLOB-->
+
 <div class="fadeoutdiv">
     <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1">
 </div>
-<!--------------------------------------------------------------------------------------------------------------------->
+
 <!--------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------MUSIC-->
 
+<audio loop id="backgroundmusic">
+    <source src="../music/Backgroundmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="navopenmusic">
+    <source src="../music/navopenmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="boxopenmusic">
+    <source src="../music/boxopenmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="shopopenmusic">
+    <source src="../music/shopopenmusic.mp3" type="audio/mp3">
+</audio>
+
+<!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------Javascript und JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -494,6 +552,8 @@ echo  "
         mathebox.style.display = "none";
         vokabelboxfull = document.getElementById("vokabelboxfull");
         vokabelboxfull.style.display = "none";
+        musicboxfull = document.getElementById("musicboxfull");
+        musicboxfull.style.display = "none";
         helpboxfull = document.getElementById("helpboxfull");
         helpboxfull.style.display = "none";
         infoboxfull = document.getElementById("infoboxfull");
@@ -593,6 +653,27 @@ echo  "
         });
     }
 
+    //Musicbox
+    function musicboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('#musicboxfull').css({zIndex:9}).fadeIn(1000);
+            navCount = 1;
+        });
+
+        document.getElementById("navopenicon").classList.remove("change");
+
+    }
+
+    //Music schließen
+    function closemusic(){
+        $(document).ready(function(){
+            $("#musicboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+        });
+    }
+
     //Helpbox
     function helpboxopen() {
         $(document).ready(function(){
@@ -613,7 +694,7 @@ echo  "
         });
     }
 
-    //Helpbox
+    //Infobox
     function infoboxopen() {
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
@@ -625,7 +706,7 @@ echo  "
         document.getElementById("navopenicon").classList.remove("change");
     }
 
-    //Help schließen
+    //Info schließen
     function closeinfo(){
         $(document).ready(function(){
             $("#infoboxfull").css({zIndex:10}).fadeOut(1000);
@@ -690,10 +771,11 @@ echo  "
 
         if (navCount==1){
             $(document).ready(function(){
-                $("nav").animate({left: '-1.5%'}, 1000);
+                $("nav").animate({left: '-1.5%'}, 800);
                 $(".shop").animate({top: '-120%'}, 1000);
                 $('#matheboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#vokabelboxfull').css({zIndex:10}).fadeOut(1000);
+                $('#musicboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#helpboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#infoboxfull').css({zIndex:10}).fadeOut(1000);
                 $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
@@ -701,7 +783,7 @@ echo  "
             navCount=0;
         }else{
             $(document).ready(function(){
-                $("nav").animate({left: '-9.8%'}, 1000);
+                $("nav").animate({left: '-9.8%'}, 800);
             });
             navCount=1;
         }
@@ -718,6 +800,45 @@ echo  "
         $(this).addClass("other");
     });
 </script>
+
+
+<!----------------------------------------------------------------------------------------------------------------------music-->
+
+<script>
+    function playbackgroundmusic() {
+        x = document.getElementById("backgroundmusic");
+        x.volume = 0.5;
+        x.play();
+    }
+
+    function pausebackgroundmusic() {
+        x = document.getElementById("backgroundmusic");
+        x.volume = 0.5;
+        x.pause();
+    }
+
+    function navopenmusic() {
+        x = document.getElementById("navopenmusic");
+        x.volume = 0.6;
+        x.play();
+    }
+
+    function boxopenmusic() {
+        x = document.getElementById("boxopenmusic");
+        x.volume = 0.6;
+        x.play();
+    }
+
+    function shopopenmusic() {
+        x = document.getElementById("shopopenmusic");
+        x.volume = 0.6;
+        x.play();
+    }
+
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 
 <!----------------------------------------------------------------------------------------------------------------------Shopkategorien-->
 
@@ -939,34 +1060,401 @@ echo  "
 </script>
 
 <!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------musicsystem-->
+
+<script>
+    function playmusicgame1music() {
+        x = document.getElementById("musicgame1music");
+        x.volume = 0.5;
+        x.play();
+    }
+
+    function playmusicgame2music() {
+        x = document.getElementById("musicgame2music");
+        x.volume = 0.5;
+        x.play();
+    }
+
+    function playmusicgame3music() {
+        x = document.getElementById("musicgame3music");
+        x.volume = 0.5;
+        x.play();
+    }
+
+    function playmusicgame4music() {
+        x = document.getElementById("musicgame4music");
+        x.volume = 0.5;
+        x.play();
+    }
+
+    hoverstatus = 0;
+
+    notenzusammensetzung = [];
+    notenuserzusammensetzung = [];
+    musicquestcounter = 1;
+    musicquestrightcounter = 0;
+
+    musictime = 1000;
+
+    answerMusicQuestcounter = 0;
+
+    function createMusicQuest() {
+
+        hoverstatus = 1;
+
+        bt1 = 1;
+        bt2 = 2;
+        bt3 = 3;
+        bt4 = 4;
+
+        musictime += 1000;
+
+        musicquestcounter++;
+        i=0;
+
+        musicinterval = setInterval(function () {
+            wahl = (Math.random() * (4 - 1)) + 1;
+            wahl = Math.round(wahl);
+
+            if (wahl==1){
+
+                notenzusammensetzung[i] = bt1;
+
+                m1hover(document.getElementById("mbox1"));
+                playmusicgame1music();
+                setTimeout(function () {
+                    element = document.getElementById("mbox1");
+                    element.style.backgroundColor = "#ff3300";
+                    element.style.borderRightColor = "#cc2900";
+                    element.style.borderBottomColor = "#cc2900";
+                    element.style.borderLeftColor = "#ff5c33";
+                    element.style.borderTopColor = "#ff5c33";
+
+
+                }, 500);
+
+            }else if (wahl==2){
+
+                notenzusammensetzung[i] = bt2;
+
+                m2hover(document.getElementById("mbox2"));
+                playmusicgame2music();
+                setTimeout(function () {
+                    element = document.getElementById("mbox2");
+                    element.style.backgroundColor = "dodgerblue";
+                    element.style.borderRightColor = "royalblue";
+                    element.style.borderBottomColor = "royalblue";
+                    element.style.borderLeftColor = "deepskyblue";
+                    element.style.borderTopColor = "deepskyblue";
+
+
+                }, 500);
+
+
+            }else if (wahl==3){
+
+                notenzusammensetzung[i] = bt3;
+
+                m3hover(document.getElementById("mbox3"));
+                playmusicgame3music();
+                setTimeout(function () {
+                    element = document.getElementById("mbox3");
+                    element.style.backgroundColor = "#009933";
+                    element.style.borderRightColor = "#006622";
+                    element.style.borderBottomColor = "#006622";
+                    element.style.borderLeftColor = "#00cc44";
+                    element.style.borderTopColor = "#00cc44";
+
+
+                }, 500);
+
+            }else if (wahl==4){
+
+                notenzusammensetzung[i] = bt4;
+
+                m4hover(document.getElementById("mbox4"));
+                playmusicgame4music();
+                setTimeout(function () {
+                    element = document.getElementById("mbox4");
+                    element.style.backgroundColor = "#cc00cc";
+                    element.style.borderRightColor = "#990099";
+                    element.style.borderBottomColor = "#990099";
+                    element.style.borderLeftColor = "#ff00ff";
+                    element.style.borderTopColor = "#ff00ff";
+
+
+                }, 500);
+            }
+
+            i++;
+
+        },1000);
+
+        setTimeout(function () {
+            clearInterval(musicinterval);
+            i = 0;
+            musicquestrightcounter = 0;
+            answerMusicQuestcounter = 0;
+
+            setTimeout(function () {
+                hoverstatus = 0;
+            },800);
+
+        }, musictime);
+
+    }
+
+    function answerMusicQuest(userbtn) {
+
+        notenuserzusammensetzung[answerMusicQuestcounter] = userbtn.valueOf();
+
+        if (notenuserzusammensetzung[answerMusicQuestcounter] == notenzusammensetzung[answerMusicQuestcounter]){
+            i++;
+            musicquestrightcounter++;
+            answerMusicQuestcounter++;
+        }else {
+            endmusicgame();
+        }
+
+        if (musicquestcounter == musicquestrightcounter){
+            createMusicQuest();
+
+            element = document.getElementById("mbox1");
+            element.style.backgroundColor = "#ff3300";
+            element.style.borderRightColor = "#cc2900";
+            element.style.borderBottomColor = "#cc2900";
+            element.style.borderLeftColor = "#ff5c33";
+            element.style.borderTopColor = "#ff5c33";
+
+            element = document.getElementById("mbox2");
+            element.style.backgroundColor = "dodgerblue";
+            element.style.borderRightColor = "royalblue";
+            element.style.borderBottomColor = "royalblue";
+            element.style.borderLeftColor = "deepskyblue";
+            element.style.borderTopColor = "deepskyblue";
+
+            element = document.getElementById("mbox3");
+            element.style.backgroundColor = "#009933";
+            element.style.borderRightColor = "#006622";
+            element.style.borderBottomColor = "#006622";
+            element.style.borderLeftColor = "#00cc44";
+            element.style.borderTopColor = "#00cc44";
+
+            element = document.getElementById("mbox4");
+            element.style.backgroundColor = "#cc00cc";
+            element.style.borderRightColor = "#990099";
+            element.style.borderBottomColor = "#990099";
+            element.style.borderLeftColor = "#ff00ff";
+            element.style.borderTopColor = "#ff00ff";
+        }
+
+    }
+
+    function startmusicgame() {
+        document.getElementById("musicstartbutton").style.display = "none";
+        document.getElementById("musicbereittext").style.display = "none";
+
+        document.getElementById("mbox1").style.display = "block";
+        document.getElementById("mbox2").style.display = "block";
+        document.getElementById("mbox3").style.display = "block";
+        document.getElementById("mbox4").style.display = "block";
+    }
+
+    function endmusicgame() {
+        document.getElementById("musicstartbutton").style.display = "block";
+        document.getElementById("musicbereittext").style.display = "block";
+
+        document.getElementById("mbox1").style.display = "none";
+        document.getElementById("mbox2").style.display = "none";
+        document.getElementById("mbox3").style.display = "none";
+        document.getElementById("mbox4").style.display = "none";
+        musictime = 1000;
+        answerMusicQuestcounter = 0;
+        musicquestcounter = 1;
+        musicquestrightcounter = 0;
+    }
+
+
+    function m1hover(element) {
+        element.style.backgroundColor = "#b30000";
+        element.style.borderRightColor = "#e60000";
+        element.style.borderBottomColor = "#e60000";
+        element.style.borderLeftColor = "#800000";
+        element.style.borderTopColor = "#800000";
+    }
+
+    function m1unhover(element) {
+        element.style.backgroundColor = "#ff3300";
+        element.style.borderRightColor = "#cc2900";
+        element.style.borderBottomColor = "#cc2900";
+        element.style.borderLeftColor = "#ff5c33";
+        element.style.borderTopColor = "#ff5c33";
+    }
+
+    function m2hover(element) {
+        element.style.backgroundColor = "#6666ff";
+        element.style.borderRightColor = "#8080ff";
+        element.style.borderBottomColor = "#8080ff";
+        element.style.borderLeftColor = "#4d4dff";
+        element.style.borderTopColor = "#4d4dff";
+    }
+
+    function m2unhover(element) {
+        element.style.backgroundColor = "dodgerblue";
+        element.style.borderRightColor = "royalblue";
+        element.style.borderBottomColor = "royalblue";
+        element.style.borderLeftColor = "deepskyblue";
+        element.style.borderTopColor = "deepskyblue";
+    }
+
+    function m3hover(element) {
+        element.style.backgroundColor = "#008000";
+        element.style.borderRightColor = "#009900";
+        element.style.borderBottomColor = "#009900";
+        element.style.borderLeftColor = "#004d00";
+        element.style.borderTopColor = "#004d00";
+    }
+
+    function m3unhover(element) {
+        element.style.backgroundColor = "#009933";
+        element.style.borderRightColor = "#006622";
+        element.style.borderBottomColor = "#006622";
+        element.style.borderLeftColor = "#00cc44";
+        element.style.borderTopColor = "#00cc44";
+    }
+
+    function m4hover(element) {
+        element.style.backgroundColor = "#993399";
+        element.style.borderRightColor = "#bf40bf";
+        element.style.borderBottomColor = "#bf40bf";
+        element.style.borderLeftColor = "#732673";
+        element.style.borderTopColor = "#732673";
+    }
+
+    function m4unhover(element) {
+        element.style.backgroundColor = "#cc00cc";
+        element.style.borderRightColor = "#990099";
+        element.style.borderBottomColor = "#990099";
+        element.style.borderLeftColor = "#ff00ff";
+        element.style.borderTopColor = "#ff00ff";
+    }
+
+
+    //----------------------------------------------------------------------------------
+
+    function m1hoverbtn(element) {
+        if (hoverstatus == 0){
+            element.style.backgroundColor = "#b30000";
+            element.style.borderRightColor = "#e60000";
+            element.style.borderBottomColor = "#e60000";
+            element.style.borderLeftColor = "#800000";
+            element.style.borderTopColor = "#800000";
+        }
+    }
+
+    function m1unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#ff3300";
+            element.style.borderRightColor = "#cc2900";
+            element.style.borderBottomColor = "#cc2900";
+            element.style.borderLeftColor = "#ff5c33";
+            element.style.borderTopColor = "#ff5c33";
+        }
+    }
+
+    function m2hoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#6666ff";
+            element.style.borderRightColor = "#8080ff";
+            element.style.borderBottomColor = "#8080ff";
+            element.style.borderLeftColor = "#4d4dff";
+            element.style.borderTopColor = "#4d4dff";
+        }
+    }
+
+    function m2unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "dodgerblue";
+            element.style.borderRightColor = "royalblue";
+            element.style.borderBottomColor = "royalblue";
+            element.style.borderLeftColor = "deepskyblue";
+            element.style.borderTopColor = "deepskyblue";
+        }
+    }
+
+    function m3hoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#008000";
+            element.style.borderRightColor = "#009900";
+            element.style.borderBottomColor = "#009900";
+            element.style.borderLeftColor = "#004d00";
+            element.style.borderTopColor = "#004d00";
+        }
+    }
+
+    function m3unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#009933";
+            element.style.borderRightColor = "#006622";
+            element.style.borderBottomColor = "#006622";
+            element.style.borderLeftColor = "#00cc44";
+            element.style.borderTopColor = "#00cc44";
+        }
+    }
+
+    function m4hoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#993399";
+            element.style.borderRightColor = "#bf40bf";
+            element.style.borderBottomColor = "#bf40bf";
+            element.style.borderLeftColor = "#732673";
+            element.style.borderTopColor = "#732673";
+        }
+    }
+
+    function m4unhoverbtn(element) {
+        if (hoverstatus == 0) {
+            element.style.backgroundColor = "#cc00cc";
+            element.style.borderRightColor = "#990099";
+            element.style.borderBottomColor = "#990099";
+            element.style.borderLeftColor = "#ff00ff";
+            element.style.borderTopColor = "#ff00ff";
+        }
+    }
+
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 <!----------------------------------------------------------------------------------------------------------------------blobbounce-->
 
 <script>
 
     //blob
-    var element = document.getElementById("blobbox1");
+    var blob = document.getElementById("blobbox1");
 
-    element.addEventListener("click", function(e){
+    blob.addEventListener("click", function(e){
         e.preventDefault;
 
-        element.classList.remove("animation-target");
+        blob.classList.remove("animation-target");
 
-        void element.offsetWidth;
+        void blob.offsetWidth;
 
-        element.classList.add("animation-target");
+        blob.classList.add("animation-target");
     }, false);
 
     //blobload
-    var elementload = document.getElementById("loadingGIF");
+    var blobload = document.getElementById("loadingGIF");
 
-    elementload.addEventListener("click", function(e){
+    blobload.addEventListener("click", function(e){
         e.preventDefault;
 
-        elementload.classList.remove("animation-target");
+        blobload.classList.remove("animation-target");
 
-        void elementload.offsetWidth;
+        void blobload.offsetWidth;
 
-        elementload.classList.add("animation-target");
+        blobload.classList.add("animation-target");
     }, false);
 
 </script>
