@@ -105,7 +105,7 @@
         <br>
         <br><span style="color: white">Navigationsbeschreibung:
     <br>Links in der Navigation findest du ganz oben das Geschäft (Shop),
-    <br>darunter die Mathe- und Englischaufgaben.
+    <br>darunter die Mathe-, Englisch- und Musikaufgaben.
     <br>Ganz unten ist der Knopf zum Ausloggen, um das Spiel zu beenden.
     <br>
     <br>Spieleanleitung:
