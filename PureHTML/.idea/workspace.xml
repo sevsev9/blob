@@ -13,11 +13,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="navbartemp.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gui.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/gui.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="913" column="27" lean-forward="false" selection-start-line="913" selection-start-column="27" selection-end-line="913" selection-end-column="27" />
+              <folding>
+                <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+                <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbartemp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navbartemp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="135" column="12" lean-forward="true" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+            <state relative-caret-position="-950">
+              <caret line="236" column="31" lean-forward="true" selection-start-line="236" selection-start-column="31" selection-end-line="236" selection-end-column="31" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -29,54 +42,48 @@
                 <element signature="e#1955#2416#0" expanded="false" />
                 <element signature="e#2443#2685#0" expanded="false" />
                 <element signature="e#2711#2893#0" expanded="false" />
-                <element signature="e#4488#4569#0" expanded="false" />
-                <element signature="e#4607#4689#0" expanded="false" />
-                <element signature="e#4728#4809#0" expanded="false" />
-                <element signature="e#4846#4927#0" expanded="false" />
-                <element signature="e#4964#5045#0" expanded="false" />
-                <element signature="e#5082#5163#0" expanded="false" />
-                <element signature="e#5404#8427#0" expanded="false" />
-                <element signature="e#5621#8122#0" expanded="false" />
-                <element signature="e#5735#6308#0" expanded="false" />
-                <element signature="e#5884#6286#0" expanded="false" />
-                <element signature="e#6325#6914#0" expanded="false" />
-                <element signature="e#6474#6891#0" expanded="false" />
-                <element signature="e#6931#7504#0" expanded="false" />
-                <element signature="e#7080#7482#0" expanded="false" />
-                <element signature="e#7521#8093#0" expanded="false" />
-                <element signature="e#7670#8072#0" expanded="false" />
-                <element signature="e#8162#8407#0" expanded="false" />
-                <element signature="e#8342#8390#0" expanded="false" />
-                <element signature="e#8468#10270#0" expanded="false" />
-                <element signature="e#8662#8767#0" expanded="false" />
-                <element signature="e#8772#8811#0" expanded="false" />
-                <element signature="e#8869#10263#0" expanded="false" />
-                <element signature="e#10302#10725#0" expanded="false" />
-                <element signature="e#10755#11306#0" expanded="false" />
-                <element signature="e#11339#11623#0" expanded="false" />
-                <element signature="e#11657#11941#0" expanded="false" />
-                <element signature="e#11973#12257#0" expanded="false" />
-                <element signature="e#12291#12590#0" expanded="false" />
-                <element signature="e#12622#12906#0" expanded="false" />
-                <element signature="e#12940#13224#0" expanded="false" />
-                <element signature="e#13256#13540#0" expanded="false" />
-                <element signature="e#13574#13858#0" expanded="false" />
-                <element signature="e#13984#14309#0" expanded="false" />
-                <element signature="e#14015#14303#0" expanded="false" />
-                <element signature="e#14346#14672#0" expanded="false" />
-                <element signature="e#14378#14666#0" expanded="false" />
-                <element signature="e#14707#15033#0" expanded="false" />
-                <element signature="e#14739#15027#0" expanded="false" />
-                <element signature="e#15070#15411#0" expanded="false" />
-                <element signature="e#15102#15405#0" expanded="false" />
-                <element signature="e#15446#15772#0" expanded="false" />
-                <element signature="e#15478#15766#0" expanded="false" />
-                <element signature="e#15809#16135#0" expanded="false" />
-                <element signature="e#15841#16129#0" expanded="false" />
-                <element signature="e#16170#16496#0" expanded="false" />
-                <element signature="e#16202#16490#0" expanded="false" />
-                <element signature="e#16533#16859#0" expanded="false" />
-                <element signature="e#16565#16853#0" expanded="false" />
+                <element signature="e#4488#4593#0" expanded="false" />
+                <element signature="e#4631#4737#0" expanded="false" />
+                <element signature="e#4776#4881#0" expanded="false" />
+                <element signature="e#4918#5023#0" expanded="false" />
+                <element signature="e#5060#5165#0" expanded="false" />
+                <element signature="e#5202#5307#0" expanded="false" />
+                <element signature="e#6067#6469#0" expanded="false" />
+                <element signature="e#6696#7113#0" expanded="false" />
+                <element signature="e#7341#7743#0" expanded="false" />
+                <element signature="e#7970#8372#0" expanded="false" />
+                <element signature="e#8462#8707#0" expanded="false" />
+                <element signature="e#8642#8690#0" expanded="false" />
+                <element signature="e#8768#10570#0" expanded="false" />
+                <element signature="e#8962#9067#0" expanded="false" />
+                <element signature="e#9072#9111#0" expanded="false" />
+                <element signature="e#9169#10563#0" expanded="false" />
+                <element signature="e#10602#11025#0" expanded="false" />
+                <element signature="e#11055#11606#0" expanded="false" />
+                <element signature="e#11639#11923#0" expanded="false" />
+                <element signature="e#11957#12241#0" expanded="false" />
+                <element signature="e#12273#12557#0" expanded="false" />
+                <element signature="e#12591#12890#0" expanded="false" />
+                <element signature="e#12922#13206#0" expanded="false" />
+                <element signature="e#13240#13524#0" expanded="false" />
+                <element signature="e#13556#13840#0" expanded="false" />
+                <element signature="e#13874#14158#0" expanded="false" />
+                <element signature="e#14284#14609#0" expanded="false" />
+                <element signature="e#14315#14603#0" expanded="false" />
+                <element signature="e#14646#14972#0" expanded="false" />
+                <element signature="e#14678#14966#0" expanded="false" />
+                <element signature="e#15007#15333#0" expanded="false" />
+                <element signature="e#15039#15327#0" expanded="false" />
+                <element signature="e#15370#15711#0" expanded="false" />
+                <element signature="e#15402#15705#0" expanded="false" />
+                <element signature="e#15746#16072#0" expanded="false" />
+                <element signature="e#15778#16066#0" expanded="false" />
+                <element signature="e#16109#16435#0" expanded="false" />
+                <element signature="e#16141#16429#0" expanded="false" />
+                <element signature="e#16470#16796#0" expanded="false" />
+                <element signature="e#16502#16790#0" expanded="false" />
+                <element signature="e#16833#17159#0" expanded="false" />
+                <element signature="e#16865#17153#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,7 +125,7 @@
     <packageJsonPaths />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -232,20 +239,20 @@
       <workItem from="1526369133559" duration="60000" />
       <workItem from="1526370289985" duration="4000" />
       <workItem from="1526544449859" duration="1400000" />
-      <workItem from="1526571191503" duration="3547000" />
+      <workItem from="1526571191503" duration="4744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40579000" />
+    <option name="totallyTimeSpent" value="41776000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="1" y="1" width="1918" height="1038" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16246057" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -256,7 +263,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -272,7 +278,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -287,7 +295,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -302,7 +313,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -317,7 +331,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -332,7 +349,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8653">
           <caret line="509" column="70" lean-forward="false" selection-start-line="509" selection-start-column="70" selection-end-line="509" selection-end-column="70" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -354,7 +374,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -369,7 +392,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -384,7 +410,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -399,7 +428,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -414,7 +446,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -429,7 +464,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -444,7 +482,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -459,7 +500,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -474,7 +518,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -489,7 +536,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -504,7 +554,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
           <caret line="134" column="83" lean-forward="true" selection-start-line="134" selection-start-column="83" selection-end-line="134" selection-end-column="83" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -519,7 +572,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -534,7 +590,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6800">
           <caret line="400" column="70" lean-forward="false" selection-start-line="400" selection-start-column="70" selection-end-line="400" selection-end-column="70" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -550,7 +609,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -565,7 +627,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -621,14 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/gui.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="913" column="27" lean-forward="false" selection-start-line="913" selection-start-column="27" selection-end-line="913" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -639,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/navbartemp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="135" column="12" lean-forward="true" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+        <state relative-caret-position="-950">
+          <caret line="236" column="31" lean-forward="true" selection-start-line="236" selection-start-column="31" selection-end-line="236" selection-end-column="31" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -652,54 +709,59 @@
             <element signature="e#1955#2416#0" expanded="false" />
             <element signature="e#2443#2685#0" expanded="false" />
             <element signature="e#2711#2893#0" expanded="false" />
-            <element signature="e#4488#4569#0" expanded="false" />
-            <element signature="e#4607#4689#0" expanded="false" />
-            <element signature="e#4728#4809#0" expanded="false" />
-            <element signature="e#4846#4927#0" expanded="false" />
-            <element signature="e#4964#5045#0" expanded="false" />
-            <element signature="e#5082#5163#0" expanded="false" />
-            <element signature="e#5404#8427#0" expanded="false" />
-            <element signature="e#5621#8122#0" expanded="false" />
-            <element signature="e#5735#6308#0" expanded="false" />
-            <element signature="e#5884#6286#0" expanded="false" />
-            <element signature="e#6325#6914#0" expanded="false" />
-            <element signature="e#6474#6891#0" expanded="false" />
-            <element signature="e#6931#7504#0" expanded="false" />
-            <element signature="e#7080#7482#0" expanded="false" />
-            <element signature="e#7521#8093#0" expanded="false" />
-            <element signature="e#7670#8072#0" expanded="false" />
-            <element signature="e#8162#8407#0" expanded="false" />
-            <element signature="e#8342#8390#0" expanded="false" />
-            <element signature="e#8468#10270#0" expanded="false" />
-            <element signature="e#8662#8767#0" expanded="false" />
-            <element signature="e#8772#8811#0" expanded="false" />
-            <element signature="e#8869#10263#0" expanded="false" />
-            <element signature="e#10302#10725#0" expanded="false" />
-            <element signature="e#10755#11306#0" expanded="false" />
-            <element signature="e#11339#11623#0" expanded="false" />
-            <element signature="e#11657#11941#0" expanded="false" />
-            <element signature="e#11973#12257#0" expanded="false" />
-            <element signature="e#12291#12590#0" expanded="false" />
-            <element signature="e#12622#12906#0" expanded="false" />
-            <element signature="e#12940#13224#0" expanded="false" />
-            <element signature="e#13256#13540#0" expanded="false" />
-            <element signature="e#13574#13858#0" expanded="false" />
-            <element signature="e#13984#14309#0" expanded="false" />
-            <element signature="e#14015#14303#0" expanded="false" />
-            <element signature="e#14346#14672#0" expanded="false" />
-            <element signature="e#14378#14666#0" expanded="false" />
-            <element signature="e#14707#15033#0" expanded="false" />
-            <element signature="e#14739#15027#0" expanded="false" />
-            <element signature="e#15070#15411#0" expanded="false" />
-            <element signature="e#15102#15405#0" expanded="false" />
-            <element signature="e#15446#15772#0" expanded="false" />
-            <element signature="e#15478#15766#0" expanded="false" />
-            <element signature="e#15809#16135#0" expanded="false" />
-            <element signature="e#15841#16129#0" expanded="false" />
-            <element signature="e#16170#16496#0" expanded="false" />
-            <element signature="e#16202#16490#0" expanded="false" />
-            <element signature="e#16533#16859#0" expanded="false" />
-            <element signature="e#16565#16853#0" expanded="false" />
+            <element signature="e#4488#4593#0" expanded="false" />
+            <element signature="e#4631#4737#0" expanded="false" />
+            <element signature="e#4776#4881#0" expanded="false" />
+            <element signature="e#4918#5023#0" expanded="false" />
+            <element signature="e#5060#5165#0" expanded="false" />
+            <element signature="e#5202#5307#0" expanded="false" />
+            <element signature="e#6067#6469#0" expanded="false" />
+            <element signature="e#6696#7113#0" expanded="false" />
+            <element signature="e#7341#7743#0" expanded="false" />
+            <element signature="e#7970#8372#0" expanded="false" />
+            <element signature="e#8462#8707#0" expanded="false" />
+            <element signature="e#8642#8690#0" expanded="false" />
+            <element signature="e#8768#10570#0" expanded="false" />
+            <element signature="e#8962#9067#0" expanded="false" />
+            <element signature="e#9072#9111#0" expanded="false" />
+            <element signature="e#9169#10563#0" expanded="false" />
+            <element signature="e#10602#11025#0" expanded="false" />
+            <element signature="e#11055#11606#0" expanded="false" />
+            <element signature="e#11639#11923#0" expanded="false" />
+            <element signature="e#11957#12241#0" expanded="false" />
+            <element signature="e#12273#12557#0" expanded="false" />
+            <element signature="e#12591#12890#0" expanded="false" />
+            <element signature="e#12922#13206#0" expanded="false" />
+            <element signature="e#13240#13524#0" expanded="false" />
+            <element signature="e#13556#13840#0" expanded="false" />
+            <element signature="e#13874#14158#0" expanded="false" />
+            <element signature="e#14284#14609#0" expanded="false" />
+            <element signature="e#14315#14603#0" expanded="false" />
+            <element signature="e#14646#14972#0" expanded="false" />
+            <element signature="e#14678#14966#0" expanded="false" />
+            <element signature="e#15007#15333#0" expanded="false" />
+            <element signature="e#15039#15327#0" expanded="false" />
+            <element signature="e#15370#15711#0" expanded="false" />
+            <element signature="e#15402#15705#0" expanded="false" />
+            <element signature="e#15746#16072#0" expanded="false" />
+            <element signature="e#15778#16066#0" expanded="false" />
+            <element signature="e#16109#16435#0" expanded="false" />
+            <element signature="e#16141#16429#0" expanded="false" />
+            <element signature="e#16470#16796#0" expanded="false" />
+            <element signature="e#16502#16790#0" expanded="false" />
+            <element signature="e#16833#17159#0" expanded="false" />
+            <element signature="e#16865#17153#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/gui.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="913" column="27" lean-forward="false" selection-start-line="913" selection-start-column="27" selection-end-line="913" selection-end-column="27" />
+          <folding>
+            <marker date="1526543061107" expanded="true" signature="15534:15553" ph="SELECT * FRO... items" />
+            <marker date="1526543061107" expanded="true" signature="20374:20519" ph="..." />
           </folding>
         </state>
       </provider>

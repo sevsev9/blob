@@ -132,13 +132,13 @@
         <source src="./music/musicgame1music.mp3" type="audio/mp3">
     </audio>
     <audio id="musicgame2music">
-        <source src="./music/musicgame2music.mp3" type="audio/mp3">
+        <source src="./music/musicgame2music.wav" type="audio/wav">
     </audio>
     <audio id="musicgame3music">
         <source src="./music/musicgame3music.mp3" type="audio/mp3">
     </audio>
     <audio id="musicgame4music">
-        <source src="./music/musicgame4music.mp3" type="audio/mp3">
+        <source src="./music/musicgame4music.wav" type="audio/mp3">
     </audio>
 </div>
 
@@ -150,11 +150,13 @@
 
     function playbackgroundmusic() {
         x = document.getElementById("backgroundmusic");
+        x.volume = 0.5;
         x.play();
     }
 
     function pausebackgroundmusic() {
         x = document.getElementById("backgroundmusic");
+        x.volume = 0.5;
         x.pause();
     }
 
@@ -162,21 +164,25 @@
 
     function playmusicgame1music() {
         x = document.getElementById("musicgame1music");
+        x.volume = 0.5;
         x.play();
     }
 
     function playmusicgame2music() {
         x = document.getElementById("musicgame2music");
+        x.volume = 0.5;
         x.play();
     }
 
     function playmusicgame3music() {
         x = document.getElementById("musicgame3music");
+        x.volume = 0.5;
         x.play();
     }
 
     function playmusicgame4music() {
         x = document.getElementById("musicgame4music");
+        x.volume = 0.5;
         x.play();
     }
 
@@ -216,6 +222,7 @@
                 notenzusammensetzung[i] = bt1;
 
                 m1hover(document.getElementById("mbox1"));
+                playmusicgame1music();
                 setTimeout(function () {
                     element = document.getElementById("mbox1");
                     element.style.backgroundColor = "#ff3300";
@@ -232,6 +239,7 @@
                 notenzusammensetzung[i] = bt2;
 
                 m2hover(document.getElementById("mbox2"));
+                playmusicgame2music();
                 setTimeout(function () {
                     element = document.getElementById("mbox2");
                     element.style.backgroundColor = "dodgerblue";
@@ -249,6 +257,7 @@
                 notenzusammensetzung[i] = bt3;
 
                 m3hover(document.getElementById("mbox3"));
+                playmusicgame3music();
                 setTimeout(function () {
                     element = document.getElementById("mbox3");
                     element.style.backgroundColor = "#009933";
@@ -265,6 +274,7 @@
                 notenzusammensetzung[i] = bt4;
 
                 m4hover(document.getElementById("mbox4"));
+                playmusicgame4music();
                 setTimeout(function () {
                     element = document.getElementById("mbox4");
                     element.style.backgroundColor = "#cc00cc";
