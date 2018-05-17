@@ -121,43 +121,66 @@
     <div class="musicbox">
         <img src="./img/musicBox.png" width="90%"/>
     </div>
-    <div id="mbox1" onmouseover="m1hoverbtn(this)" onmouseout="m1unhoverbtn(this)" onclick="answerMusicQuest(1), PlaySound1"></div>
-    <div id="mbox2" onmouseover="m2hoverbtn(this)" onmouseout="m2unhoverbtn(this)" onclick="answerMusicQuest(2), PlaySound2"></div>
-    <div id="mbox3" onmouseover="m3hoverbtn(this)" onmouseout="m3unhoverbtn(this)" onclick="answerMusicQuest(3), PlaySound3"></div>
-    <div id="mbox4" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), PlaySound4"></div>
+    <div id="mbox1" onmouseover="m1hoverbtn(this)" onmouseout="m1unhoverbtn(this)" onclick="answerMusicQuest(1), playmusicgame1music()"></div>
+    <div id="mbox2" onmouseover="m2hoverbtn(this)" onmouseout="m2unhoverbtn(this)" onclick="answerMusicQuest(2), playmusicgame2music()"></div>
+    <div id="mbox3" onmouseover="m3hoverbtn(this)" onmouseout="m3unhoverbtn(this)" onclick="answerMusicQuest(3), playmusicgame3music()"></div>
+    <div id="mbox4" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), playmusicgame4music()"></div>
     <div id="musicbereittext">Bereit?</div>
     <button id="musicstartbutton" onclick="createMusicQuest(), startmusicgame()">Start</button>
-    <audio id="musicgamesound1"> </audio>
-    <audio id="musicgamesound2"> </audio>
-    <audio id="musicgamesound3"> </audio>
-    <audio id="musicgamesound4"> </audio>
+
+    <audio id="musicgame1music">
+        <source src="./music/musicgame1music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="musicgame2music">
+        <source src="./music/musicgame2music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="musicgame3music">
+        <source src="./music/musicgame3music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="musicgame4music">
+        <source src="./music/musicgame4music.mp3" type="audio/mp3">
+    </audio>
 </div>
+
+<audio loop id="backgroundmusic">
+    <source src="./music/Backgroundmusic.mp3" type="audio/mp3">
+</audio>
 
 <script>
 
-    function PlaySound1() {
-        musicgamesound1 = new Audio();
-        musicgamesound1.src = "./music/musicgamesound1.mp3";
-        musicgamesound1.play();
+    function playbackgroundmusic() {
+        x = document.getElementById("backgroundmusic");
+        x.play();
     }
 
-    function PlaySound2() {
-        musicgamesound2 = new Audio();
-        musicgamesound2.src = "./music/musicgamesound2.mp3";
-        musicgamesound2.play();
+    function pausebackgroundmusic() {
+        x = document.getElementById("backgroundmusic");
+        x.pause();
     }
 
-    function PlaySound3() {
-        musicgamesound3 = new Audio();
-        musicgamesound3.src = "./music/musicgamesound3.mp3";
-        musicgamesound3.play();
+
+
+    function playmusicgame1music() {
+        x = document.getElementById("musicgame1music");
+        x.play();
     }
 
-    function PlaySound4() {
-        musicgamesound4 = new Audio();
-        musicgamesound4.src = "./music/musicgamesound4.mp3";
-        musicgamesound4.play();
+    function playmusicgame2music() {
+        x = document.getElementById("musicgame2music");
+        x.play();
     }
+
+    function playmusicgame3music() {
+        x = document.getElementById("musicgame3music");
+        x.play();
+    }
+
+    function playmusicgame4music() {
+        x = document.getElementById("musicgame4music");
+        x.play();
+    }
+
+
 
     hoverstatus = 0;
 
