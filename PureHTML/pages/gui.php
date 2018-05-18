@@ -804,7 +804,7 @@ echo  "
 <script>
     function playbackgroundmusic() {
         x = document.getElementById("backgroundmusic");
-        x.volume = 0.5;
+        x.volume = 0.7;
         x.play();
     }
 
