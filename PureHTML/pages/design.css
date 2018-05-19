@@ -649,7 +649,47 @@ nav{
 
 
 
+.settingsBox{
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    z-index: 50;
+}
 
+.settingsText{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 1.8em;
+    font-family: "Arial Black";
+    z-index: 52;
+    size: 300em;
+}
+
+.settingsX{
+    position: absolute;
+    left: 89%;
+    top: 18%;
+    z-index: 502;
+}
+
+.soundeffects {
+    width: 500px;
+    margin: 1em auto;
+    z-index: 1000;
+    position: absolute;
+    top: 30em;
+    left: 40em;
+}
+
+.soundbackground {
+    width: 500px;
+    margin: 1em auto;
+    z-index: 1000;
+    position: absolute;
+    top: 40em;
+    left: 40em;
+}
 
 .helpBox{
     position: absolute;

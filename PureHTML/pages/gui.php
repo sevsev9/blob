@@ -442,8 +442,6 @@ echo  "
 <img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
 <img src="../img/loading_final.gif" id="loadingGIF">
 <!--------------------------------------------------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------------------------------------------------->
-
 
 
 <!----------------------------------------------------------------------------------------------------------------------NAVBAR-->
@@ -489,6 +487,28 @@ echo  "
 <div class="fadeoutdiv">
     <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1" onclick="blobmusic()">
 </div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------settingsbox-->
+
+<div id="settingsboxfull" class="fadeindiv">
+    <h1 class="settingsX MouseHover" style="z-index: 501" onclick="closesettings(), boxoutmusic()">X</h1>
+    <img src="../img/infoBox.png" width="73.75%" class="settingsBox">
+    <div class="soundeffects">
+        <span style="font-size: 3em">Effektlautstärke:</span>
+        <output id="musiceffectoutput" for="musiceffectslider">5</output>
+        <input id="musiceffectslider" name="musiceffectslider" type="range" min="0" max="10" step="1.0">
+    </div>
+    <div class="soundbackground">
+        <span style="font-size: 3em">Musiklautstärke:</span>
+        <output id="musicbackgroundoutput" for="musicbackgroundslider">5</output>
+        <input id="musicbackgroundslider" name="musicbackgroundslider" type="range" min="0" max="10" step="1.0">
+    </div>
+
+
+</div>
+<div class="coinTxt text MouseHover" onclick="settingsboxopen(), boxopenmusic()">SETTINGS</div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
@@ -555,6 +575,8 @@ echo  "
         helpboxfull.style.display = "none";
         infoboxfull = document.getElementById("infoboxfull");
         infoboxfull.style.display = "none";
+        settingsboxfull = document.getElementById("settingsboxfull");
+        settingsboxfull.style.display = "none";
 
         document.getElementById("pb").style.display = "block";
         document.getElementById("ts").style.display = "block";
@@ -711,6 +733,27 @@ echo  "
         });
     }
 
+    //Settingsbox
+    function settingsboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('#settingsboxfull').css({zIndex:9}).fadeIn(1000);
+            navCount = 1;
+        });
+
+        document.getElementById("navopenicon").classList.remove("change");
+
+    }
+
+    //Settings schließen
+    function closesettings(){
+        $(document).ready(function(){
+            $("#settingsboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+        });
+    }
+
     //Wechseln in den Fullscreenmodus
     function toggleFullscreen(elem) {
         document.getElementById("wt").style.display = "none";
@@ -775,6 +818,7 @@ echo  "
                 $('#musicboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#helpboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#infoboxfull').css({zIndex:10}).fadeOut(1000);
+                $('#settingsboxfull').css({zIndex:10}).fadeOut(1000);
                 $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             });
             navCount=0;
@@ -798,56 +842,84 @@ echo  "
     });
 </script>
 
+<!----------------------------------------------------------------------------------------------------------------------settings-->
+
+<script>
+
+    musiceffectslider = document.querySelector("#musiceffectslider");
+    musiceffectoutput = document.querySelector("#musiceffectoutput");
+    document.addEventListener('DOMContentLoaded', function() {
+        musiceffectoutput.value = musiceffectslider.value;
+    });
+
+    musiceffectslider.addEventListener ("input", function () {
+        musiceffectoutput.value = this.value;
+    });
+
+    musicbackgroundslider = document.querySelector("#musicbackgroundslider");
+    musicbackgroundoutput = document.querySelector("#musicbackgroundoutput");
+    document.addEventListener('DOMContentLoaded', function() {
+        musicbackgroundoutput.value = musicbackgroundslider.value;
+        playbackgroundmusic();
+    });
+
+    musicbackgroundslider.addEventListener ("input", function () {
+        musicbackgroundoutput.value = this.value;
+        playbackgroundmusic();
+    });
+
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------music-->
 
 <script>
     function playbackgroundmusic() {
         x = document.getElementById("backgroundmusic");
-        x.volume = 0.7;
+        x.volume = musicbackgroundoutput.value/10;
         x.play();
     }
 
     function pausebackgroundmusic() {
         x = document.getElementById("backgroundmusic");
-        x.volume = 0.5;
         x.pause();
     }
 
     function navopenmusic() {
         x = document.getElementById("navopenmusic");
-        x.volume = 0.6;
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function boxopenmusic() {
         x = document.getElementById("boxopenmusic");
-        x.volume = 0.6;
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function boxoutmusic() {
         x = document.getElementById("boxoutmusic");
-        x.volume = 0.6;
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function shopmusic() {
         x = document.getElementById("shopmusic");
-        x.volume = 0.6;
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function shopoutmusic() {
         x = document.getElementById("shopoutmusic");
-        x.volume = 0.6;
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function blobmusic() {
         x = new Audio();
         x.src = "../music/blobsound.mp3";
-        x.volume = 0.6;
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
