@@ -494,21 +494,21 @@ echo  "
 
 <div id="settingsboxfull" class="fadeindiv">
     <h1 class="settingsX MouseHover" style="z-index: 501" onclick="closesettings(), boxoutmusic()">X</h1>
-    <img src="../img/infoBox.png" width="73.75%" class="settingsBox">
+    <img src="../img/settingsBox.png" width="40%" class="settingsBox">
     <div class="soundeffects">
-        <span style="font-size: 3em">Effektlautstärke:</span>
+        <span style="font-size: 3.5em">Effektlautstärke:</span>
         <output id="musiceffectoutput" for="musiceffectslider">5</output>
         <input id="musiceffectslider" name="musiceffectslider" type="range" min="0" max="10" step="1.0">
     </div>
     <div class="soundbackground">
-        <span style="font-size: 3em">Musiklautstärke:</span>
+        <span style="font-size: 3.5em">Musiklautstärke:</span>
         <output id="musicbackgroundoutput" for="musicbackgroundslider">5</output>
         <input id="musicbackgroundslider" name="musicbackgroundslider" type="range" min="0" max="10" step="1.0">
     </div>
 
 
 </div>
-<div class="coinTxt text MouseHover" onclick="settingsboxopen(), boxopenmusic()">SETTINGS</div>
+<img src="../img/settings.png" width="3%" class="settingsBtn MouseHover" onclick="settingsboxopen(), boxopenmusic()">
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
