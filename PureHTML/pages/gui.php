@@ -492,17 +492,17 @@ echo  "
 
 <!----------------------------------------------------------------------------------------------------------------------settingsbox-->
 
-<div id="settingsboxfull" class="fadeindiv">
+<div id="settingsboxfull" class="fadeindiv" style="color: #191919">
     <h1 class="settingsX MouseHover" style="z-index: 501" onclick="closesettings(), boxoutmusic()">X</h1>
     <img src="../img/settingsBox.png" width="40%" class="settingsBox">
     <div class="soundeffects">
-        <span style="font-size: 3.5em">Effektlautstärke:</span>
-        <output id="musiceffectoutput" for="musiceffectslider">5</output>
+        <span style="font-size: 3.5em; color: #191919">Effektlautstärke:</span>
+        <output id="musiceffectoutput" for="musiceffectslider" style="color: #191919">5</output>
         <input id="musiceffectslider" name="musiceffectslider" type="range" min="0" max="10" step="1.0">
     </div>
     <div class="soundbackground">
-        <span style="font-size: 3.5em">Musiklautstärke:</span>
-        <output id="musicbackgroundoutput" for="musicbackgroundslider">5</output>
+        <span style="font-size: 3.5em; color: #191919">Musiklautstärke:</span>
+        <output id="musicbackgroundoutput" for="musicbackgroundslider" style="color: #191919">5</output>
         <input id="musicbackgroundslider" name="musicbackgroundslider" type="range" min="0" max="10" step="1.0">
     </div>
 
@@ -1075,25 +1075,31 @@ echo  "
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "red";
+                wrongmusic();
             }
         }else if(w==2){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "red";
+                wrongmusic();
             }
         }else {
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "red";
+                wrongmusic();
             }
         }
 
@@ -1173,20 +1179,25 @@ echo  "
             if (x==english){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english2;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                correctmusic();
             }else if (x==english2){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                correctmusic();
             }else {
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english + "\n" + "oder: " + english2;
                 document.getElementById("Vokabelaufgabentext").style.color = "red";
+                wrongmusic();
             }
         }else{
             if (x==english){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                correctmusic();
             }else {
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english;
                 document.getElementById("Vokabelaufgabentext").style.color = "red";
+                wrongmusic();
             }
         }
 
@@ -1355,11 +1366,14 @@ echo  "
             musicquestrightcounter++;
             answerMusicQuestcounter++;
         }else {
+            setTimeout(wrongmusic(),1000);
             endmusicgame();
         }
 
         if (musicquestcounter == musicquestrightcounter){
-            createMusicQuest();
+
+            setTimeout(correctmusic(),1000);
+            setTimeout(createMusicQuest(),2500);
 
             element = document.getElementById("mbox1");
             element.style.backgroundColor = "#ff3300";
