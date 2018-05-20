@@ -6,7 +6,6 @@
     width: 10px;
     background: violet;
     border-radius: 5px;
-
 }
 
 .infoText::-webkit-scrollbar-track {
@@ -24,7 +23,6 @@
     width: 10px;
     background: sandybrown;
     border-radius: 5px;
-
 }
 
 .shop::-webkit-scrollbar-track {
@@ -730,18 +728,20 @@ input[type=range] {
     -webkit-appearance: none;
     width: 100%;
     margin: 8.75px 0;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]:focus {
     outline: none;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 5.5px;
-    cursor: pointer;
     box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
     background: #dbc5a8;
     border-radius: 25px;
     border: 0px solid rgba(0, 0, 1, 0);
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-webkit-slider-thumb {
     box-shadow: 2px 2px 7px #000000, 0px 0px 2px #0d0d0d;
@@ -750,21 +750,22 @@ input[type=range]::-webkit-slider-thumb {
     width: 23px;
     border-radius: 50px;
     background: #894e00;
-    cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8.75px;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
     background: #dbc5a8;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-moz-range-track {
     width: 100%;
     height: 5.5px;
-    cursor: pointer;
     box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
     background: #dbc5a8;
     border-radius: 25px;
     border: 0px solid rgba(0, 0, 1, 0);
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-moz-range-thumb {
     box-shadow: 2px 2px 7px #000000, 0px 0px 2px #0d0d0d;
@@ -773,27 +774,29 @@ input[type=range]::-moz-range-thumb {
     width: 23px;
     border-radius: 50px;
     background: #894e00;
-    cursor: pointer;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-ms-track {
     width: 100%;
     height: 5.5px;
-    cursor: pointer;
     background: transparent;
     border-color: transparent;
     color: transparent;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-ms-fill-lower {
     background: #dbc5a8;
     border: 0px solid rgba(0, 0, 1, 0);
     border-radius: 50px;
     box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-ms-fill-upper {
     background: #dbc5a8;
     border: 0px solid rgba(0, 0, 1, 0);
     border-radius: 50px;
     box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]::-ms-thumb {
     box-shadow: 2px 2px 7px #000000, 0px 0px 2px #0d0d0d;
@@ -802,14 +805,15 @@ input[type=range]::-ms-thumb {
     width: 23px;
     border-radius: 50px;
     background: #894e00;
-    cursor: pointer;
-    height: 5.5px;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]:focus::-ms-fill-lower {
     background: #dbc5a8;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 input[type=range]:focus::-ms-fill-upper {
     background: #dbc5a8;
+    cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 
 

@@ -216,15 +216,15 @@
 
 <div class="shop">
     <div class="tab" style="z-index: 499">
-        <button style="top: -14%" id="tabup" class="tablinks other MouseHover" onclick="openTab(event, 'color')"><img src="../img/standard/color_standard.png" class="MouseHover" id="tabicon" style="top: 12%; left: 3%; width: 90%;"></button>
-        <button style="top: 0%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'merkmale')"><img src="../img/standard/merkmal_standard.png" class="MouseHover" id="tabicon" style="top: 14%; left: 3%; width: 90%;"></button>
-        <button style="top: 14%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'eyes')"><img src="../img/standard/eyes_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 2%; width: 95%;"></button>
-        <button style="top: 28%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'mouth')"><img src="../img/standard/mouth_standard.png" class="MouseHover" id="tabicon" style="top: 45%; left: 2%; width: 95%;"></button>
-        <button style="top: 42%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'clothing')"><img src="../img/standard/clothing_standard.png" class="MouseHover" id="tabicon" style="top: 50%; left: 2%; width: 95%;"></button>
-        <button style="top: 56%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'accessoires')"><img src="../img/standard/accessoires_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 5%; width: 90%;"></button>
-        <button style="top: 70%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'hat')"><img src="../img/standard/hat_standard.png" class="MouseHover" id="tabicon" style="top: 15%; left: 5%; width: 90%;"></button>
-        <button style="top: 84%" class="tabmid tablinks other MouseHover" onclick="openTab(event, 'costume')"><img src="../img/standard/costume_standard.png" class="MouseHover" id="tabicon" style="top: 13%; left: 5%; width: 90%;"></button>
-        <button style="top: 98%" id="tabdown" class="tablinks other MouseHover" onclick="openTab(event, 'wallpaper')"><img src="../img/standard/background_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 0%; width: 100%; user-select: none;"></button>
+        <button style="top: -14%" id="tabup" class="tablinks other MouseHover" onclick="shoptabmusic(1), openTab(event, 'color')"><img src="../img/standard/color_standard.png" class="MouseHover" id="tabicon" style="top: 12%; left: 3%; width: 90%;"></button>
+        <button style="top: 0%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(2), openTab(event, 'merkmale')"><img src="../img/standard/merkmal_standard.png" class="MouseHover" id="tabicon" style="top: 14%; left: 3%; width: 90%;"></button>
+        <button style="top: 14%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(3), openTab(event, 'eyes')"><img src="../img/standard/eyes_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 2%; width: 95%;"></button>
+        <button style="top: 28%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(4), openTab(event, 'mouth')"><img src="../img/standard/mouth_standard.png" class="MouseHover" id="tabicon" style="top: 45%; left: 2%; width: 95%;"></button>
+        <button style="top: 42%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(5), openTab(event, 'clothing')"><img src="../img/standard/clothing_standard.png" class="MouseHover" id="tabicon" style="top: 50%; left: 2%; width: 95%;"></button>
+        <button style="top: 56%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(6), openTab(event, 'accessoires')"><img src="../img/standard/accessoires_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 5%; width: 90%;"></button>
+        <button style="top: 70%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(7), openTab(event, 'hat')"><img src="../img/standard/hat_standard.png" class="MouseHover" id="tabicon" style="top: 15%; left: 5%; width: 90%;"></button>
+        <button style="top: 84%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(8), openTab(event, 'costume')"><img src="../img/standard/costume_standard.png" class="MouseHover" id="tabicon" style="top: 13%; left: 5%; width: 90%;"></button>
+        <button style="top: 98%" id="tabdown" class="tablinks other MouseHover" onclick="shoptabmusic(9), openTab(event, 'wallpaper')"><img src="../img/standard/background_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 0%; width: 100%; user-select: none;"></button>
     </div>
 
 
@@ -536,6 +536,14 @@ echo  "
 
 <audio id="shopoutmusic">
     <source src="../music/shopoutmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="correctmusic">
+    <source src="../music/correctmusic.mp3" type="audio/mp3">
+</audio>
+
+<audio id="wrongmusic">
+    <source src="../music/wrongmusic.mp3" type="audio/mp3">
 </audio>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -916,9 +924,54 @@ echo  "
         x.play();
     }
 
+    shoptabmusiccontrol = 1;
+
+    function shoptabmusic(y) {
+
+        if (shoptabmusiccontrol != y){
+
+            x = new Audio();
+            x.src = "../music/shoptabmusic.mp3";
+            x.volume = musiceffectoutput.value/10;
+            x.play();
+
+            shoptabmusiccontrol = y;
+        }
+
+    }
+
     function blobmusic() {
-        x = new Audio();
-        x.src = "../music/blobsound.mp3";
+
+        blobrand = (Math.random() * (100 - 0)) + 0;
+        blobrand = Math.round(blobrand);
+
+        if (blobrand <= 20){
+            x = new Audio();
+            x.src = "../music/blobsound1.mp3";
+            x.volume = musiceffectoutput.value/10;
+            x.play();
+        }else if (blobrand <= 50){
+            x = new Audio();
+            x.src = "../music/blobsound2.mp3";
+            x.volume = musiceffectoutput.value/10;
+            x.play();
+        }else{
+            x = new Audio();
+            x.src = "../music/blobsound3.mp3";
+            x.volume = musiceffectoutput.value/10;
+            x.play();
+        }
+
+    }
+
+    function correctmusic() {
+        x = document.getElementById("correctmusic");
+        x.volume = musiceffectoutput.value/10;
+        x.play();
+    }
+
+    function wrongmusic() {
+        x = document.getElementById("wrongmusic");
         x.volume = musiceffectoutput.value/10;
         x.play();
     }
