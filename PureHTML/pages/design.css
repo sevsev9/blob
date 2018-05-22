@@ -225,7 +225,14 @@ body{
     left: 30%;
     top: 12%;
     z-index: 10;
+    width: 40%;
 }
+
+.blobitemsinhome{
+    position: absolute;
+    width: 100%;
+}
+
 
 #loadingGIF{
     position: absolute;

@@ -59,8 +59,17 @@
 
 <!----------------------------------------------------------------------------------------------------------------------BLOB-->
 
-<div class="fadeoutdiv">
-    <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1" onclick="blobmusic()">
+<div class="fadeoutdiv" onclick="blobmusic()">
+    <div class="blobbox">
+        <img src="../img/color/color_Melone.png" class="MouseHover blobitemsinhome" id="blobcolor" style="z-index: 11">
+        <img src="../img/merkmale/merkmale_GraueRinge.png" class="MouseHover blobitemsinhome" id="blobmerkmale" style="z-index: 12">
+        <img src="../img/mouth/mouth_grinsend.png" class="MouseHover blobitemsinhome" id="blobmouth" style="z-index: 13">
+        <img src="../img/eyes/eyes_glücklich.png" class="MouseHover blobitemsinhome" id="blobeyes" style="z-index: 14">
+        <img src="../img/clothing/clothing_Latzhose.png" class="MouseHover blobitemsinhome" id="blobclothing" style="z-index: 15">
+        <img src="../img/accessoires/accessories_Sonnenbrille.png" class="MouseHover blobitemsinhome" id="blobaccessoires" style="z-index: 16">
+        <img src="../img/costume/costume_Superman.png" class="MouseHover blobitemsinhome" id="blobcostume" style="z-index: 17">
+        <img src="../img/hat/hat_Beanie.png" class="MouseHover blobitemsinhome" id="blobhat" style="z-index: 18">
+    </div>
 </div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -847,6 +856,7 @@ echo  "
     });
 </script>
 
+
 <!----------------------------------------------------------------------------------------------------------------------settings-->
 
 <script>
@@ -1588,17 +1598,46 @@ echo  "
 <script>
 
     //blob
-    var blob = document.getElementById("blobbox1");
+    var blobcolor = document.getElementById("blobcolor");
+    var blobmerkmale = document.getElementById("blobmerkmale");
+    var blobclothing = document.getElementById("blobclothing");
+    var blobeyes = document.getElementById("blobeyes");
+    var blobmouth = document.getElementById("blobmouth");
+    var blobaccessoires = document.getElementById("blobaccessoires");
+    var blobcostume = document.getElementById("blobcostume");
+    var blobhat = document.getElementById("blobhat");
 
-    blob.addEventListener("click", function(e){
+    blobhat.addEventListener("click", function(e){
         e.preventDefault;
 
-        blob.classList.remove("animation-target");
+        blobcolor.classList.remove("animation-target");
+        blobmerkmale.classList.remove("animation-target");
+        blobclothing.classList.remove("animation-target");
+        blobeyes.classList.remove("animation-target");
+        blobmouth.classList.remove("animation-target");
+        blobaccessoires.classList.remove("animation-target");
+        blobcostume.classList.remove("animation-target");
+        blobhat.classList.remove("animation-target");
 
-        void blob.offsetWidth;
+        void blobcolor.offsetWidth;
+        void blobmerkmale.offsetWidth;
+        void blobclothing.offsetWidth;
+        void blobeyes.offsetWidth;
+        void blobmouth.offsetWidth;
+        void blobaccessoires.offsetWidth;
+        void blobcostume.offsetWidth;
+        void blobhat.offsetWidth;
 
-        blob.classList.add("animation-target");
+        blobcolor.classList.add("animation-target");
+        blobmerkmale.classList.add("animation-target");
+        blobclothing.classList.add("animation-target");
+        blobeyes.classList.add("animation-target");
+        blobmouth.classList.add("animation-target");
+        blobaccessoires.classList.add("animation-target");
+        blobcostume.classList.add("animation-target");
+        blobhat.classList.add("animation-target");
     }, false);
+
 
     //blobload
     var blobload = document.getElementById("loadingGIF");
