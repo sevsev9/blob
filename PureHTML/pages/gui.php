@@ -102,19 +102,6 @@
     <div id="mbox4" class="MouseHover" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), playmusicgame4music()"></div>
     <div id="musicbereittext">Bereit?</div>
     <button id="musicstartbutton" class="MouseHover" onclick="createMusicQuest(), startmusicgame()">Start</button>
-
-    <audio id="musicgame1music">
-        <source src="../music/musicgame1music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="musicgame2music">
-        <source src="../music/musicgame2music.wav" type="audio/wav">
-    </audio>
-    <audio id="musicgame3music">
-        <source src="../music/musicgame3music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="musicgame4music">
-        <source src="../music/musicgame4music.wav" type="audio/mp3">
-    </audio>
 </div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -609,6 +596,7 @@ echo  "
     function closeshop(){
         $(document).ready(function(){
             $(".shop").animate({top: '-120%'}, 1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -618,6 +606,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $(".shop").animate({top: '-17%'}, 1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             doBounce($(".shop"), 1, '1%', 180);
             navCount = 1;
         });
@@ -640,6 +629,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             $('#matheboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
@@ -654,6 +644,7 @@ echo  "
         $(document).ready(function(){
             $("#matheboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -662,6 +653,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             $('#vokabelboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
@@ -677,6 +669,7 @@ echo  "
         $(document).ready(function(){
             $("#vokabelboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -685,6 +678,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             $('#musicboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
@@ -698,6 +692,7 @@ echo  "
         $(document).ready(function(){
             $("#musicboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -706,6 +701,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             $('#helpboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
@@ -718,6 +714,7 @@ echo  "
         $(document).ready(function(){
             $("#helpboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -726,6 +723,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             $('#infoboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
@@ -738,6 +736,7 @@ echo  "
         $(document).ready(function(){
             $("#infoboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -746,6 +745,7 @@ echo  "
         $(document).ready(function(){
             $("nav").animate({left: '-9.8%'}, 1000);
             $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
             $('#settingsboxfull').css({zIndex:9}).fadeIn(1000);
             navCount = 1;
         });
@@ -759,6 +759,7 @@ echo  "
         $(document).ready(function(){
             $("#settingsboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
     }
 
@@ -942,20 +943,20 @@ echo  "
 
     function blobmusic() {
 
-        blobrand = (Math.random() * (100 - 0)) + 0;
+        blobrand = (Math.random() * (3 - 1)) + 1;
         blobrand = Math.round(blobrand);
 
-        if (blobrand <= 20){
+        if (blobrand == 1){
             x = new Audio();
             x.src = "../music/blobsound1.mp3";
             x.volume = musiceffectoutput.value/10;
             x.play();
-        }else if (blobrand <= 50){
+        }else if (blobrand == 2){
             x = new Audio();
             x.src = "../music/blobsound2.mp3";
             x.volume = musiceffectoutput.value/10;
             x.play();
-        }else{
+        }else if(blobrand == 3){
             x = new Audio();
             x.src = "../music/blobsound3.mp3";
             x.volume = musiceffectoutput.value/10;
@@ -1213,30 +1214,34 @@ echo  "
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
-<!----------------------------------------------------------------------------------------------------------------------musicsystem-->
+<!----------------------------------------------------------------------------------------------------------------------musicquestsystem-->
 
 <script>
     function playmusicgame1music() {
-        x = document.getElementById("musicgame1music");
-        x.volume = 0.5;
+        x = new Audio();
+        x.src = "../music/musicgame1music.mp3";
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function playmusicgame2music() {
-        x = document.getElementById("musicgame2music");
-        x.volume = 0.5;
+        x = new Audio();
+        x.src = "../music/musicgame2music.wav";
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function playmusicgame3music() {
-        x = document.getElementById("musicgame3music");
-        x.volume = 0.5;
+        x = new Audio();
+        x.src = "../music/musicgame3music.mp3";
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
     function playmusicgame4music() {
-        x = document.getElementById("musicgame4music");
-        x.volume = 0.5;
+        x = new Audio();
+        x.src = "../music/musicgame4music.wav";
+        x.volume = musiceffectoutput.value/10;
         x.play();
     }
 
