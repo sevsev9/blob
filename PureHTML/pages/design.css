@@ -267,7 +267,7 @@ body{
 }
 
 #startgame{
-    a-webkit-animation-name: hovering;
+    -webkit-animation-name: hovering;
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
@@ -280,13 +280,13 @@ body{
 @-webkit-keyframes hovering {
     from {-webkit-transform:translate(0, 0px);}
     50% {-webkit-transform:translate(0, -25px);}
-    to {-webkit-transform: translate(0, -0px);}
+    to {-webkit-transform:translate(0, -0px);}
 }
 
 @keyframes hovering {
     from {transform:translate(0, 0px);}
     50% {transform:translate(0, -25px);}
-    to {transform: translate(0, -0px);}
+    to {transform:translate(0, -0px);}
 }
 
 .openBtn{
@@ -650,6 +650,27 @@ nav{
     top:  92.5%;
     left: 95%;
     z-index: 10;
+}
+
+.settingsBtn:hover{
+    -webkit-animation-name: settingsspin;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: settingsspin;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes settingsspin {
+    from {transform:rotate(0deg);}
+    to {transform: rotate(180deg);}
+}
+
+@-webkit-keyframes settingsspin {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform: rotate(180deg);}
 }
 
 .settingsBox{

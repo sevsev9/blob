@@ -44,7 +44,64 @@
 
 <!-------------------------------------------------Site Content-------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------Startscreen-->
+<div id="startgamediv">
+    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), playbackgroundmusic()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
+    <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
+</div>
+<span id="wt">Welcome to</span>
+<img src="../img/logo_new.png" id="bl">
+<span id="pb">presented by</span>
+<span id="ts">Team Skrt</span>
+<img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
+<img src="../img/loading_final.gif" id="loadingGIF">
+<!--------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------BLOB-->
+
+<div class="fadeoutdiv">
+    <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1" onclick="blobmusic()">
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------NAVBAR-->
+
+<nav>
+    <ul>
+        <li>
+            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav(), playbackgroundmusic(), navopenmusic()"></div>
+            <span class="openBtn" id="navopenicon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+            </span>
+        </li>
+        <li>
+            <span class="coinTxt text MouseHover" onclick="openNav(), shop(), shopmusic()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
+        </li>
+        <li>
+            <span class="matheTxt text MouseHover" onclick="openNav(), mathboxopen(), boxopenmusic()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
+        </li>
+        <li>
+            <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen(), boxopenmusic()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
+        </li>
+        <li>
+            <span class="musicTxt text MouseHover" onclick="openNav(), musicboxopen(), pausebackgroundmusic(), boxopenmusic()">Musik</span><img src="../img/music.png" width="25%" class="musicBtn">
+        </li>
+        <li>
+            <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen(), boxopenmusic()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
+        </li>
+        <li>
+            <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen(), boxopenmusic()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
+        </li>
+        <li>
+            <span class="logoutTxt text MouseHover" onclick="openNav(), logout(), pausebackgroundmusic()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
+        </li>
+    </ul>
+</nav>
+
+<!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
@@ -413,67 +470,6 @@ echo  "
 </script>
     ";
 ?>
-
-<!--------------------------------------------------------------------------------------------------------------------->
-
-
-<!----------------------------------------------------------------------------------------------------------------------FULLSCREEN-->
-<div id="startgamediv">
-    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), playbackgroundmusic()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
-    <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
-</div>
-<span id="wt">Welcome to</span>
-<img src="../img/logo_new.png" id="bl">
-<span id="pb">presented by</span>
-<span id="ts">Team Skrt</span>
-<img src="../img/background_purple.png" width="100%" id="background" style="z-index: 0"/>
-<img src="../img/loading_final.gif" id="loadingGIF">
-<!--------------------------------------------------------------------------------------------------------------------->
-
-
-<!----------------------------------------------------------------------------------------------------------------------NAVBAR-->
-
-<nav>
-    <ul>
-        <li>
-            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav(), playbackgroundmusic(), navopenmusic()"></div>
-            <span class="openBtn" id="navopenicon">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-            </span>
-        </li>
-        <li>
-            <span class="coinTxt text MouseHover" onclick="openNav(), shop(), shopmusic()">Shop</span><img src="../img/coin.png" width="25%" class="coinBtn">
-        </li>
-        <li>
-            <span class="matheTxt text MouseHover" onclick="openNav(), mathboxopen(), boxopenmusic()">Mathe</span><img src="../img/mathe.png" width="25%" class="matheBtn">
-        </li>
-        <li>
-            <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen(), boxopenmusic()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
-        </li>
-        <li>
-            <span class="musicTxt text MouseHover" onclick="openNav(), musicboxopen(), pausebackgroundmusic(), boxopenmusic()">Musik</span><img src="../img/music.png" width="25%" class="musicBtn">
-        </li>
-        <li>
-            <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen(), boxopenmusic()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
-        </li>
-        <li>
-            <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen(), boxopenmusic()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
-        </li>
-        <li>
-            <span class="logoutTxt text MouseHover" onclick="openNav(), logout(), pausebackgroundmusic()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
-        </li>
-    </ul>
-</nav>
-
-<!--------------------------------------------------------------------------------------------------------------------->
-
-<!----------------------------------------------------------------------------------------------------------------------BLOB-->
-
-<div class="fadeoutdiv">
-    <img src="../img/Blob_basic.png" width="40%" class="blobbox MouseHover" id="blobbox1" onclick="blobmusic()">
-</div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
