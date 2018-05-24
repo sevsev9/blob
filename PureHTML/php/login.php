@@ -31,19 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-
-
-        //$active = $row['active'];
         $count = mysqli_num_rows($result);
-        //Debugging puropse
-        /*      echo $sql;
-                echo "<br>";
-                print_r($result);
-                echo "<br>";
-                print_r($row);
-                echo "<br>";
-                echo $count;
-        */
 
         // If result matched $username and $password, table row must be 1 row
         if ($count == 1) {
@@ -68,8 +56,70 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['level'] = $row["level"];
             $_SESSION['blob_name'] = $row["blob_name"];
             $_SESSION['coins'] = $row["coins"];
+            $_SESSION['blob_id'] = $row["blob_id"];
 
-            $db->close();
+            $sql = "SELECT * FROM blob_users.blobs WHERE id LIKE ".$row['blob_id'];
+            $result = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            //Debug Purpose
+            echo "<table>
+                        <tr>
+                            <td>B</td>
+                            <td>".$row["name"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Blob id</td>
+                            <td>".$row["id"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>".$row["name"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Hat</td>
+                            <td>".$row["hat"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Eyes</td>
+                            <td>".$row["eyes"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Clothing</td>
+                            <td>".$row["clothing"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>".$row["color"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Costume</td>
+                            <td>".$row["costume"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Mouth</td>
+                            <td>".$row["mouth"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Accessoires</td>
+                            <td>".$row["accesssoires"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Merkmale</td>
+                            <td>".$row["merkmale"]."</td>
+                        </tr>
+                      </table>";
+
+            $_SESSION['blob']['name'] = $row["name"];
+            $_SESSION['blob']['hat'] = $row["hat"];
+            $_SESSION['blob']['eyes'] = $row["eyes"];
+            $_SESSION['blob']['clothing'] = $row["clothing"];
+            $_SESSION['blob']['color'] = $row["color"];
+            $_SESSION['blob']['costume'] = $row["costume"];
+            $_SESSION['blob']['mouth'] = $row["mouth"];
+            $_SESSION['blob']['accessoires'] = $row["accessoires"];
+            $_SESSION['blob']['merkmale'] = $row["merkmale"];
+
+                $db->close();
             errorAlert('',0);
         } else {
             errorAlert("Invalid Username/Email and Password combination!",1);
@@ -91,7 +141,7 @@ function errorAlert($message, $nr) {
                       return new Promise((resolve) => setTimeout(resolve, time));
                     }
                     
-                    sleep(0).then(() => {
+                    sleep(2000000).then(() => {
                         window.location.replace(\"$paths[$nr]\");
                     });                            
                 </script>";
