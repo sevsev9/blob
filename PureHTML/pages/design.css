@@ -915,7 +915,6 @@ img{
     display: none;
 }
 
-
 #bl{
     position: absolute;
     left: 5vw;
@@ -935,7 +934,6 @@ img{
     z-index: 1002;
     display: none;
 }
-
 
 #ts{
     color: black;
@@ -1181,3 +1179,41 @@ img{
 
 
 
+.blobanimationyeahskrt {
+    -webkit-animation: pulse 6000ms infinite;
+    animation: pulse 6000ms infinite;
+}
+
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}

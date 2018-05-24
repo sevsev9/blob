@@ -61,14 +61,14 @@
 
 <div class="fadeoutdiv" onclick="blobmusic()">
     <div class="blobbox">
-        <img src="../img/color/color_Melone.png" class="MouseHover blobitemsinhome" id="blobcolor" style="z-index: 11">
-        <img src="../img/merkmale/merkmale_GraueRinge.png" class="MouseHover blobitemsinhome" id="blobmerkmale" style="z-index: 12">
-        <img src="../img/mouth/mouth_grinsend.png" class="MouseHover blobitemsinhome" id="blobmouth" style="z-index: 13">
-        <img src="../img/eyes/eyes_glücklich.png" class="MouseHover blobitemsinhome" id="blobeyes" style="z-index: 14">
-        <img src="../img/clothing/clothing_Latzhose.png" class="MouseHover blobitemsinhome" id="blobclothing" style="z-index: 15">
-        <img src="../img/accessoires/accessories_Sonnenbrille.png" class="MouseHover blobitemsinhome" id="blobaccessoires" style="z-index: 16">
-        <img src="../img/costume/costume_Superman.png" class="MouseHover blobitemsinhome" id="blobcostume" style="z-index: 17">
-        <img src="../img/hat/hat_Beanie.png" class="MouseHover blobitemsinhome" id="blobhat" style="z-index: 18">
+        <img src="../img/color/color_Melone.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobcolor" style="z-index: 11">
+        <img src="../img/merkmale/merkmale_GraueRinge.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobmerkmale" style="z-index: 12">
+        <img src="../img/mouth/mouth_grinsend.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobmouth" style="z-index: 13">
+        <img src="../img/eyes/eyes_glücklich.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobeyes" style="z-index: 14">
+        <img src="../img/clothing/clothing_Latzhose.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobclothing" style="z-index: 15">
+        <img src="../img/accessoires/accessories_Sonnenbrille.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobaccessoires" style="z-index: 16">
+        <img src="../img/costume/costume_Superman.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobcostume" style="z-index: 17">
+        <img src="../img/hat/hat_Beanie.png" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobhat" style="z-index: 18">
     </div>
 </div>
 
@@ -1610,6 +1610,15 @@ echo  "
     blobhat.addEventListener("click", function(e){
         e.preventDefault;
 
+        blobcolor.classList.remove("blobanimationyeahskrt");
+        blobmerkmale.classList.remove("blobanimationyeahskrt");
+        blobclothing.classList.remove("blobanimationyeahskrt");
+        blobeyes.classList.remove("blobanimationyeahskrt");
+        blobmouth.classList.remove("blobanimationyeahskrt");
+        blobaccessoires.classList.remove("blobanimationyeahskrt");
+        blobcostume.classList.remove("blobanimationyeahskrt");
+        blobhat.classList.remove("blobanimationyeahskrt");
+
         blobcolor.classList.remove("animation-target");
         blobmerkmale.classList.remove("animation-target");
         blobclothing.classList.remove("animation-target");
@@ -1636,6 +1645,28 @@ echo  "
         blobaccessoires.classList.add("animation-target");
         blobcostume.classList.add("animation-target");
         blobhat.classList.add("animation-target");
+
+        setTimeout(function () {
+            blobcolor.classList.remove("animation-target");
+            blobmerkmale.classList.remove("animation-target");
+            blobclothing.classList.remove("animation-target");
+            blobeyes.classList.remove("animation-target");
+            blobmouth.classList.remove("animation-target");
+            blobaccessoires.classList.remove("animation-target");
+            blobcostume.classList.remove("animation-target");
+            blobhat.classList.remove("animation-target");
+
+            setTimeout(function () {
+                blobcolor.classList.add("blobanimationyeahskrt");
+                blobmerkmale.classList.add("blobanimationyeahskrt");
+                blobclothing.classList.add("blobanimationyeahskrt");
+                blobeyes.classList.add("blobanimationyeahskrt");
+                blobmouth.classList.add("blobanimationyeahskrt");
+                blobaccessoires.classList.add("blobanimationyeahskrt");
+                blobcostume.classList.add("blobanimationyeahskrt");
+                blobhat.classList.add("blobanimationyeahskrt");
+            },500);
+        }, 2000);
     }, false);
 
 
