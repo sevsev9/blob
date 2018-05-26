@@ -1,0 +1,17 @@
+graphics: -> kaser, frühwirth
+
++ caps/mützen/FEDORA (~1 stk)
++ accesoires (~1 stk)
++ merkmale (~2 stk)
++ background (~1 stk)
++ PR-folder (ungefähre vorlage in Pics->PR-Folder sketch) -> Bernd
+
+development: -> mairinger
+
++ server
++ Logout button (weiterleitung zu login page)
++ Login page (weiterleitung zu spiel)
++ items in shop einfügen
++ xp/coin-system
++ speichersystem
+- registrierung deaktivieren
