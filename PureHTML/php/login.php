@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<br>";*/
 
             $_SESSION['login_user'] = $row["username"];
-            $_SESSION['curr_xp'] = $row["curr_xp"];
+            $_SESSION['curr_xp'] = $row["xp"];
             $_SESSION['level'] = $row["level"];
             $_SESSION['blob_name'] = $row["blob_name"];
             $_SESSION['coins'] = $row["coins"];
@@ -61,10 +61,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "SELECT * FROM blob_users.blobs WHERE id LIKE ".$row['blob_id'];
             $result = mysqli_query($db, $sql);
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+            $_SESSION['blob']['name'] = $row["name"];
+            $_SESSION['blob']['hat'] = $row["hat"];
+            $_SESSION['blob']['eyes'] = $row["eyes"];
+            $_SESSION['blob']['clothing'] = $row["clothing"];
+            $_SESSION['blob']['color'] = $row["color"];
+            $_SESSION['blob']['costume'] = $row["costume"];
+            $_SESSION['blob']['mouth'] = $row["mouth"];
+            $_SESSION['blob']['accessoires'] = $row["accessoires"];
+            $_SESSION['blob']['merkmale'] = $row["merkmale"];
+
             //Debug Purpose
             echo "<table>
                         <tr>
-                            <td>B</td>
+                            <td>Username</td>
+                            <td>".$_SESSION["login_user"]."</td>
+                        </tr>
+                        <tr>
+                            <td>XP</td>
+                            <td>".$_SESSION["curr_xp"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Coins</td>
+                            <td>".$_SESSION["coins"]."</td>
+                        </tr>
+                        <tr>
+                            <td>Blob Name</td>
                             <td>".$row["name"]."</td>
                         </tr>
                         <tr>
@@ -109,16 +132,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tr>
                       </table>";
 
-            $_SESSION['blob']['name'] = $row["name"];
-            $_SESSION['blob']['hat'] = $row["hat"];
-            $_SESSION['blob']['eyes'] = $row["eyes"];
-            $_SESSION['blob']['clothing'] = $row["clothing"];
-            $_SESSION['blob']['color'] = $row["color"];
-            $_SESSION['blob']['costume'] = $row["costume"];
-            $_SESSION['blob']['mouth'] = $row["mouth"];
-            $_SESSION['blob']['accessoires'] = $row["accessoires"];
-            $_SESSION['blob']['merkmale'] = $row["merkmale"];
-
                 $db->close();
             errorAlert('',0);
         } else {
@@ -141,7 +154,7 @@ function errorAlert($message, $nr) {
                       return new Promise((resolve) => setTimeout(resolve, time));
                     }
                     
-                    sleep(2000000).then(() => {
+                    sleep(0).then(() => {
                         window.location.replace(\"$paths[$nr]\");
                     });                            
                 </script>";
