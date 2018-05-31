@@ -1,7 +1,7 @@
 <?php
     require_once "../php/session.php";
-    error_reporting(0);
-    //ini_set('display_errors',1);
+    //error_reporting(0);
+    ini_set('display_errors',1);
 ?>
 <!doctype html>
 <html lang="">
@@ -114,7 +114,7 @@
 
 <!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
-    <div class="name fadeoutdiv"><?= $_SESSION['blob_name']?></div>
+    <div class="name fadeoutdiv"><?= $_SESSION['blob']['name']?></div>
     <div class="xp"><?= $_SESSION['curr_xp']?>/<!-- javascript calculation -->xp</div>
 </div>
 <div class="coins"><?= $_SESSION['coins']?> Coins</div>
@@ -335,7 +335,7 @@
 <!--Shop Item Script-->
 <?php
 //Create Javascript Item Array
-$servername = "localhost";
+$servername = "172.17.0.5";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";

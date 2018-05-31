@@ -58,19 +58,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['coins'] = $row["coins"];
             $_SESSION['blob_id'] = $row["blob_id"];
 
-            $sql = "SELECT * FROM blob_users.blobs WHERE id LIKE ".$row['blob_id'];
+            $sql = "SELECT * FROM blob_users.blobs WHERE id LIKE " . $row['blob_id'];
             $result = mysqli_query($db, $sql);
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
             $_SESSION['blob']['name'] = $row["name"];
-            $_SESSION['blob']['hat'] = $row["hat"];
-            $_SESSION['blob']['eyes'] = $row["eyes"];
-            $_SESSION['blob']['clothing'] = $row["clothing"];
-            $_SESSION['blob']['color'] = $row["color"];
-            $_SESSION['blob']['costume'] = $row["costume"];
-            $_SESSION['blob']['mouth'] = $row["mouth"];
-            $_SESSION['blob']['accessoires'] = $row["accessoires"];
-            $_SESSION['blob']['merkmale'] = $row["merkmale"];
+
+            if (    $row["hat"] == "") {
+                    $_SESSION['blob']['hat'] = "notfound";
+            } else {$_SESSION['blob']['hat'] = $row["hat"];}
+
+            if (    $row['eyes'] == "") {
+                    $_SESSION['blob']['eyes'] = "notfound";
+            } else {$_SESSION['blob']['eyes'] = $row["eyes"];}
+
+            if (    $row['clothing'] == "") {
+                    $_SESSION['blob']['clothing'] = "notfound";
+            } else {$_SESSION['blob']['clothing'] = $row["clothing"];}
+
+            if (    $row['color'] == "") {
+                    $_SESSION['blob']['color'] = "notfound";
+            } else {$_SESSION['blob']['color'] = $row["color"];}
+
+            if (    $row['costume'] == "") {
+                    $_SESSION['blob']['costume'] = "notfound";
+            } else {$_SESSION['blob']['costume'] = $row["costume"];}
+
+            if (    $row['mouth'] == "") {
+                    $_SESSION['blob']['mouth'] = "notfound";
+            } else {$_SESSION['blob']['mouth'] = $row["mouth"];}
+
+            if (    $row['accessoires'] == "") {
+                    $_SESSION['blob']['accessoires'] = "notfound";
+            } else {$_SESSION['blob']['accessoires'] = $row["accessoires"];}
+
+            if (    $row['merkmale'] == "") {
+                    $_SESSION['blob']['merkmale'] = "notfound";
+            } else {$_SESSION['blob']['merkmale'] = $row["merkmale"];}
 
             //Debug Purpose
             echo "<table>
@@ -88,47 +112,47 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tr>
                         <tr>
                             <td>Blob Name</td>
-                            <td>".$row["name"]."</td>
+                            <td>".$_SESSION['blob']["name"]."</td>
                         </tr>
                         <tr>
                             <td>Blob id</td>
-                            <td>".$row["id"]."</td>
+                            <td>".$_SESSION["blob_id"]."</td>
                         </tr>
                         <tr>
                             <td>Name</td>
-                            <td>".$row["name"]."</td>
+                            <td>".$_SESSION['blob']["name"]."</td>
                         </tr>
                         <tr>
                             <td>Hat</td>
-                            <td>".$row["hat"]."</td>
+                            <td>".$_SESSION['blob']["hat"]."</td>
                         </tr>
                         <tr>
                             <td>Eyes</td>
-                            <td>".$row["eyes"]."</td>
+                            <td>".$_SESSION['blob']["eyes"]."</td>
                         </tr>
                         <tr>
                             <td>Clothing</td>
-                            <td>".$row["clothing"]."</td>
+                            <td>".$_SESSION['blob']["clothing"]."</td>
                         </tr>
                         <tr>
                             <td>Color</td>
-                            <td>".$row["color"]."</td>
+                            <td>".$_SESSION['blob']["color"]."</td>
                         </tr>
                         <tr>
                             <td>Costume</td>
-                            <td>".$row["costume"]."</td>
+                            <td>".$_SESSION['blob']["costume"]."</td>
                         </tr>
                         <tr>
                             <td>Mouth</td>
-                            <td>".$row["mouth"]."</td>
+                            <td>".$_SESSION['blob']["mouth"]."</td>
                         </tr>
                         <tr>
                             <td>Accessoires</td>
-                            <td>".$row["accesssoires"]."</td>
+                            <td>".$_SESSION['blob']["accessoires"]."</td>
                         </tr>
                         <tr>
                             <td>Merkmale</td>
-                            <td>".$row["merkmale"]."</td>
+                            <td>".$_SESSION['blob']["merkmale"]."</td>
                         </tr>
                       </table>";
 
