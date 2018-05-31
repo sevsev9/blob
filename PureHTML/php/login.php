@@ -2,13 +2,13 @@
 
 require_once "session.php";
 
-$servername = "localhost";
+$servername = "172.17.0.5";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
 
-error_reporting(0);
-//ini_set('display_errors',1);
+//error_reporting(0);
+ini_set('display_errors',1);
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
