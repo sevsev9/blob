@@ -363,7 +363,7 @@ while($row = mysqli_fetch_array($result)){
         if ($rows[$ctr]['item_class'] == "eyes") {
             echo "createItem(document.getElementById('eyes'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -374,7 +374,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "clothing") {
             echo "createItem(document.getElementById('clothing'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -385,7 +385,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "color") {
             echo "createItem(document.getElementById('color'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -396,7 +396,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "costume") {
             echo "createItem(document.getElementById('costume'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            ''/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -407,7 +407,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "hat") {
             echo "createItem(document.getElementById('hat'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -418,7 +418,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "mouth") {
             echo "createItem(document.getElementById('mouth'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -429,7 +429,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "accessoires") {
             echo "createItem(document.getElementById('accessoires'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -440,7 +440,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "merkmale") {
             echo "createItem(document.getElementById('merkmale'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -451,7 +451,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "wallpapers") {
             echo "createItem(document.getElementById('wallpapers'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -465,19 +465,6 @@ while($row = mysqli_fetch_array($result)){
 }
 //echo "<p>".json_encode($rows)."</p>";
 //echo "<p>".json_encode($rows[0]["id"])."</p>";
-
-echo  "
-<script type='text/javascript'>
-//Item Name Array
-    var names = [];
-//Item Price Array
-    var prices = [];
-//Item Image Path Array
-    var imgpaths = [];
-    
-    
-</script>
-    ";
 ?>
 
 <!--------------------------------------------------------------------------------------------------------------------->
