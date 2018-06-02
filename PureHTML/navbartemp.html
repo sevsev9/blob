@@ -8,14 +8,14 @@
 
     <style>
 
-        .musicbox{
+        .deutschbox{
             position: absolute;
             top: 18%;
             left: 18%;
             z-index: 500;
         }
 
-        .musicX{
+        .deutschX{
             position: absolute;
             left: 89%;
             top: 18%;
@@ -23,92 +23,28 @@
             z-index: 502;
         }
 
-        #mbox1{
-            width: 14em;
-            height: 14em;
-            background-color: #ff3300;
+        .deutschheader{
             position: absolute;
-            top: 18em;
-            right: 46em;
-            z-index: 502;
-            border: ridge 0.8em;
-            border-right-color: #cc2900;
-            border-bottom-color: #cc2900;
-            border-left-color: #ff5c33;
-            border-top-color: #ff5c33;
-            border-radius: 2em;
-            display: none;
+            top: 10%;
+            left: 25%;
+            font-size: 2em;
+            font-family: "Arial Black";
         }
 
-        #mbox2{
-            width: 14em;
-            height: 14em;
-            background-color: dodgerblue;
+        #deutschQuest{
             position: absolute;
-            top: 18em;
-            right: 29em;
-            z-index: 502;
-            border: ridge 0.8em;
-            border-right-color: royalblue;
-            border-bottom-color: royalblue;
-            border-left-color: deepskyblue;
-            border-top-color: deepskyblue;
-            border-radius: 2em;
-            display: none;
-        }
-
-        #mbox3{
-            width: 14em;
-            height: 14em;
-            background-color: #009933;
-            position: absolute;
-            top: 35em;
-            right: 46em;
-            z-index: 502;
-            border: ridge 0.8em;
-            border-right-color: #006622;
-            border-bottom-color: #006622;
-            border-left-color: #00cc44;
-            border-top-color: #00cc44;
-            border-radius: 2em;
-            display: none;
-        }
-
-        #mbox4{
-            width: 14em;
-            height: 14em;
-            background-color: #cc00cc;
-            position: absolute;
-            top: 35em;
-            right: 29em;
-            z-index: 502;
-            border: ridge 0.8em;
-            border-right-color: #990099;
-            border-bottom-color: #990099;
-            border-left-color: #ff00ff;
-            border-top-color: #ff00ff;
-            border-radius: 2em;
-            display: none;
-        }
-
-        #musicstartbutton{
-            padding: 0.3em;
-            position: absolute;
-            top: 60%;
-            left: 57%;
+            top: 30%;
+            left: 25%;
             font-size: 3em;
             font-family: "Arial Black";
-            border-radius: 1em;
-            z-index: 501;
         }
 
-        #musicbereittext{
+        #deutschQuestAnswerOptions{
             position: absolute;
-            top: 40%;
-            left: 51%;
-            font-size: 7em;
+            top: 45%;
+            left: 25%;
+            font-size: 2.5em;
             font-family: "Arial Black";
-            z-index: 501;
         }
 
     </style>
@@ -116,414 +52,217 @@
 </head>
 <body>
 
-<div id="musicboxfull" class="fadeindiv">
-    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame()">X</h1>
-    <div class="musicbox">
-        <img src="./img/musicBox.png" width="90%"/>
+<div id="deutschboxfull" class="fadeindiv">
+    <h1 class="deutschX MouseHover" style="z-index: 501" onclick="closedeutsch()">X</h1>
+    <div class="deutschbox">
+        <img src="./img/musicBox.png" width="90%" onclick="createDeutschQuest()"/>
+        <div class="deutschheader">Finde die fehlende Steigerungsform:</div>
+        <div id="deutschQuest"></div>
+        <div id="deutschQuestAnswerOptions">
+            <span id="deutschQuestAnswerOptions1" onclick=""></span>
+            <br>
+            <span id="deutschQuestAnswerOptions2"></span>
+            <br>
+            <span id="deutschQuestAnswerOptions3"></span>
+        </div>
     </div>
-    <div id="mbox1" onmouseover="m1hoverbtn(this)" onmouseout="m1unhoverbtn(this)" onclick="answerMusicQuest(1), playmusicgame1music()"></div>
-    <div id="mbox2" onmouseover="m2hoverbtn(this)" onmouseout="m2unhoverbtn(this)" onclick="answerMusicQuest(2), playmusicgame2music()"></div>
-    <div id="mbox3" onmouseover="m3hoverbtn(this)" onmouseout="m3unhoverbtn(this)" onclick="answerMusicQuest(3), playmusicgame3music()"></div>
-    <div id="mbox4" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), playmusicgame4music()"></div>
-    <div id="musicbereittext">Bereit?</div>
-    <button id="musicstartbutton" onclick="createMusicQuest(), startmusicgame()">Start</button>
-
-    <audio id="musicgame1music">
-        <source src="./music/musicgame1music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="musicgame2music">
-        <source src="./music/musicgame2music.wav" type="audio/wav">
-    </audio>
-    <audio id="musicgame3music">
-        <source src="./music/musicgame3music.mp3" type="audio/mp3">
-    </audio>
-    <audio id="musicgame4music">
-        <source src="./music/musicgame4music.wav" type="audio/mp3">
-    </audio>
 </div>
 
-<audio loop id="backgroundmusic">
-    <source src="./music/Backgroundmusic.mp3" type="audio/mp3">
-</audio>
 
 <script>
 
-    function playbackgroundmusic() {
-        x = document.getElementById("backgroundmusic");
-        x.volume = 0.5;
-        x.play();
+    deutschQuestAnswer = "";
+    deutschQuestWahl = 0;
+    deutschQuestArrayWahl = 0;
+    deutschQuestNumber = 0;
+
+    deutschar0 = ["klein", "kleiner", "am kleinsten"];
+    deutschar1 = ["gut", "besser", "am besten"];
+    deutschar2 = ["hoch", "höher", "am höchsten"];
+    deutschar3 = ["groß", "größer", "am größten"];
+    deutschar4 = ["schnell", "schneller", "am schnellsten"];
+    deutschar5 = ["dick", "dicker", "am dicksten"];
+    deutschar6 = ["spitz", "spitzer", "am spitzesten"];
+    deutschar7 = ["freundlich", "freundlicher", "am freundlichsten"];
+    deutschar8 = ["laut", "lauter", "am lautesten"];
+    deutschar9 = ["leise", "leiser", "am leisesten"];
+    deutschar10 = ["brav", "braver", "am bravsten"];
+
+    deutscharrays = [deutschar0,
+        deutschar1,
+        deutschar2,
+        deutschar3,
+        deutschar4,
+        deutschar5,
+        deutschar6,
+        deutschar7,
+        deutschar8,
+        deutschar9,
+        deutschar10];
+
+    function createDeutschQuest() {
+
+        deutschQuestWahl = (Math.random() * (3 - 1)) + 1;
+        deutschQuestWahl = Math.round(deutschQuestWahl);
+
+        deutschQuestArrayWahl = (Math.random() * (10 - 0)) + 0;
+        deutschQuestArrayWahl = Math.round(deutschQuestArrayWahl);
+
+        deutschQuest = document.getElementById("deutschQuest");
+
+        if (deutschQuestWahl==1){
+
+            deutschQuest.innerHTML = "?" + " - " + deutscharrays[deutschQuestArrayWahl][1] + " - " + deutscharrays[deutschQuestArrayWahl][2];
+            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][0];
+            deutschQuestNumber = 0;
+
+        }else if (deutschQuestWahl==2){
+
+            deutschQuest.innerHTML = deutscharrays[deutschQuestArrayWahl][0] + " - " + "?" + " - " + deutscharrays[deutschQuestArrayWahl][2];
+            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][1];
+            deutschQuestNumber = 1;
+
+        }else if (deutschQuestWahl==3){
+
+            deutschQuest.innerHTML = deutscharrays[deutschQuestArrayWahl][0] + " - " + deutscharrays[deutschQuestArrayWahl][1] + " - " + "?";
+            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][2];
+            deutschQuestNumber = 2;
+
+        }
+
+        createDeutschAnswerOptions();
     }
 
-    function pausebackgroundmusic() {
-        x = document.getElementById("backgroundmusic");
-        x.volume = 0.5;
-        x.pause();
-    }
+    function createDeutschAnswerOptions() {
 
+        deutschQuestAnswerOptions1 = document.getElementById("deutschQuestAnswerOptions1");
+        deutschQuestAnswerOptions2 = document.getElementById("deutschQuestAnswerOptions2");
+        deutschQuestAnswerOptions3 = document.getElementById("deutschQuestAnswerOptions3");
 
+        deutschw = (Math.random() * (3 - 1)) + 1;
+        deutschw = Math.round(deutschw);
 
-    function playmusicgame1music() {
-        x = document.getElementById("musicgame1music");
-        x.volume = 0.5;
-        x.play();
-    }
+        do{
+            deutschx = (Math.random() * (10 - 0)) + 0;
+            deutschx = Math.round(deutschx);
+        }while (deutschQuestArrayWahl == deutschx);
 
-    function playmusicgame2music() {
-        x = document.getElementById("musicgame2music");
-        x.volume = 0.5;
-        x.play();
-    }
+        do{
+            deutschy = (Math.random() * (10 - 0)) + 0;
+            deutschy = Math.round(deutschy);
+        }while ((deutschQuestArrayWahl == deutschy)||(deutschx == deutschy));
 
-    function playmusicgame3music() {
-        x = document.getElementById("musicgame3music");
-        x.volume = 0.5;
-        x.play();
-    }
+        if (deutschw==1){
 
-    function playmusicgame4music() {
-        x = document.getElementById("musicgame4music");
-        x.volume = 0.5;
-        x.play();
-    }
+            deutschQuestAnswerOptions1.innerHTML = deutschQuestAnswer;
+            deutschQuestAnswerOptions2.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
+            deutschQuestAnswerOptions3.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
 
-
-
-    hoverstatus = 0;
-
-    notenzusammensetzung = [];
-    notenuserzusammensetzung = [];
-    musicquestcounter = 1;
-    musicquestrightcounter = 0;
-
-    musictime = 1000;
-
-    answerMusicQuestcounter = 0;
-
-    function createMusicQuest() {
-
-        hoverstatus = 1;
-
-        bt1 = 1;
-        bt2 = 2;
-        bt3 = 3;
-        bt4 = 4;
-
-        musictime += 1000;
-
-        musicquestcounter++;
-        i=0;
-
-        musicinterval = setInterval(function () {
-            wahl = (Math.random() * (4 - 1)) + 1;
-            wahl = Math.round(wahl);
-
-            if (wahl==1){
-
-                notenzusammensetzung[i] = bt1;
-
-                m1hover(document.getElementById("mbox1"));
-                playmusicgame1music();
+            deutschQuestAnswerOptions1.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "green";
                 setTimeout(function () {
-                    element = document.getElementById("mbox1");
-                    element.style.backgroundColor = "#ff3300";
-                    element.style.borderRightColor = "#cc2900";
-                    element.style.borderBottomColor = "#cc2900";
-                    element.style.borderLeftColor = "#ff5c33";
-                    element.style.borderTopColor = "#ff5c33";
-
-
-                }, 500);
-
-            }else if (wahl==2){
-
-                notenzusammensetzung[i] = bt2;
-
-                m2hover(document.getElementById("mbox2"));
-                playmusicgame2music();
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
+            deutschQuestAnswerOptions2.onclick = function() {
+                deutschQuestAnswerOptions2.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
                 setTimeout(function () {
-                    element = document.getElementById("mbox2");
-                    element.style.backgroundColor = "dodgerblue";
-                    element.style.borderRightColor = "royalblue";
-                    element.style.borderBottomColor = "royalblue";
-                    element.style.borderLeftColor = "deepskyblue";
-                    element.style.borderTopColor = "deepskyblue";
-
-
-                }, 500);
-
-
-            }else if (wahl==3){
-
-                notenzusammensetzung[i] = bt3;
-
-                m3hover(document.getElementById("mbox3"));
-                playmusicgame3music();
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
+            deutschQuestAnswerOptions3.onclick = function() {
+                deutschQuestAnswerOptions2.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
                 setTimeout(function () {
-                    element = document.getElementById("mbox3");
-                    element.style.backgroundColor = "#009933";
-                    element.style.borderRightColor = "#006622";
-                    element.style.borderBottomColor = "#006622";
-                    element.style.borderLeftColor = "#00cc44";
-                    element.style.borderTopColor = "#00cc44";
-
-
-                }, 500);
-
-            }else if (wahl==4){
-
-                notenzusammensetzung[i] = bt4;
-
-                m4hover(document.getElementById("mbox4"));
-                playmusicgame4music();
-                setTimeout(function () {
-                    element = document.getElementById("mbox4");
-                    element.style.backgroundColor = "#cc00cc";
-                    element.style.borderRightColor = "#990099";
-                    element.style.borderBottomColor = "#990099";
-                    element.style.borderLeftColor = "#ff00ff";
-                    element.style.borderTopColor = "#ff00ff";
-
-
-                }, 500);
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
             }
 
-            i++;
+        }else if (deutschw==2){
 
-        },1000);
+            deutschQuestAnswerOptions1.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
+            deutschQuestAnswerOptions2.innerHTML = deutschQuestAnswer;
+            deutschQuestAnswerOptions3.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
 
-        setTimeout(function () {
-            clearInterval(musicinterval);
-            i = 0;
-            musicquestrightcounter = 0;
-            answerMusicQuestcounter = 0;
+            deutschQuestAnswerOptions2.onclick = function() {
+                deutschQuestAnswerOptions2.style.color = "green";
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
+            deutschQuestAnswerOptions1.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
+            deutschQuestAnswerOptions3.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
 
-            setTimeout(function () {
-                hoverstatus = 0;
-            },800);
+        }else if (deutschw==3){
 
-        }, musictime);
+            deutschQuestAnswerOptions1.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
+            deutschQuestAnswerOptions2.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
+            deutschQuestAnswerOptions3.innerHTML = deutschQuestAnswer;
 
-    }
+            deutschQuestAnswerOptions3.onclick = function() {
+                deutschQuestAnswerOptions3.style.color = "green";
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
+            deutschQuestAnswerOptions1.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions2.style.color = "red";
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
+            deutschQuestAnswerOptions2.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions2.style.color = "red";
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },2000);
+            }
 
-    function answerMusicQuest(userbtn) {
-
-        notenuserzusammensetzung[answerMusicQuestcounter] = userbtn.valueOf();
-
-        if (notenuserzusammensetzung[answerMusicQuestcounter] == notenzusammensetzung[answerMusicQuestcounter]){
-            i++;
-            musicquestrightcounter++;
-            answerMusicQuestcounter++;
-        }else {
-            endmusicgame();
         }
 
-        if (musicquestcounter == musicquestrightcounter){
-            createMusicQuest();
-
-            element = document.getElementById("mbox1");
-            element.style.backgroundColor = "#ff3300";
-            element.style.borderRightColor = "#cc2900";
-            element.style.borderBottomColor = "#cc2900";
-            element.style.borderLeftColor = "#ff5c33";
-            element.style.borderTopColor = "#ff5c33";
-
-            element = document.getElementById("mbox2");
-            element.style.backgroundColor = "dodgerblue";
-            element.style.borderRightColor = "royalblue";
-            element.style.borderBottomColor = "royalblue";
-            element.style.borderLeftColor = "deepskyblue";
-            element.style.borderTopColor = "deepskyblue";
-
-            element = document.getElementById("mbox3");
-            element.style.backgroundColor = "#009933";
-            element.style.borderRightColor = "#006622";
-            element.style.borderBottomColor = "#006622";
-            element.style.borderLeftColor = "#00cc44";
-            element.style.borderTopColor = "#00cc44";
-
-            element = document.getElementById("mbox4");
-            element.style.backgroundColor = "#cc00cc";
-            element.style.borderRightColor = "#990099";
-            element.style.borderBottomColor = "#990099";
-            element.style.borderLeftColor = "#ff00ff";
-            element.style.borderTopColor = "#ff00ff";
-        }
-
     }
-
-    function startmusicgame() {
-        document.getElementById("musicstartbutton").style.display = "none";
-        document.getElementById("musicbereittext").style.display = "none";
-
-        document.getElementById("mbox1").style.display = "block";
-        document.getElementById("mbox2").style.display = "block";
-        document.getElementById("mbox3").style.display = "block";
-        document.getElementById("mbox4").style.display = "block";
-    }
-
-    function endmusicgame() {
-        document.getElementById("musicstartbutton").style.display = "block";
-        document.getElementById("musicbereittext").style.display = "block";
-
-        document.getElementById("mbox1").style.display = "none";
-        document.getElementById("mbox2").style.display = "none";
-        document.getElementById("mbox3").style.display = "none";
-        document.getElementById("mbox4").style.display = "none";
-        musictime = 1000;
-        answerMusicQuestcounter = 0;
-        musicquestcounter = 1;
-        musicquestrightcounter = 0;
-    }
-
-
-    function m1hover(element) {
-            element.style.backgroundColor = "#b30000";
-            element.style.borderRightColor = "#e60000";
-            element.style.borderBottomColor = "#e60000";
-            element.style.borderLeftColor = "#800000";
-            element.style.borderTopColor = "#800000";
-    }
-
-    function m1unhover(element) {
-            element.style.backgroundColor = "#ff3300";
-            element.style.borderRightColor = "#cc2900";
-            element.style.borderBottomColor = "#cc2900";
-            element.style.borderLeftColor = "#ff5c33";
-            element.style.borderTopColor = "#ff5c33";
-    }
-
-    function m2hover(element) {
-            element.style.backgroundColor = "#6666ff";
-            element.style.borderRightColor = "#8080ff";
-            element.style.borderBottomColor = "#8080ff";
-            element.style.borderLeftColor = "#4d4dff";
-            element.style.borderTopColor = "#4d4dff";
-    }
-
-    function m2unhover(element) {
-            element.style.backgroundColor = "dodgerblue";
-            element.style.borderRightColor = "royalblue";
-            element.style.borderBottomColor = "royalblue";
-            element.style.borderLeftColor = "deepskyblue";
-            element.style.borderTopColor = "deepskyblue";
-    }
-
-    function m3hover(element) {
-            element.style.backgroundColor = "#008000";
-            element.style.borderRightColor = "#009900";
-            element.style.borderBottomColor = "#009900";
-            element.style.borderLeftColor = "#004d00";
-            element.style.borderTopColor = "#004d00";
-    }
-
-    function m3unhover(element) {
-            element.style.backgroundColor = "#009933";
-            element.style.borderRightColor = "#006622";
-            element.style.borderBottomColor = "#006622";
-            element.style.borderLeftColor = "#00cc44";
-            element.style.borderTopColor = "#00cc44";
-    }
-
-    function m4hover(element) {
-            element.style.backgroundColor = "#993399";
-            element.style.borderRightColor = "#bf40bf";
-            element.style.borderBottomColor = "#bf40bf";
-            element.style.borderLeftColor = "#732673";
-            element.style.borderTopColor = "#732673";
-    }
-
-    function m4unhover(element) {
-            element.style.backgroundColor = "#cc00cc";
-            element.style.borderRightColor = "#990099";
-            element.style.borderBottomColor = "#990099";
-            element.style.borderLeftColor = "#ff00ff";
-            element.style.borderTopColor = "#ff00ff";
-    }
-
-
-    //----------------------------------------------------------------------------------
-
-    function m1hoverbtn(element) {
-        if (hoverstatus == 0){
-            element.style.backgroundColor = "#b30000";
-            element.style.borderRightColor = "#e60000";
-            element.style.borderBottomColor = "#e60000";
-            element.style.borderLeftColor = "#800000";
-            element.style.borderTopColor = "#800000";
-        }
-    }
-
-    function m1unhoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "#ff3300";
-            element.style.borderRightColor = "#cc2900";
-            element.style.borderBottomColor = "#cc2900";
-            element.style.borderLeftColor = "#ff5c33";
-            element.style.borderTopColor = "#ff5c33";
-        }
-    }
-
-    function m2hoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "#6666ff";
-            element.style.borderRightColor = "#8080ff";
-            element.style.borderBottomColor = "#8080ff";
-            element.style.borderLeftColor = "#4d4dff";
-            element.style.borderTopColor = "#4d4dff";
-        }
-    }
-
-    function m2unhoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "dodgerblue";
-            element.style.borderRightColor = "royalblue";
-            element.style.borderBottomColor = "royalblue";
-            element.style.borderLeftColor = "deepskyblue";
-            element.style.borderTopColor = "deepskyblue";
-        }
-    }
-
-    function m3hoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "#008000";
-            element.style.borderRightColor = "#009900";
-            element.style.borderBottomColor = "#009900";
-            element.style.borderLeftColor = "#004d00";
-            element.style.borderTopColor = "#004d00";
-        }
-    }
-
-    function m3unhoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "#009933";
-            element.style.borderRightColor = "#006622";
-            element.style.borderBottomColor = "#006622";
-            element.style.borderLeftColor = "#00cc44";
-            element.style.borderTopColor = "#00cc44";
-        }
-    }
-
-    function m4hoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "#993399";
-            element.style.borderRightColor = "#bf40bf";
-            element.style.borderBottomColor = "#bf40bf";
-            element.style.borderLeftColor = "#732673";
-            element.style.borderTopColor = "#732673";
-        }
-    }
-
-    function m4unhoverbtn(element) {
-        if (hoverstatus == 0) {
-            element.style.backgroundColor = "#cc00cc";
-            element.style.borderRightColor = "#990099";
-            element.style.borderBottomColor = "#990099";
-            element.style.borderLeftColor = "#ff00ff";
-            element.style.borderTopColor = "#ff00ff";
-        }
-    }
-
-
 
 </script>
 
