@@ -20,14 +20,15 @@ function createItem(id, itemname, itemimage, cost, bought, wearing) {
         element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;' class='MouseHover'> Kaufen </button>";
     } else {
         element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #2c25aa; font-size: 2em;' class='MouseHover'> Gekauft </button>";
+        //Angezogen button
+        if (!wearing) {
+            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover'>Anziehen</button>";
+        } else {
+            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #1f20ff; font-size: 2em;' class='MouseHover'>Angezogen</button>";
+        }
     }
 
-    //Angezogen button
-    if (!wearing) {
-        element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover'>Anziehen</button>";
-    } else {
-        element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #1f20ff; font-size: 2em;' class='MouseHover'>Angezogen</button>";
-    }
+
 
     //Kosten des Items
     element += "<span style='margin-left: 14.5em; font-size: 3em; position: absolute; margin-top: 1.6em'>" + cost + " Coins</span>";
