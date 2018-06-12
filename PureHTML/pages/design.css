@@ -339,6 +339,13 @@ body{
     z-index: 10;
 }
 
+.deutschTxt{
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    z-index: 10;
+}
+
 .infoTxt{
     position: absolute;
     top: 70%;
@@ -382,7 +389,13 @@ body{
 
 .musicBtn{
     position: absolute;
-    top: 44.5%;
+    top: 44%;
+    left: 70%;
+}
+
+.deutschBtn{
+    position: absolute;
+    top: 54.5%;
     left: 70%;
 }
 
@@ -415,7 +428,7 @@ nav{
     top: 0;
     width: 15%;
     height: 100%;
-    z-index: 9;
+    z-index: 10;
 }
 
 .mathebox{
@@ -648,6 +661,49 @@ nav{
     font-size: 7em;
     font-family: "Arial Black";
     z-index: 501;
+}
+
+
+
+.deutschbox{
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    z-index: 500;
+}
+
+.deutschX{
+    position: absolute;
+    left: 89%;
+    top: 18%;
+    color: grey;
+    z-index: 502;
+}
+
+.deutschheader{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    font-size: 2em;
+    font-family: "Arial Black";
+}
+
+#deutschQuest{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    font-size: 3em;
+    color: black;
+    font-family: "Arial Black";
+}
+
+#deutschQuestAnswerOptions{
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    font-size: 2.5em;
+    color: black;
+    font-family: "Arial Black";
 }
 
 
@@ -1175,45 +1231,4 @@ img{
     89.99% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 999.972, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 999.972, 0, 0, 1); }
     98.96% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 999.999, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 999.999, 0, 0, 1); }
     100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 1000, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 1000, 0, 0, 1); }
-}
-
-
-
-.blobanimationyeahskrt {
-    -webkit-animation: pulse 6000ms infinite;
-    animation: pulse 6000ms infinite;
-}
-
-@-webkit-keyframes pulse {
-    from {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-
-    50% {
-        -webkit-transform: scale3d(1.05, 1.05, 1.05);
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-
-    to {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-}
-
-@keyframes pulse {
-    from {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-
-    50% {
-        -webkit-transform: scale3d(1.05, 1.05, 1.05);
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-
-    to {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
 }

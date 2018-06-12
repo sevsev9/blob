@@ -1,8 +1,4 @@
-graphics: -> kaser, frühwirth
 
-+ caps/mützen/FEDORA (~1 stk)
-+ accesoires (~1 stk)
-+ merkmale (~1 stk)
 + PR-folder (ungefähre vorlage in Pics->PR-Folder sketch) -> Bernd
 
 development: -> mairinger

@@ -1,7 +1,7 @@
 <?php
     require_once "../php/session.php";
-    error_reporting(0);
-    //ini_set('display_errors',1);
+    //error_reporting(0);
+    ini_set('display_errors',1);
 ?>
 <!doctype html>
 <html lang="">
@@ -99,6 +99,9 @@
             <span class="musicTxt text MouseHover" onclick="openNav(), musicboxopen(), pausebackgroundmusic(), boxopenmusic()">Musik</span><img src="../img/music.png" width="25%" class="musicBtn">
         </li>
         <li>
+            <span class="deutschTxt text MouseHover" onclick="openNav(), deutschboxopen(), boxopenmusic(), createDeutschQuest()">Deutsch</span><img src="../img/deutsch.png" width="25%" class="deutschBtn">
+        </li>
+        <li>
             <span class="infoTxt text MouseHover" onclick="openNav(), infoboxopen(), boxopenmusic()">Info</span><img src="../img/info.png" width="25%" class="infoBtn">
         </li>
         <li>
@@ -114,7 +117,7 @@
 
 <!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
-    <div class="name fadeoutdiv"><?= $_SESSION['blob_name']?></div>
+    <div class="name fadeoutdiv"><?= $_SESSION['blob']['name']?></div>
     <div class="xp"><?= $_SESSION['curr_xp']?>/<!-- javascript calculation -->xp</div>
 </div>
 <div class="coins"><?= $_SESSION['coins']?> Coins</div>
@@ -168,6 +171,26 @@
     <div id="mbox4" class="MouseHover" onmouseover="m4hoverbtn(this)" onmouseout="m4unhoverbtn(this)" onclick="answerMusicQuest(4), playmusicgame4music()"></div>
     <div id="musicbereittext">Bereit?</div>
     <button id="musicstartbutton" class="MouseHover" onclick="createMusicQuest(), startmusicgame()">Start</button>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------deutschbox-->
+
+<div id="deutschboxfull" class="fadeindiv">
+    <h1 class="deutschX MouseHover" style="z-index: 501" onclick="closedeutsch(), boxoutmusic()">X</h1>
+    <div class="deutschbox">
+        <img src="../img/deutschBox.png" width="90%"/>
+        <div class="deutschheader">Finde die fehlende Steigerungsform:</div>
+        <div id="deutschQuest"></div>
+        <div id="deutschQuestAnswerOptions">
+            <span id="deutschQuestAnswerOptions1" class="MouseHover"></span>
+            <br>
+            <span id="deutschQuestAnswerOptions2" class="MouseHover"></span>
+            <br>
+            <span id="deutschQuestAnswerOptions3" class="MouseHover"></span>
+        </div>
+    </div>
 </div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -335,7 +358,7 @@
 <!--Shop Item Script-->
 <?php
 //Create Javascript Item Array
-$servername = "localhost";
+$servername = "172.17.0.5";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
@@ -363,7 +386,7 @@ while($row = mysqli_fetch_array($result)){
         if ($rows[$ctr]['item_class'] == "eyes") {
             echo "createItem(document.getElementById('eyes'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -374,7 +397,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "clothing") {
             echo "createItem(document.getElementById('clothing'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -385,7 +408,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "color") {
             echo "createItem(document.getElementById('color'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -396,7 +419,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "costume") {
             echo "createItem(document.getElementById('costume'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            ''/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -407,7 +430,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "hat") {
             echo "createItem(document.getElementById('hat'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -418,7 +441,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "mouth") {
             echo "createItem(document.getElementById('mouth'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -429,7 +452,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "accessoires") {
             echo "createItem(document.getElementById('accessoires'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -440,7 +463,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "merkmale") {
             echo "createItem(document.getElementById('merkmale'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -451,7 +474,7 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "wallpapers") {
             echo "createItem(document.getElementById('wallpapers'),
                             '".$rows[$ctr]['name']."',
-                            '".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
                             '".$rows[$ctr]['bought']."',
                             '".$rows[$ctr]['wearing']."'
@@ -465,19 +488,6 @@ while($row = mysqli_fetch_array($result)){
 }
 //echo "<p>".json_encode($rows)."</p>";
 //echo "<p>".json_encode($rows[0]["id"])."</p>";
-
-echo  "
-<script type='text/javascript'>
-//Item Name Array
-    var names = [];
-//Item Price Array
-    var prices = [];
-//Item Image Path Array
-    var imgpaths = [];
-    
-    
-</script>
-    ";
 ?>
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -577,6 +587,8 @@ echo  "
         infoboxfull.style.display = "none";
         settingsboxfull = document.getElementById("settingsboxfull");
         settingsboxfull.style.display = "none";
+        deutschboxfull = document.getElementById("deutschboxfull");
+        deutschboxfull.style.display = "none";
 
         document.getElementById("pb").style.display = "block";
         document.getElementById("ts").style.display = "block";
@@ -696,6 +708,29 @@ echo  "
     function closemusic(){
         $(document).ready(function(){
             $("#musicboxfull").css({zIndex:10}).fadeOut(1000);
+            $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
+            $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
+        });
+    }
+
+    //Deutschbox
+    function deutschboxopen() {
+        $(document).ready(function(){
+            $("nav").animate({left: '-9.8%'}, 1000);
+            $('.fadeoutdiv').css({zIndex:10}).fadeOut(1000);
+            $('.settingsBtn').css({zIndex:10}).fadeOut(1000);
+            $('#deutschboxfull').css({zIndex:9}).fadeIn(1000);
+            navCount = 1;
+        });
+
+        document.getElementById("navopenicon").classList.remove("change");
+
+    }
+
+    //Deutsch schließen
+    function closedeutsch(){
+        $(document).ready(function(){
+            $("#deutschboxfull").css({zIndex:10}).fadeOut(1000);
             $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             $('.settingsBtn').css({zIndex:9}).fadeIn(1000);
         });
@@ -833,6 +868,7 @@ echo  "
                 $('#helpboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#infoboxfull').css({zIndex:10}).fadeOut(1000);
                 $('#settingsboxfull').css({zIndex:10}).fadeOut(1000);
+                $('#deutschboxfull').css({zIndex:10}).fadeOut(1000);
                 $('.fadeoutdiv').css({zIndex:9}).fadeIn(1000);
             });
             navCount=0;
@@ -1593,6 +1629,216 @@ echo  "
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
+<!----------------------------------------------------------------------------------------------------------------------deutschsystem-->
+
+<script>
+
+    deutschQuestAnswer = "";
+    deutschQuestWahl = 0;
+    deutschQuestArrayWahl = 0;
+    deutschQuestNumber = 0;
+
+    deutschar0 = ["klein", "kleiner", "am kleinsten"];
+    deutschar1 = ["gut", "besser", "am besten"];
+    deutschar2 = ["hoch", "höher", "am höchsten"];
+    deutschar3 = ["groß", "größer", "am größten"];
+    deutschar4 = ["schnell", "schneller", "am schnellsten"];
+    deutschar5 = ["dick", "dicker", "am dicksten"];
+    deutschar6 = ["spitz", "spitzer", "am spitzesten"];
+    deutschar7 = ["freundlich", "freundlicher", "am freundlichsten"];
+    deutschar8 = ["laut", "lauter", "am lautesten"];
+    deutschar9 = ["leise", "leiser", "am leisesten"];
+    deutschar10 = ["brav", "braver", "am bravsten"];
+
+    deutscharrays = [deutschar0,
+        deutschar1,
+        deutschar2,
+        deutschar3,
+        deutschar4,
+        deutschar5,
+        deutschar6,
+        deutschar7,
+        deutschar8,
+        deutschar9,
+        deutschar10];
+
+    function createDeutschQuest() {
+
+        deutschQuestWahl = (Math.random() * (3 - 1)) + 1;
+        deutschQuestWahl = Math.round(deutschQuestWahl);
+
+        deutschQuestArrayWahl = (Math.random() * (10 - 0)) + 0;
+        deutschQuestArrayWahl = Math.round(deutschQuestArrayWahl);
+
+        deutschQuest = document.getElementById("deutschQuest");
+
+        if (deutschQuestWahl==1){
+
+            deutschQuest.innerHTML = "?" + " - " + deutscharrays[deutschQuestArrayWahl][1] + " - " + deutscharrays[deutschQuestArrayWahl][2];
+            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][0];
+            deutschQuestNumber = 0;
+
+        }else if (deutschQuestWahl==2){
+
+            deutschQuest.innerHTML = deutscharrays[deutschQuestArrayWahl][0] + " - " + "?" + " - " + deutscharrays[deutschQuestArrayWahl][2];
+            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][1];
+            deutschQuestNumber = 1;
+
+        }else if (deutschQuestWahl==3){
+
+            deutschQuest.innerHTML = deutscharrays[deutschQuestArrayWahl][0] + " - " + deutscharrays[deutschQuestArrayWahl][1] + " - " + "?";
+            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][2];
+            deutschQuestNumber = 2;
+
+        }
+
+        createDeutschAnswerOptions();
+    }
+
+    function createDeutschAnswerOptions() {
+
+        deutschQuestAnswerOptions1 = document.getElementById("deutschQuestAnswerOptions1");
+        deutschQuestAnswerOptions2 = document.getElementById("deutschQuestAnswerOptions2");
+        deutschQuestAnswerOptions3 = document.getElementById("deutschQuestAnswerOptions3");
+
+        deutschw = (Math.random() * (3 - 1)) + 1;
+        deutschw = Math.round(deutschw);
+
+        do{
+            deutschx = (Math.random() * (10 - 0)) + 0;
+            deutschx = Math.round(deutschx);
+        }while (deutschQuestArrayWahl == deutschx);
+
+        do{
+            deutschy = (Math.random() * (10 - 0)) + 0;
+            deutschy = Math.round(deutschy);
+        }while ((deutschQuestArrayWahl == deutschy)||(deutschx == deutschy));
+
+        if (deutschw==1){
+
+            deutschQuestAnswerOptions1.innerHTML = deutschQuestAnswer;
+            deutschQuestAnswerOptions2.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
+            deutschQuestAnswerOptions3.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
+
+            deutschQuestAnswerOptions1.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "green";
+                correctmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+            deutschQuestAnswerOptions2.onclick = function() {
+                deutschQuestAnswerOptions2.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
+                wrongmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+            deutschQuestAnswerOptions3.onclick = function() {
+                deutschQuestAnswerOptions2.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
+                wrongmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+
+        }else if (deutschw==2){
+
+            deutschQuestAnswerOptions1.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
+            deutschQuestAnswerOptions2.innerHTML = deutschQuestAnswer;
+            deutschQuestAnswerOptions3.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
+
+            deutschQuestAnswerOptions2.onclick = function() {
+                deutschQuestAnswerOptions2.style.color = "green";
+                correctmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+            deutschQuestAnswerOptions1.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
+                wrongmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+            deutschQuestAnswerOptions3.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions3.style.color = "red";
+                wrongmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+
+        }else if (deutschw==3){
+
+            deutschQuestAnswerOptions1.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
+            deutschQuestAnswerOptions2.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
+            deutschQuestAnswerOptions3.innerHTML = deutschQuestAnswer;
+
+            deutschQuestAnswerOptions3.onclick = function() {
+                deutschQuestAnswerOptions3.style.color = "green";
+                correctmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+            deutschQuestAnswerOptions1.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions2.style.color = "red";
+                wrongmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+            deutschQuestAnswerOptions2.onclick = function() {
+                deutschQuestAnswerOptions1.style.color = "red";
+                deutschQuestAnswerOptions2.style.color = "red";
+                wrongmusic();
+                setTimeout(function () {
+                    deutschQuestAnswerOptions1.style.color = "black";
+                    deutschQuestAnswerOptions2.style.color = "black";
+                    deutschQuestAnswerOptions3.style.color = "black";
+                    createDeutschQuest();
+                },1000);
+            }
+
+        }
+
+    }
+
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 <!----------------------------------------------------------------------------------------------------------------------blobbounce-->
 
 <script>
@@ -1609,15 +1855,6 @@ echo  "
 
     blobhat.addEventListener("click", function(e){
         e.preventDefault;
-
-        blobcolor.classList.remove("blobanimationyeahskrt");
-        blobmerkmale.classList.remove("blobanimationyeahskrt");
-        blobclothing.classList.remove("blobanimationyeahskrt");
-        blobeyes.classList.remove("blobanimationyeahskrt");
-        blobmouth.classList.remove("blobanimationyeahskrt");
-        blobaccessoires.classList.remove("blobanimationyeahskrt");
-        blobcostume.classList.remove("blobanimationyeahskrt");
-        blobhat.classList.remove("blobanimationyeahskrt");
 
         blobcolor.classList.remove("animation-target");
         blobmerkmale.classList.remove("animation-target");
@@ -1646,27 +1883,6 @@ echo  "
         blobcostume.classList.add("animation-target");
         blobhat.classList.add("animation-target");
 
-        setTimeout(function () {
-            blobcolor.classList.remove("animation-target");
-            blobmerkmale.classList.remove("animation-target");
-            blobclothing.classList.remove("animation-target");
-            blobeyes.classList.remove("animation-target");
-            blobmouth.classList.remove("animation-target");
-            blobaccessoires.classList.remove("animation-target");
-            blobcostume.classList.remove("animation-target");
-            blobhat.classList.remove("animation-target");
-
-            setTimeout(function () {
-                blobcolor.classList.add("blobanimationyeahskrt");
-                blobmerkmale.classList.add("blobanimationyeahskrt");
-                blobclothing.classList.add("blobanimationyeahskrt");
-                blobeyes.classList.add("blobanimationyeahskrt");
-                blobmouth.classList.add("blobanimationyeahskrt");
-                blobaccessoires.classList.add("blobanimationyeahskrt");
-                blobcostume.classList.add("blobanimationyeahskrt");
-                blobhat.classList.add("blobanimationyeahskrt");
-            },500);
-        }, 2000);
     }, false);
 
 
