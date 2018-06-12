@@ -61,14 +61,14 @@
 
 <div class="fadeoutdiv" onclick="blobmusic()">
     <div class="blobbox">
-        <img src="../img/color/<?php echo $_SESSION["blob"]["color"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobcolor" style="z-index: 11">
-        <img src="../img/merkmale/<?php echo $_SESSION["blob"]["merkmale"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobmerkmale" style="z-index: 12">
-        <img src="../img/mouth/<?php echo $_SESSION["blob"]["mouth"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobmouth" style="z-index: 13">
-        <img src="../img/eyes/<?php echo $_SESSION["blob"]["eyes"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobeyes" style="z-index: 14">
-        <img src="../img/clothing/<?php echo $_SESSION["blob"]["clothing"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobclothing" style="z-index: 15">
-        <img src="../img/accessoires/<?php echo $_SESSION["blob"]["accessoires"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobaccessoires" style="z-index: 16">
-        <img src="../img/costume/<?php echo $_SESSION["blob"]["costume"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobcostume" style="z-index: 17">
-        <img src="../img/hat/<?php echo $_SESSION["blob"]["hat"].".png"?>" class="MouseHover blobitemsinhome blobanimationyeahskrt" id="blobhat" style="z-index: 18">
+        <img src="../img/color/<?php echo $_SESSION["blob"]["color"].".png"?>" class="MouseHover blobitemsinhome" id="blobcolor" style="z-index: 11">
+        <img src="../img/merkmale/<?php echo $_SESSION["blob"]["merkmale"].".png"?>" class="MouseHover blobitemsinhome" id="blobmerkmale" style="z-index: 12">
+        <img src="../img/mouth/<?php echo $_SESSION["blob"]["mouth"].".png"?>" class="MouseHover blobitemsinhome" id="blobmouth" style="z-index: 13">
+        <img src="../img/eyes/<?php echo $_SESSION["blob"]["eyes"].".png"?>" class="MouseHover blobitemsinhome" id="blobeyes" style="z-index: 14">
+        <img src="../img/clothing/<?php echo $_SESSION["blob"]["clothing"].".png"?>" class="MouseHover blobitemsinhome" id="blobclothing" style="z-index: 15">
+        <img src="../img/accessoires/<?php echo $_SESSION["blob"]["accessoires"].".png"?>" class="MouseHover blobitemsinhome" id="blobaccessoires" style="z-index: 16">
+        <img src="../img/costume/<?php echo $_SESSION["blob"]["costume"].".png"?>" class="MouseHover blobitemsinhome" id="blobcostume" style="z-index: 17">
+        <img src="../img/hat/<?php echo $_SESSION["blob"]["hat"].".png"?>" class="MouseHover blobitemsinhome" id="blobhat" style="z-index: 18">
     </div>
 </div>
 
