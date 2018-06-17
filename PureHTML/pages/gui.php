@@ -120,7 +120,7 @@
     <div class="name fadeoutdiv"><?= $_SESSION['blob']['name']?></div>
     <div class="xp"><?= $_SESSION['curr_xp']?>/<!-- javascript calculation -->xp</div>
 </div>
-<div class="coins"><?= $_SESSION['coins']?> Coins</div>
+<div class="coins" id="coin_display"><?= $_SESSION['coins']?> Coins</div>
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!----------------------------------------------------------------------------------------------------------------------mathebox-->
@@ -377,6 +377,22 @@ $ctr = 0;
 while($row = mysqli_fetch_array($result)){
     array_push($rows, $row);
 
+    $wearing = "false";
+    $bought = "false";
+
+    if (    strpos($rows[$ctr]['path'],$_SESSION['blob']['hat']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['eyes']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['clothing']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['color']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['costume']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['mouth']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['accessoires']) ||
+            strpos($rows[$ctr]['path'],$_SESSION['blob']['merkmale'])
+    ) {
+        $wearing = "true";
+        $bought = "true";
+    }
+
     echo "<script type='text/javascript'>";
 
     //createItem(id, itemname, itemimage, cost, bought, wearing)
@@ -388,8 +404,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Kleidung
@@ -399,8 +415,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Farbe
@@ -410,8 +426,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Kostüm
@@ -421,8 +437,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             ''/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Hut
@@ -432,8 +448,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Mund
@@ -443,8 +459,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Accessoirs
@@ -454,8 +470,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Merkmale
@@ -465,8 +481,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 //Wallpaper
@@ -476,8 +492,8 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['cost']."',
-                            '".$rows[$ctr]['bought']."',
-                            '".$rows[$ctr]['wearing']."'
+                            '"."Boolean(".$bought.")"."',
+                            '"."Boolean(".$wearing.")"."'
                );";
         }
 
@@ -561,6 +577,51 @@ while($row = mysqli_fetch_array($result)){
     function unhover(element) {
         element.setAttribute('src', '../img/Game_Start_Button.png');
         document.getElementById("startgameshadow").style.opacity = 0.5;
+    }
+</script>
+
+
+<script>
+    function buy(itemname,cost) {
+        var coins=<?php echo $_SESSION['coins']?>;
+
+        if (!coins) {
+            coins = 500;
+        }
+
+        if(cost<=coins) {
+            coins-=cost;
+            var doc=document.getElementById("coin_display");
+            doc.innerHTML = ""+coins;
+            $.ajax({
+               type: "POST"
+               url: "func.php"
+                data: { coins: coins }
+            }).done(function () {
+              alert("Bought item: "+itemname)
+            });
+
+            doc=document.getElementById("btn_buy-"+itemname).style.display= 'none';
+        } else {
+            alert("Not enough coins!");
+        }
+    }
+    function wear(itemimage) {
+        if (itemimage.includes("color")) {
+            document.getElementById("color").setAttribute("src",itemimage)
+        }else if (itemimage.includes("merkmale")) {
+            document.getElementById("merkmale").setAttribute("src",itemimage)
+        }else if (itemimage.includes("mouth")) {
+            document.getElementById("mouth").setAttribute("src",itemimage)
+        }else if (itemimage.includes("clothing")) {
+            document.getElementById("clothing").setAttribute("src",itemimage)
+        }else if (itemimage.includes("accessoires")) {
+            document.getElementById("accessoires").setAttribute("src",itemimage)
+        }else if (itemimage.includes("costume")) {
+            document.getElementById("costume").setAttribute("src",itemimage)
+        }else if (itemimage.includes("hat")) {
+            document.getElementById("hat").setAttribute("src",itemimage)
+        }
     }
 </script>
 

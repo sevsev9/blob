@@ -1,4 +1,4 @@
-
+""
 
 
 //Usage:
@@ -16,15 +16,16 @@ function createItem(id, itemname, itemimage, cost, bought, wearing) {
     element += "<span style='margin-left: 2em; margin-top: 1em; font-size: 2em; position: absolute'>" + itemname + "</span>";
 
     //Kaufen Button
+
     if (!bought) {
-        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;' class='MouseHover'> Kaufen </button>";
+        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: limegreen; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +","+ itemname +")'> Kaufen </button>";
     } else {
-        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #2c25aa; font-size: 2em;' class='MouseHover'> Gekauft </button>";
+        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #2c25aa; font-size: 2em;' class='MouseHover' id='btn_bought-"+ itemname +"'> Gekauft </button>";
         //Angezogen button
         if (!wearing) {
-            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover'>Anziehen</button>";
+            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover' id='btn_wear-"+ itemname +"' onclick='wear(itemimage)' >Anziehen</button>";
         } else {
-            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #1f20ff; font-size: 2em;' class='MouseHover'>Angezogen</button>";
+            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #1f20ff; font-size: 2em;' class='MouseHover' id='btn_wearing-"+ itemname +"'>Angezogen</button>";
         }
     }
 
