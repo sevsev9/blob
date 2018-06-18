@@ -2,7 +2,7 @@
 
 require_once "session.php";
 
-$servername = "172.17.0.5";
+$servername = "172.17.0.3";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
@@ -10,9 +10,7 @@ $dbpassw = "Blob_256!";
 //error_reporting(0);
 ini_set('display_errors',1);
 
-
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-
     if($_SESSION['login_user'] == null || $_SESSION['login_user'] == '') {
         $db = mysqli_connect($servername, $dbuname, $dbpassw, $dbname);
 
@@ -27,7 +25,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $pswlen = strlen($psw);
 
         $sql = "SELECT * FROM users WHERE (username = '$umail' AND password ='$psw') OR (email = '$umail' AND password = '$psw')";
-
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -96,6 +93,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['blob']['merkmale'] = "notfound";
             } else {$_SESSION['blob']['merkmale'] = $row["merkmale"];}
 
+            if (    $row['wallpapers'] == "") {
+                $_SESSION['blob']['wallpapers'] = "notfound";
+            } else {$_SESSION['blob']['wallpapers'] = $row["wallpapers"];}
+
             //Debug Purpose
             echo "<table>
                         <tr>
@@ -154,6 +155,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <td>Merkmale</td>
                             <td>".$_SESSION['blob']["merkmale"]."</td>
                         </tr>
+                        <tr>
+                            <td>Wallpaper</td>
+                            <td>".$_SESSION['blob']["wallpapers"]."</td>
+                        </tr>
                       </table>";
 
                 $db->close();
@@ -178,7 +183,7 @@ function errorAlert($message, $nr) {
                       return new Promise((resolve) => setTimeout(resolve, time));
                     }
                     
-                    sleep(0).then(() => {
+                    sleep(20000).then(() => {
                         window.location.replace(\"$paths[$nr]\");
                     });                            
                 </script>";
