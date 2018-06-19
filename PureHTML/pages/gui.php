@@ -395,7 +395,7 @@ while($row = mysqli_fetch_array($result)){
 
     echo "<script type='text/javascript'>";
 
-    //createItem(id, itemname, itemimage, cost, bought, wearing)
+    //createItem(id, itemname, itemimage, price, bought, wearing)
 //Augen
     //document.getElementById('eyes')
     while ($rows[$ctr] != null){
@@ -403,7 +403,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('eyes'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -414,7 +414,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('clothing'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -425,7 +425,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('color'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -436,7 +436,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('costume'),
                             '".$rows[$ctr]['name']."',
                             ''/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -447,7 +447,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('hat'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -458,7 +458,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('mouth'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -469,7 +469,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('accessoires'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -480,7 +480,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('merkmale'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -491,7 +491,7 @@ while($row = mysqli_fetch_array($result)){
             echo "createItem(document.getElementById('wallpapers'),
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
-                            '".$rows[$ctr]['cost']."',
+                            '".$rows[$ctr]['price']."',
                             '"."Boolean(".$bought.")"."',
                             '"."Boolean(".$wearing.")"."'
                );";
@@ -582,15 +582,15 @@ while($row = mysqli_fetch_array($result)){
 
 
 <script>
-    function buy(itemname,cost) {
+    function buy(itemname,price) {
         var coins=<?php echo $_SESSION['coins']?>;
 
         if (!coins) {
             coins = 500;
         }
 
-        if(cost<=coins) {
-            coins-=cost;
+        if(price<=coins) {
+            coins-=price;
             var doc=document.getElementById("coin_display");
             doc.innerHTML = ""+coins;
             $.ajax({
