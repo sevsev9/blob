@@ -26,6 +26,49 @@
     <script type="text/javascript" src="../js/fscreen.js" ></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script src="../js/items.js"></script>
+    <script type="text/javascript">
+        function buy(price,itemname,coins) {
+            if (!coins) {
+                coins = 500;
+            }
+
+            if(price<=coins) {
+                coins-=price;
+                var doc=document.getElementById("coin_display");
+                doc.innerHTML = ""+coins;
+                $.ajax({
+                    type: "POST",
+                    url: "../php/func.php",
+                    data: { coins: coins }
+                }).done(function () {
+                    alert("Bought item: "+itemname)
+                });
+
+                doc=document.getElementById("btn_buy-"+itemname).style.display= 'none';
+            } else {
+                alert("Not enough coins!");
+            }
+        }
+
+        function wear(itemimage) {
+            if (itemimage.includes("color")) {
+                document.getElementById("color").setAttribute("src",itemimage)
+            }else if (itemimage.includes("merkmale")) {
+                document.getElementById("merkmale").setAttribute("src",itemimage)
+            }else if (itemimage.includes("mouth")) {
+                document.getElementById("mouth").setAttribute("src",itemimage)
+            }else if (itemimage.includes("clothing")) {
+                document.getElementById("clothing").setAttribute("src",itemimage)
+            }else if (itemimage.includes("accessoires")) {
+                document.getElementById("accessoires").setAttribute("src",itemimage)
+            }else if (itemimage.includes("costume")) {
+                document.getElementById("costume").setAttribute("src",itemimage)
+            }else if (itemimage.includes("hat")) {
+                document.getElementById("hat").setAttribute("src",itemimage)
+            }
+        }
+    </script>
+
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -300,7 +343,7 @@
         <button style="top: 56%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(6), openTab(event, 'accessoires')"><img src="../img/standard/accessoires_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 5%; width: 90%;"></button>
         <button style="top: 70%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(7), openTab(event, 'hat')"><img src="../img/standard/hat_standard.png" class="MouseHover" id="tabicon" style="top: 15%; left: 5%; width: 90%;"></button>
         <button style="top: 84%" class="tabmid tablinks other MouseHover" onclick="shoptabmusic(8), openTab(event, 'costume')"><img src="../img/standard/costume_standard.png" class="MouseHover" id="tabicon" style="top: 13%; left: 5%; width: 90%;"></button>
-        <button style="top: 98%" id="tabdown" class="tablinks other MouseHover" onclick="shoptabmusic(9), openTab(event, 'wallpaper')"><img src="../img/standard/background_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 0%; width: 100%; user-select: none;"></button>
+        <button style="top: 98%" id="tabdown" class="tablinks other MouseHover" onclick="shoptabmusic(9), openTab(event, 'wallpapers')"><img src="../img/standard/background_standard.png" class="MouseHover" id="tabicon" style="top: 25%; left: 0%; width: 100%; user-select: none;"></button>
     </div>
 
 
@@ -349,7 +392,7 @@
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!----------------------------------------------------------------------------------------------------------------------WALLPAPER-->
-    <div class="shopinhalt" id="wallpaper">
+    <div class="shopinhalt" id="wallpapers">
     </div>
     <!--------------------------------------------------------------------------------------------------------------------------->
 
@@ -380,18 +423,21 @@ while($row = mysqli_fetch_array($result)){
     $wearing = "false";
     $bought = "false";
 
-    if (    strpos($rows[$ctr]['path'],$_SESSION['blob']['hat']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['eyes']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['clothing']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['color']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['costume']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['mouth']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['accessoires']) ||
-            strpos($rows[$ctr]['path'],$_SESSION['blob']['merkmale'])
+    if (    (strpos($rows[$ctr]['path'],$_SESSION['blob']["hat"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["eyes"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["clothing"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["color"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["costume"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["mouth"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["accessoires"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["merkmale"]) !== false) ||
+            (strpos($rows[$ctr]['path'],$_SESSION['blob']["wallpapers"]) !== false)
     ) {
         $wearing = "true";
         $bought = "true";
     }
+
+    echo "Row:    ".$rows[$ctr]['path']."\nSession: ".$_SESSION['blob']["hat"]."\nwearing: ".$wearing."\nBought: ".$bought;
 
     echo "<script type='text/javascript'>";
 
@@ -404,8 +450,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Kleidung
@@ -415,8 +462,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Farbe
@@ -426,8 +474,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Kostüm
@@ -435,10 +484,11 @@ while($row = mysqli_fetch_array($result)){
         elseif ($rows[$ctr]['item_class'] == "costume") {
             echo "createItem(document.getElementById('costume'),
                             '".$rows[$ctr]['name']."',
-                            ''/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
+                            '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Hut
@@ -448,8 +498,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Mund
@@ -459,8 +510,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Accessoirs
@@ -470,8 +522,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Merkmale
@@ -481,8 +534,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 //Wallpaper
@@ -492,8 +546,9 @@ while($row = mysqli_fetch_array($result)){
                             '".$rows[$ctr]['name']."',
                             '/img/".$rows[$ctr]['item_class']."/".$rows[$ctr]['path']."',
                             '".$rows[$ctr]['price']."',
-                            '"."Boolean(".$bought.")"."',
-                            '"."Boolean(".$wearing.")"."'
+                            "."Boolean(".$bought.")".",
+                            "."Boolean(".$wearing.")".",
+                            ".$_SESSION['coins']."
                );";
         }
 
@@ -577,51 +632,6 @@ while($row = mysqli_fetch_array($result)){
     function unhover(element) {
         element.setAttribute('src', '../img/Game_Start_Button.png');
         document.getElementById("startgameshadow").style.opacity = 0.5;
-    }
-</script>
-
-
-<script>
-    function buy(itemname,price) {
-        var coins=<?php echo $_SESSION['coins']?>;
-
-        if (!coins) {
-            coins = 500;
-        }
-
-        if(price<=coins) {
-            coins-=price;
-            var doc=document.getElementById("coin_display");
-            doc.innerHTML = ""+coins;
-            $.ajax({
-               type: "POST"
-               url: "func.php"
-                data: { coins: coins }
-            }).done(function () {
-              alert("Bought item: "+itemname)
-            });
-
-            doc=document.getElementById("btn_buy-"+itemname).style.display= 'none';
-        } else {
-            alert("Not enough coins!");
-        }
-    }
-    function wear(itemimage) {
-        if (itemimage.includes("color")) {
-            document.getElementById("color").setAttribute("src",itemimage)
-        }else if (itemimage.includes("merkmale")) {
-            document.getElementById("merkmale").setAttribute("src",itemimage)
-        }else if (itemimage.includes("mouth")) {
-            document.getElementById("mouth").setAttribute("src",itemimage)
-        }else if (itemimage.includes("clothing")) {
-            document.getElementById("clothing").setAttribute("src",itemimage)
-        }else if (itemimage.includes("accessoires")) {
-            document.getElementById("accessoires").setAttribute("src",itemimage)
-        }else if (itemimage.includes("costume")) {
-            document.getElementById("costume").setAttribute("src",itemimage)
-        }else if (itemimage.includes("hat")) {
-            document.getElementById("hat").setAttribute("src",itemimage)
-        }
     }
 </script>
 

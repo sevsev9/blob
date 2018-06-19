@@ -2,7 +2,7 @@
 
 require_once "session.php";
 
-$servername = "172.17.0.3";
+$servername = "172.17.0.5";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
@@ -183,7 +183,7 @@ function errorAlert($message, $nr) {
                       return new Promise((resolve) => setTimeout(resolve, time));
                     }
                     
-                    sleep(20000).then(() => {
+                    sleep(0).then(() => {
                         window.location.replace(\"$paths[$nr]\");
                     });                            
                 </script>";

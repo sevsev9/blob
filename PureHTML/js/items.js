@@ -9,7 +9,7 @@
 //  * bought - boolean
 //  * wearing - boolean
 
-function createItem(id, itemname, itemimage, cost, bought, wearing) {
+function createItem(id, itemname, itemimage, cost, bought, wearing,coins) {
 
     var element = "<div class='shopinhalt_elem'>";
 
@@ -18,7 +18,7 @@ function createItem(id, itemname, itemimage, cost, bought, wearing) {
     //Kaufen Button
 
     if (!bought) {
-        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #cdc600; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +","+ itemname +")'> Kaufen </button>";
+        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #cdc600; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +",\""+ itemname +"\"," + coins +")'> Kaufen </button>";
     } else {
         element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_bought-"+ itemname +"'> Gekauft </button>";
         //Angezogen button
