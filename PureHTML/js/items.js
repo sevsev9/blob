@@ -18,14 +18,22 @@ function createItem(id, itemname, itemimage, cost, bought, wearing,coins) {
     //Kaufen Button
 
     if (!bought) {
-        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #cdc600; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +",\""+ itemname +"\"," + coins +")'> Kaufen </button>";
+        element += "<button style='display: block;margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #cdc600; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +",\""+ itemname +"\"," + coins +")'> Kaufen </button>";
+        element += "<button style='display: none;margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_bought-"+ itemname +"'>                               Gekauft </button>";
+        element += "<button style='display: none;margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover' id='btn_wear-"+ itemname +"' onclick='wear(itemimage)' >   Anziehen</button>";
+        element += "<button style='display: none;margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_wearing-"+ itemname +"'>                              Angezogen</button>";
     } else {
-        element += "<button style='margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_bought-"+ itemname +"'> Gekauft </button>";
         //Angezogen button
         if (!wearing) {
-            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover' id='btn_wear-"+ itemname +"' onclick='wear(itemimage)' >Anziehen</button>";
+            element += "<button style='display: none;margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #cdc600; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +",\""+ itemname +"\"," + coins +")'> Kaufen </button>";
+            element += "<button style='display: block;margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_bought-"+ itemname +"'>                               Gekauft </button>";
+            element += "<button style='display: block;margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover' id='btn_wear-"+ itemname +"' onclick='wear(itemimage)' >   Anziehen</button>";
+            element += "<button style='display: none;margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_wearing-"+ itemname +"'>                              Angezogen</button>";
         } else {
-            element += "<button style='margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_wearing-"+ itemname +"'>Angezogen</button>";
+            element += "<button style='display: none;margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #cdc600; font-size: 2em;' class='MouseHover' id='btn_buy-"+ itemname +"' onclick='buy("+ cost +",\""+ itemname +"\"," + coins +")'> Kaufen </button>";
+            element += "<button style='display: block;margin-left: 1em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_bought-"+ itemname +"'>                               Gekauft </button>";
+            element += "<button style='display: none;margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: darkorange; font-size: 2em;' class='MouseHover' id='btn_wear-"+ itemname +"' onclick='wear(itemimage)' >   Anziehen</button>";
+            element += "<button style='display: block;margin-left: 6em; margin-top: 3.7em; position: absolute; height: 2em; background-color: #22aa00; font-size: 2em;' class='MouseHover' id='btn_wearing-"+ itemname +"'>                              Angezogen</button>";
         }
     }
 

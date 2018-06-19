@@ -28,23 +28,21 @@
     <script src="../js/items.js"></script>
     <script type="text/javascript">
         function buy(price,itemname,coins) {
-            if (!coins) {
-                coins = 500;
-            }
 
             if(price<=coins) {
                 coins-=price;
                 var doc=document.getElementById("coin_display");
-                doc.innerHTML = ""+coins;
+                doc.innerHTML = coins+" Coins";
                 $.ajax({
                     type: "POST",
                     url: "../php/func.php",
-                    data: { coins: coins }
+                    data: { buyItem: coins, itemname: itemname }
                 }).done(function () {
-                    alert("Bought item: "+itemname)
+                    document.getElementById("btn_buy-"+itemname).style.display= 'none';
+                    document.getElementById("btn_bought-"+itemname).style.display= 'block';
+                    document.getElementById("btn_wear-"+itemname).style.display= 'block';
                 });
 
-                doc=document.getElementById("btn_buy-"+itemname).style.display= 'none';
             } else {
                 alert("Not enough coins!");
             }
@@ -436,8 +434,6 @@ while($row = mysqli_fetch_array($result)){
         $wearing = "true";
         $bought = "true";
     }
-
-    echo "Row:    ".$rows[$ctr]['path']."\nSession: ".$_SESSION['blob']["hat"]."\nwearing: ".$wearing."\nBought: ".$bought;
 
     echo "<script type='text/javascript'>";
 
