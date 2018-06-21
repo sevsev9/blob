@@ -1267,6 +1267,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                updateCoins('+', 4, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
@@ -1277,6 +1278,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                updateCoins('+', 4, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
@@ -1287,6 +1289,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                updateCoins('+', 4, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
@@ -1371,10 +1374,12 @@ while($row = mysqli_fetch_array($result)){
             if (x==english){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english2;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                updateCoins('+', 3, Lvl);
                 correctmusic();
             }else if (x==english2){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                updateCoins('+', 3, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english + "\n" + "oder: " + english2;
@@ -1385,6 +1390,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==english){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                updateCoins('+', 3, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english;
@@ -1568,6 +1574,7 @@ while($row = mysqli_fetch_array($result)){
 
         if (musicquestcounter == musicquestrightcounter){
 
+            updateCoins('+', i, Lvl);
             setTimeout(correctmusic(),1000);
             setTimeout(createMusicQuest(),2500);
 
@@ -1871,6 +1878,7 @@ while($row = mysqli_fetch_array($result)){
 
             deutschQuestAnswerOptions1.onclick = function() {
                 deutschQuestAnswerOptions1.style.color = "green";
+                updateCoins('+', 2, Lvl);
                 correctmusic();
                 setTimeout(function () {
                     deutschQuestAnswerOptions1.style.color = "black";
@@ -1910,6 +1918,7 @@ while($row = mysqli_fetch_array($result)){
 
             deutschQuestAnswerOptions2.onclick = function() {
                 deutschQuestAnswerOptions2.style.color = "green";
+                updateCoins('+', 2, Lvl);
                 correctmusic();
                 setTimeout(function () {
                     deutschQuestAnswerOptions1.style.color = "black";
@@ -1949,6 +1958,7 @@ while($row = mysqli_fetch_array($result)){
 
             deutschQuestAnswerOptions3.onclick = function() {
                 deutschQuestAnswerOptions3.style.color = "green";
+                updateCoins('+', 2, Lvl);
                 correctmusic();
                 setTimeout(function () {
                     deutschQuestAnswerOptions1.style.color = "black";
@@ -1991,7 +2001,7 @@ while($row = mysqli_fetch_array($result)){
 <!----------------------------------------------------------------------------------------------------------------------blobbounce-->
 
 <script>
-
+    var clickcoins = 0
     //blob
     var blobcolor = document.getElementById("blobcolor");
     var blobmerkmale = document.getElementById("blobmerkmale");
@@ -2003,6 +2013,14 @@ while($row = mysqli_fetch_array($result)){
     var blobhat = document.getElementById("blobhat");
 
     blobhat.addEventListener("click", function(e){
+        clickcoins++;
+        if (clickcoins == 10){
+            clickcoins = 0;
+            updateCoins('+', 1, Lvl);
+        }
+
+
+
         e.preventDefault;
 
         blobcolor.classList.remove("animation-target");
@@ -2039,6 +2057,7 @@ while($row = mysqli_fetch_array($result)){
     var blobload = document.getElementById("loadingGIF");
 
     blobload.addEventListener("click", function(e){
+
         e.preventDefault;
 
         blobload.classList.remove("animation-target");
@@ -2048,6 +2067,16 @@ while($row = mysqli_fetch_array($result)){
         blobload.classList.add("animation-target");
     }, false);
 
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------CoinsFunktion-->
+
+<script>
+    function updateCoins(RZ, Coins, Lvl) {
+        //Update den Schaß!
+    }
 </script>
 
 <!--------------------------------------------------------------------------------------------------------------------->
