@@ -1210,6 +1210,7 @@ while($row = mysqli_fetch_array($result)){
     function createQuest() {
 
         document.getElementById("okBtn").style.opacity = 1;
+        document.getElementById("nextBtn").style.opacity = 0;
 
         document.getElementById("aufgabentext").style.color = "black";
 
@@ -1260,6 +1261,7 @@ while($row = mysqli_fetch_array($result)){
     function answerQuest() {
 
         document.getElementById("okBtn").style.opacity = 0;
+        document.getElementById("nextBtn").style.opacity = 1;
 
         x = document.forms["matheInputForm"]["matheInput"].value;
 
@@ -1298,7 +1300,7 @@ while($row = mysqli_fetch_array($result)){
             }
         }
 
-
+        document.forms["matheInputForm"]["matheInput"].value = "";
     }
 
     $('#matheInput').keydown(function(e) {
@@ -1345,6 +1347,7 @@ while($row = mysqli_fetch_array($result)){
     function createVokabelQuest() {
 
         document.getElementById("VokabelOkBtn").style.opacity = 1;
+        document.getElementById("VokabelNextBtn").style.opacity = 0;
 
         document.getElementById("Vokabelaufgabentext").style.color = "black";
 
@@ -1367,6 +1370,7 @@ while($row = mysqli_fetch_array($result)){
     function answerVokabelQuest() {
 
         document.getElementById("VokabelOkBtn").style.opacity = 0;
+        document.getElementById("VokabelNextBtn").style.opacity = 1;
 
         x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
 
@@ -1400,6 +1404,8 @@ while($row = mysqli_fetch_array($result)){
         }
 
         englcount++;
+
+        document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value = "";
 
     }
 
