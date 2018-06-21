@@ -736,12 +736,6 @@ nav{
     to {-webkit-transform: rotate(180deg);}
 }
 
-.settingsBox{
-    position: absolute;
-    top: 10%;
-    left: 30.25%;
-    z-index: 500;
-}
 
 .settingsText{
     position: absolute;
@@ -762,10 +756,17 @@ nav{
     font-size: 2em;
 }
 
+.settingsBox{
+    position: absolute;
+    top: 10%;
+    left: 30.25%;
+    z-index: 500;
+}
+
 .soundeffects {
     width: 520px;
     position: absolute;
-    top: 20em;
+    top: 15em;
     left: 50em;
     z-index: 502;
 }
@@ -788,7 +789,7 @@ nav{
 .soundbackground {
     width: 520px;
     position: absolute;
-    top: 40em;
+    top: 27.5em;
     left: 50em;
     z-index: 502;
 }
@@ -900,6 +901,13 @@ input[type=range]:focus::-ms-fill-upper {
     cursor: url("../img/mouse/blobpointer.png") 0 0, default;
 }
 
+.musicpicker {
+    width: 520px;
+    position: absolute;
+    top: 40em;
+    left: 50em;
+    z-index: 502;
+}
 
 
 .helpBox{

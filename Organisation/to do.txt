@@ -1,6 +1,4 @@
 
-+ PR-folder (ungefähre vorlage in Pics->PR-Folder sketch) -> Bernd
-
 development: -> mairinger
 
 + server
