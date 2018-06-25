@@ -8,15 +8,16 @@
  * @param $coins
  */
 require_once "session.php";
+
+buyItem($_POST['buyItem'],$_POST['itemname']);
+
 function buyItem($coins,$itemname) {
     $_SESSION['coins'] = $coins;
     echo "<script>alert('Coins:  ".$coins."     Itemname: ".$itemname."');</script>";
     update($itemname);
 }
 
-if (isset($_POST['buyItem']) || isset($_POST['itemname'])) {
-    buyItem($_POST['buyItem'],$_POST['itemname']);
-}
+
 
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
