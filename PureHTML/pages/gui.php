@@ -27,43 +27,114 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script src="../js/items.js"></script>
     <script type="text/javascript">
-        function buy(price,itemname,coins) {
+        coins = <?php echo $_SESSION['coins']; ?>;
+        Lvl = 0;
+        curr_xp = 0;
+        const multiplier = 1.5;
+        const start = 10;
 
+        function buy(price,itemname) {
             if(price<=coins) {
                 coins-=price;
                 var doc=document.getElementById("coin_display");
-                doc.innerHTML = coins+" Coins";
-                $.ajax({
-                    type: "POST",
-                    url: "../php/func.php",
-                    data: { buyItem: coins, itemname: itemname }
-                }).done(function () {
-                    document.getElementById("btn_buy-"+itemname).style.display= 'none';
-                    document.getElementById("btn_bought-"+itemname).style.display= 'block';
-                    document.getElementById("btn_wear-"+itemname).style.display= 'block';
-                });
-
+                doc.innerHTML = "Coins: " + coins;
+                document.getElementById("btn_buy-"+itemname).style.display = "none";
+                document.getElementById("btn_bought-"+itemname).style.display = "block";
+                document.getElementById("btn_wear-"+itemname).style.display = "block";
             } else {
                 alert("Not enough coins!");
             }
         }
+        
+        function calcLvl(xp) {
+            curr_xp = xp;
 
-        function wear(itemimage) {
-            if (itemimage.includes("color")) {
-                document.getElementById("color").setAttribute("src",itemimage)
-            }else if (itemimage.includes("merkmale")) {
-                document.getElementById("merkmale").setAttribute("src",itemimage)
-            }else if (itemimage.includes("mouth")) {
-                document.getElementById("mouth").setAttribute("src",itemimage)
-            }else if (itemimage.includes("clothing")) {
-                document.getElementById("clothing").setAttribute("src",itemimage)
-            }else if (itemimage.includes("accessoires")) {
-                document.getElementById("accessoires").setAttribute("src",itemimage)
-            }else if (itemimage.includes("costume")) {
-                document.getElementById("costume").setAttribute("src",itemimage)
-            }else if (itemimage.includes("hat")) {
-                document.getElementById("hat").setAttribute("src",itemimage)
+            while ( (start*(multiplier*(Lvl+1))) <= curr_xp) {
+                curr_xp-=(start*(multiplier*(Lvl+1)));
+                Lvl++;
             }
+
+            document.getElementById("blobLevel").innerHTML = "Level: "+Lvl + "<br>"+ curr_xp + "/" + (start*(multiplier*(Lvl+1)));
+        }
+
+        function wear(itemname, itemimage) {
+            if (itemimage.includes("color")) {
+                console.log("color");
+                document.getElementById("blobcolor").setAttribute("src",itemimage);
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+            }else if (itemimage.includes("merkmale")) {
+                console.log("merkmale");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobmerkmale").setAttribute("src",itemimage);
+            }else if (itemimage.includes("eyes")) {
+                console.log("eyes");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobeyes").setAttribute("src",itemimage);
+            }else if (itemimage.includes("mouth")) {
+                console.log("mouth");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobmouth").setAttribute("src",itemimage);
+            }else if (itemimage.includes("clothing")) {
+                console.log("clothing");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobclothing").setAttribute("src",itemimage);
+            }else if (itemimage.includes("accessoires")) {
+                console.log("accessoires");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobaccessoires").setAttribute("src",itemimage);
+            }else if (itemimage.includes("costume")) {
+                console.log("costume");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobcostume").setAttribute("src",itemimage);
+            }else if (itemimage.includes("hat")) {
+                console.log("hat");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("blobhat").setAttribute("src",itemimage);
+            }else if (itemimage.includes("wallpaper")) {
+                console.log("wallpaper");
+                document.getElementById("btn_wear-"+itemname).style.display = "none";
+                document.getElementById("btn_wearing-"+itemname).style.display = "block";
+                document.getElementById("background").setAttribute("src",itemimage);
+            } else console.log("nothing");
+        }
+
+        function clearItem(itemname, itemimage) {
+            var itemclass;
+            if (itemimage.includes("color")) {
+                itemclass = "color";
+            }else if (itemimage.includes("merkmale")) {
+                itemclass = "merkmale";
+            }else if (itemimage.includes("mouth")) {
+                itemclass = "mouth";
+            }else if (itemimage.includes("clothing")) {
+                itemclass = "clothing";
+            }else if (itemimage.includes("accessoires")) {
+                itemclass = "accessoires";
+            }else if (itemimage.includes("costume")) {
+                itemclass = "costume";
+            }else if (itemimage.includes("hat")) {
+                itemclass = "hat";
+            }else if (itemimage.includes("wallpaper")) {
+                itemclass = "wallpaper";
+                document.getElementById("background").setAttribute("src","");
+                document.getElementById("btn_wear-"+itemname).style.display = "block";
+                document.getElementById("btn_wearing-"+itemname).style.display = "none";
+            } else console.log("nothing");
+
+            if (itemclass !== "wallpaper") {
+                document.getElementById("blob"+itemclass).setAttribute("src","");
+                document.getElementById("btn_wear-"+itemname).style.display = "block";
+                document.getElementById("btn_wearing-"+itemname).style.display = "none";
+            }
+
         }
     </script>
 
@@ -87,7 +158,7 @@
 
 <!----------------------------------------------------------------------------------------------------------------------Startscreen-->
 <div id="startgamediv">
-    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), testRadioButtonChecked()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
+    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), testRadioButtonChecked(), calcLvl(<?= $_SESSION['curr_xp']?>)" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
     <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
 </div>
 <span id="wt">Welcome to</span>
@@ -159,7 +230,7 @@
 <!----------------------------------------------------------------------------------------------------------------------STANDARD_HUD-->
 <div class="zentr">
     <div class="name fadeoutdiv"><?= $_SESSION['blob']['name']?></div>
-    <div class="xp"><?= $_SESSION['curr_xp']?>/<!-- javascript calculation -->xp</div>
+    <div class="xp" id="blobLevel"></div>
 </div>
 <div class="coins" id="coin_display"><?= $_SESSION['coins']?> Coins</div>
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -399,7 +470,7 @@
 <!--Shop Item Script-->
 <?php
 //Create Javascript Item Array
-$servername = "172.17.0.5";
+$servername = "172.17.0.6";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
@@ -589,7 +660,6 @@ while($row = mysqli_fetch_array($result)){
             <input type="radio" id="supermario" name="musicpicker" style="width: 1em; height: 1em" onclick="testRadioButtonChecked()">
             <label for="supermario">Super Mario</label>
         </fieldset>
-
     </div>
 
 </div>
@@ -2081,7 +2151,17 @@ while($row = mysqli_fetch_array($result)){
 
 <script>
     function updateCoins(RZ, Coins, Lvl) {
-        //Update den Schaß!
+        console.log(10*(1.5*(Lvl+1)));
+        if (RZ === "+") {
+            coins+=Coins*Lvl;
+            curr_xp+=Coins*Lvl;
+        } else if (RZ === "-") {
+            coins-=Coins;
+        }
+
+        calcLvl(curr_xp);
+        document.getElementById("coin_display").innerHTML = "Coins: " + coins;
+
     }
 </script>
 

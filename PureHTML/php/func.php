@@ -28,7 +28,7 @@ if ($db->connect_error) {
 //
 
 function update($itemname) {
-    $servername = "172.17.0.5";
+    $servername = "172.17.0.6";
     $dbname = "blob_users";
     $dbuname = "webacc";
     $dbpassw = "Blob_256!";
