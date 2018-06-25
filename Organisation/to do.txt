@@ -1,12 +1,8 @@
 
-+ PR-folder (ungefähre vorlage in Pics->PR-Folder sketch) -> Bernd
-
 development: -> mairinger
 
-+ server
 + Logout button (weiterleitung zu login page)
-+ Login page (weiterleitung zu spiel)
-+ items in shop einfügen
-+ xp/coin-system
-+ speichersystem
++ xp/coin-addfunktion
++ kaufen
++ anziehen
 - registrierung deaktivieren

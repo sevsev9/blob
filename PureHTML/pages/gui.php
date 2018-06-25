@@ -87,7 +87,7 @@
 
 <!----------------------------------------------------------------------------------------------------------------------Startscreen-->
 <div id="startgamediv">
-    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), playbackgroundmusic()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
+    <img src="../img/Game_Start_Button.png" id="startgame" onclick="toggleFullscreen(), testRadioButtonChecked()" class="MouseHover Gamestartbuttonhover" onmouseover="hover(this);" onmouseout="unhover(this);">
     <img src="../img/Game_Start_Button_Shadow.png" id="startgameshadow">
 </div>
 <span id="wt">Welcome to</span>
@@ -120,7 +120,7 @@
 <nav>
     <ul>
         <li>
-            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav(), playbackgroundmusic(), navopenmusic()"></div>
+            <div id="navbaropeniconoverlay" class="MouseHover" onclick="openNav(), testRadioButtonChecked(), navopenmusic()"></div>
             <span class="openBtn" id="navopenicon">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -137,7 +137,7 @@
             <span class="englishTxt text MouseHover" onclick="openNav(), vokabelboxopen(), boxopenmusic()">English</span><img src="../img/english.png" width="25%" class="englishBtn">
         </li>
         <li>
-            <span class="musicTxt text MouseHover" onclick="openNav(), musicboxopen(), pausebackgroundmusic(), boxopenmusic()">Musik</span><img src="../img/music.png" width="25%" class="musicBtn">
+            <span class="musicTxt text MouseHover" onclick="openNav(), musicboxopen(), pausebackgroundmusic1(), pausebackgroundmusic2(), pausebackgroundmusic3(), pausebackgroundmusic4(), boxopenmusic()">Musik</span><img src="../img/music.png" width="25%" class="musicBtn">
         </li>
         <li>
             <span class="deutschTxt text MouseHover" onclick="openNav(), deutschboxopen(), boxopenmusic(), createDeutschQuest()">Deutsch</span><img src="../img/deutsch.png" width="25%" class="deutschBtn">
@@ -149,7 +149,7 @@
             <span class="helpTxt text MouseHover" onclick="openNav(), helpboxopen(), boxopenmusic()">Help</span><img src="../img/help.png" width="25%" class="helpBtn">
         </li>
         <li>
-            <span class="logoutTxt text MouseHover" onclick="openNav(), logout(), pausebackgroundmusic()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
+            <span class="logoutTxt text MouseHover" onclick="openNav(), logout(), pausebackgroundmusic1(), pausebackgroundmusic2(), pausebackgroundmusic3(), pausebackgroundmusic4()">Logout</span><img src="../img/cancel.png" width="25%" class="logoutBtn">
         </li>
     </ul>
 </nav>
@@ -202,7 +202,7 @@
 <!----------------------------------------------------------------------------------------------------------------------musicbox-->
 
 <div id="musicboxfull" class="fadeindiv">
-    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame(), playbackgroundmusic(), boxoutmusic()">X</h1>
+    <h1 class="musicX MouseHover" style="z-index: 501" onclick="closemusic(), endmusicgame(), testRadioButtonChecked(), boxoutmusic()">X</h1>
     <div class="musicbox">
         <img src="../img/musicBox.png" width="90%"/>
     </div>
@@ -574,7 +574,23 @@ while($row = mysqli_fetch_array($result)){
         <output id="musicbackgroundoutput" for="musicbackgroundslider" style="color: #191919">5</output>
         <input id="musicbackgroundslider" name="musicbackgroundslider" type="range" min="0" max="10" step="1.0">
     </div>
+    <div class="musicpicker">
+        <span style="font-size: 3.5em; color: #191919">Musik:</span>
+        <fieldset style="font-size: 2em; color: #191919; border: none; position: absolute; left: 8em; top: 1em;" >
+            <input checked type="radio" id="lounge" name="musicpicker" style="width: 1em; height: 1em" onclick="testRadioButtonChecked()">
+            <label for="lounge">Lounge</label>
+            <br>
+            <input type="radio" id="disko" name="musicpicker" style="width: 1em; height: 1em" onclick="testRadioButtonChecked()">
+            <label for="disko">Disko</label>
+            <br>
+            <input type="radio" id="jazz" name="musicpicker" style="width: 1em; height: 1em" onclick="testRadioButtonChecked()">
+            <label for="jazz">Jazz</label>
+            <br>
+            <input type="radio" id="supermario" name="musicpicker" style="width: 1em; height: 1em" onclick="testRadioButtonChecked()">
+            <label for="supermario">Super Mario</label>
+        </fieldset>
 
+    </div>
 
 </div>
 <img src="../img/settings.png" width="3%" class="settingsBtn MouseHover" onclick="settingsboxopen(), boxopenmusic()">
@@ -583,8 +599,17 @@ while($row = mysqli_fetch_array($result)){
 
 <!----------------------------------------------------------------------------------------------------------------------MUSIC-->
 
-<audio loop id="backgroundmusic">
-    <source src="../music/backgroundmusic.mp3" type="audio/mp3">
+<audio loop id="backgroundmusic1">
+    <source src="../music/backgroundmusic1.mp3" type="audio/mp3">
+</audio>
+<audio loop id="backgroundmusic2">
+    <source src="../music/backgroundmusic2.mp3" type="audio/mp3">
+</audio>
+<audio loop id="backgroundmusic3">
+    <source src="../music/backgroundmusic3.mp3" type="audio/mp3">
+</audio>
+<audio loop id="backgroundmusic4">
+    <source src="../music/backgroundmusic4.mp3" type="audio/mp3">
 </audio>
 
 <audio id="navopenmusic">
@@ -978,13 +1003,37 @@ while($row = mysqli_fetch_array($result)){
     musicbackgroundoutput = document.querySelector("#musicbackgroundoutput");
     document.addEventListener('DOMContentLoaded', function() {
         musicbackgroundoutput.value = musicbackgroundslider.value;
-        playbackgroundmusic();
+        testRadioButtonChecked();
     });
 
     musicbackgroundslider.addEventListener ("input", function () {
         musicbackgroundoutput.value = this.value;
-        playbackgroundmusic();
+        testRadioButtonChecked();
     });
+
+    function testRadioButtonChecked() {
+        if (document.getElementById("lounge").checked==true){
+            pausebackgroundmusic2();
+            pausebackgroundmusic3();
+            pausebackgroundmusic4();
+            playbackgroundmusic1();
+        }else if (document.getElementById("disko").checked==true){
+            pausebackgroundmusic1();
+            pausebackgroundmusic3();
+            pausebackgroundmusic4();
+            playbackgroundmusic2();
+        }else if (document.getElementById("jazz").checked==true){
+            pausebackgroundmusic1();
+            pausebackgroundmusic2();
+            pausebackgroundmusic4();
+            playbackgroundmusic3();
+        }else if (document.getElementById("supermario").checked==true){
+            pausebackgroundmusic1();
+            pausebackgroundmusic2();
+            pausebackgroundmusic3();
+            playbackgroundmusic4();
+        }
+    }
 
 </script>
 
@@ -993,14 +1042,47 @@ while($row = mysqli_fetch_array($result)){
 <!----------------------------------------------------------------------------------------------------------------------music-->
 
 <script>
-    function playbackgroundmusic() {
-        x = document.getElementById("backgroundmusic");
+    function playbackgroundmusic1() {
+        x = document.getElementById("backgroundmusic1");
         x.volume = musicbackgroundoutput.value/10;
         x.play();
     }
 
-    function pausebackgroundmusic() {
-        x = document.getElementById("backgroundmusic");
+    function pausebackgroundmusic1() {
+        x = document.getElementById("backgroundmusic1");
+        x.pause();
+    }
+
+    function playbackgroundmusic2() {
+        x = document.getElementById("backgroundmusic2");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic2() {
+        x = document.getElementById("backgroundmusic2");
+        x.pause();
+    }
+
+    function playbackgroundmusic3() {
+        x = document.getElementById("backgroundmusic3");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic3() {
+        x = document.getElementById("backgroundmusic3");
+        x.pause();
+    }
+
+    function playbackgroundmusic4() {
+        x = document.getElementById("backgroundmusic4");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic4() {
+        x = document.getElementById("backgroundmusic4");
         x.pause();
     }
 
@@ -1128,6 +1210,7 @@ while($row = mysqli_fetch_array($result)){
     function createQuest() {
 
         document.getElementById("okBtn").style.opacity = 1;
+        document.getElementById("nextBtn").style.opacity = 0;
 
         document.getElementById("aufgabentext").style.color = "black";
 
@@ -1178,6 +1261,7 @@ while($row = mysqli_fetch_array($result)){
     function answerQuest() {
 
         document.getElementById("okBtn").style.opacity = 0;
+        document.getElementById("nextBtn").style.opacity = 1;
 
         x = document.forms["matheInputForm"]["matheInput"].value;
 
@@ -1185,6 +1269,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                updateCoins('+', 4, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " + " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
@@ -1195,6 +1280,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                updateCoins('+', 4, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " - " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
@@ -1205,6 +1291,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==ergebnis){
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + ergebnis;
                 document.getElementById("aufgabentext").style.color = "green";
+                updateCoins('+', 4, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("aufgabentext").innerText = z1 + " • " + z2 + " = " + x + "\n" + "Lösung: " + ergebnis;
@@ -1213,7 +1300,7 @@ while($row = mysqli_fetch_array($result)){
             }
         }
 
-
+        document.forms["matheInputForm"]["matheInput"].value = "";
     }
 
     $('#matheInput').keydown(function(e) {
@@ -1260,6 +1347,7 @@ while($row = mysqli_fetch_array($result)){
     function createVokabelQuest() {
 
         document.getElementById("VokabelOkBtn").style.opacity = 1;
+        document.getElementById("VokabelNextBtn").style.opacity = 0;
 
         document.getElementById("Vokabelaufgabentext").style.color = "black";
 
@@ -1282,6 +1370,7 @@ while($row = mysqli_fetch_array($result)){
     function answerVokabelQuest() {
 
         document.getElementById("VokabelOkBtn").style.opacity = 0;
+        document.getElementById("VokabelNextBtn").style.opacity = 1;
 
         x = document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value;
 
@@ -1289,10 +1378,12 @@ while($row = mysqli_fetch_array($result)){
             if (x==english){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english2;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                updateCoins('+', 3, Lvl);
                 correctmusic();
             }else if (x==english2){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " ->" + x + "\n" + "oder: " + english;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                updateCoins('+', 3, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english + "\n" + "oder: " + english2;
@@ -1303,6 +1394,7 @@ while($row = mysqli_fetch_array($result)){
             if (x==english){
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x;
                 document.getElementById("Vokabelaufgabentext").style.color = "green";
+                updateCoins('+', 3, Lvl);
                 correctmusic();
             }else {
                 document.getElementById("Vokabelaufgabentext").innerText = german + " -> " + x + "\n" + "Das Wort war: " + english;
@@ -1312,6 +1404,8 @@ while($row = mysqli_fetch_array($result)){
         }
 
         englcount++;
+
+        document.forms["VokabelQuestInputForm"]["VokabelQuestInput"].value = "";
 
     }
 
@@ -1486,6 +1580,7 @@ while($row = mysqli_fetch_array($result)){
 
         if (musicquestcounter == musicquestrightcounter){
 
+            updateCoins('+', i, Lvl);
             setTimeout(correctmusic(),1000);
             setTimeout(createMusicQuest(),2500);
 
@@ -1789,6 +1884,7 @@ while($row = mysqli_fetch_array($result)){
 
             deutschQuestAnswerOptions1.onclick = function() {
                 deutschQuestAnswerOptions1.style.color = "green";
+                updateCoins('+', 2, Lvl);
                 correctmusic();
                 setTimeout(function () {
                     deutschQuestAnswerOptions1.style.color = "black";
@@ -1828,6 +1924,7 @@ while($row = mysqli_fetch_array($result)){
 
             deutschQuestAnswerOptions2.onclick = function() {
                 deutschQuestAnswerOptions2.style.color = "green";
+                updateCoins('+', 2, Lvl);
                 correctmusic();
                 setTimeout(function () {
                     deutschQuestAnswerOptions1.style.color = "black";
@@ -1867,6 +1964,7 @@ while($row = mysqli_fetch_array($result)){
 
             deutschQuestAnswerOptions3.onclick = function() {
                 deutschQuestAnswerOptions3.style.color = "green";
+                updateCoins('+', 2, Lvl);
                 correctmusic();
                 setTimeout(function () {
                     deutschQuestAnswerOptions1.style.color = "black";
@@ -1909,7 +2007,7 @@ while($row = mysqli_fetch_array($result)){
 <!----------------------------------------------------------------------------------------------------------------------blobbounce-->
 
 <script>
-
+    var clickcoins = 0
     //blob
     var blobcolor = document.getElementById("blobcolor");
     var blobmerkmale = document.getElementById("blobmerkmale");
@@ -1921,6 +2019,14 @@ while($row = mysqli_fetch_array($result)){
     var blobhat = document.getElementById("blobhat");
 
     blobhat.addEventListener("click", function(e){
+        clickcoins++;
+        if (clickcoins == 10){
+            clickcoins = 0;
+            updateCoins('+', 1, Lvl);
+        }
+
+
+
         e.preventDefault;
 
         blobcolor.classList.remove("animation-target");
@@ -1957,6 +2063,7 @@ while($row = mysqli_fetch_array($result)){
     var blobload = document.getElementById("loadingGIF");
 
     blobload.addEventListener("click", function(e){
+
         e.preventDefault;
 
         blobload.classList.remove("animation-target");
@@ -1966,6 +2073,16 @@ while($row = mysqli_fetch_array($result)){
         blobload.classList.add("animation-target");
     }, false);
 
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------CoinsFunktion-->
+
+<script>
+    function updateCoins(RZ, Coins, Lvl) {
+        //Update den Schaß!
+    }
 </script>
 
 <!--------------------------------------------------------------------------------------------------------------------->

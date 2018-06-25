@@ -8,43 +8,157 @@
 
     <style>
 
-        .deutschbox{
+        .settingsBox{
             position: absolute;
-            top: 18%;
-            left: 18%;
+            top: 10%;
+            left: 30.25%;
             z-index: 500;
         }
 
-        .deutschX{
+        .soundeffects {
+            width: 520px;
             position: absolute;
-            left: 89%;
-            top: 18%;
-            color: grey;
+            top: 15em;
+            left: 50em;
             z-index: 502;
         }
 
-        .deutschheader{
+        #musiceffectoutput{
+            font-size: 3.5em;
             position: absolute;
-            top: 10%;
-            left: 25%;
-            font-size: 2em;
-            font-family: "Arial Black";
+            top: -0.1em;
+            left: 9.5em;
+            z-index: 502;
         }
 
-        #deutschQuest{
+        #musiceffectslider{
             position: absolute;
-            top: 30%;
-            left: 25%;
-            font-size: 3em;
-            font-family: "Arial Black";
+            top: 7em;
+            left: 0.05em;
+            z-index: 502;
         }
 
-        #deutschQuestAnswerOptions{
+        .soundbackground {
+            width: 520px;
             position: absolute;
-            top: 45%;
-            left: 25%;
-            font-size: 2.5em;
-            font-family: "Arial Black";
+            top: 27.5em;
+            left: 50em;
+            z-index: 502;
+        }
+
+        #musicbackgroundoutput{
+            font-size: 3.5em;
+            position: absolute;
+            top: -0.1em;
+            left: 9.5em;
+            z-index: 502;
+        }
+
+        #musicbackgroundslider{
+            position: absolute;
+            top: 7em;
+            left: 0.05em;
+            z-index: 502;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            margin: 8.75px 0;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]:focus {
+            outline: none;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 5.5px;
+            box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
+            background: #dbc5a8;
+            border-radius: 25px;
+            border: 0px solid rgba(0, 0, 1, 0);
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            box-shadow: 2px 2px 7px #000000, 0px 0px 2px #0d0d0d;
+            border: 2.8px solid #691400;
+            height: 23px;
+            width: 23px;
+            border-radius: 50px;
+            background: #894e00;
+            -webkit-appearance: none;
+            margin-top: -8.75px;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #dbc5a8;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-moz-range-track {
+            width: 100%;
+            height: 5.5px;
+            box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
+            background: #dbc5a8;
+            border-radius: 25px;
+            border: 0px solid rgba(0, 0, 1, 0);
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-moz-range-thumb {
+            box-shadow: 2px 2px 7px #000000, 0px 0px 2px #0d0d0d;
+            border: 2.8px solid #691400;
+            height: 23px;
+            width: 23px;
+            border-radius: 50px;
+            background: #894e00;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-ms-track {
+            width: 100%;
+            height: 5.5px;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-ms-fill-lower {
+            background: #dbc5a8;
+            border: 0px solid rgba(0, 0, 1, 0);
+            border-radius: 50px;
+            box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-ms-fill-upper {
+            background: #dbc5a8;
+            border: 0px solid rgba(0, 0, 1, 0);
+            border-radius: 50px;
+            box-shadow: 2.4px 2.4px 7.9px #000000, 0px 0px 2.4px #0d0d0d;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]::-ms-thumb {
+            box-shadow: 2px 2px 7px #000000, 0px 0px 2px #0d0d0d;
+            border: 2.8px solid #691400;
+            height: 23px;
+            width: 23px;
+            border-radius: 50px;
+            background: #894e00;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]:focus::-ms-fill-lower {
+            background: #dbc5a8;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+        input[type=range]:focus::-ms-fill-upper {
+            background: #dbc5a8;
+            cursor: url("../img/mouse/blobpointer.png") 0 0, default;
+        }
+
+        .musicpicker {
+            width: 520px;
+            position: absolute;
+            top: 40em;
+            left: 50em;
+            z-index: 502;
         }
 
     </style>
@@ -52,219 +166,161 @@
 </head>
 <body>
 
-<div id="deutschboxfull" class="fadeindiv">
-    <h1 class="deutschX MouseHover" style="z-index: 501" onclick="closedeutsch()">X</h1>
-    <div class="deutschbox">
-        <img src="./img/musicBox.png" width="90%" onclick="createDeutschQuest()"/>
-        <div class="deutschheader">Finde die fehlende Steigerungsform:</div>
-        <div id="deutschQuest"></div>
-        <div id="deutschQuestAnswerOptions">
-            <span id="deutschQuestAnswerOptions1" onclick=""></span>
-            <br>
-            <span id="deutschQuestAnswerOptions2"></span>
-            <br>
-            <span id="deutschQuestAnswerOptions3"></span>
-        </div>
+<div id="settingsboxfull" class="fadeindiv" style="color: #191919">
+    <img src="./img/settingsBox.png" width="40%" class="settingsBox">
+    <div class="soundeffects">
+        <span style="font-size: 3.5em; color: #191919">Effektlautstärke:</span>
+        <output id="musiceffectoutput" for="musiceffectslider" style="color: #191919">5</output>
+        <input id="musiceffectslider" name="musiceffectslider" type="range" min="0" max="10" step="1.0">
     </div>
+    <div class="soundbackground">
+        <span style="font-size: 3.5em; color: #191919">Musiklautstärke:</span>
+        <output id="musicbackgroundoutput" for="musicbackgroundslider" style="color: #191919">5</output>
+        <input id="musicbackgroundslider" name="musicbackgroundslider" type="range" min="0" max="10" step="1.0">
+    </div>
+    <div class="musicpicker">
+        <span style="font-size: 3.5em; color: #191919">Musik:</span>
+        <fieldset style="font-size: 2.5em; color: #191919; border: none; position: absolute; left: 4em; top: 0em;" >
+            <input checked type="radio" id="lounge" name="musicpicker" style="width: 2em; height: 2em" onclick="testRadioButtonChecked()">
+            <label for="lounge">Lounge</label>
+            <br>
+            <input type="radio" id="disko" name="musicpicker" style="width: 2em; height: 2em" onclick="testRadioButtonChecked()">
+            <label for="disko">Disko</label>
+            <br>
+            <input type="radio" id="jazz" name="musicpicker" style="width: 2em; height: 2em" onclick="testRadioButtonChecked()">
+            <label for="jazz">Jazz</label>
+            <br>
+            <input type="radio" id="supermario" name="musicpicker" style="width: 2em; height: 2em" onclick="testRadioButtonChecked()">
+            <label for="supermario">Super Mario</label>
+        </fieldset>
+
+    </div>
+
 </div>
 
+<audio loop id="backgroundmusic1">
+    <source src="./music/backgroundmusic1.mp3" type="audio/mp3">
+</audio>
+<audio loop id="backgroundmusic2">
+    <source src="./music/backgroundmusic2.mp3" type="audio/mp3">
+</audio>
+<audio loop id="backgroundmusic3">
+    <source src="./music/backgroundmusic3.mp3" type="audio/mp3">
+</audio>
+<audio loop id="backgroundmusic4">
+    <source src="./music/backgroundmusic4.mp3" type="audio/mp3">
+</audio>
+
+
+<!----------------------------------------------------------------------------------------------------------------------settings-->
 
 <script>
 
-    deutschQuestAnswer = "";
-    deutschQuestWahl = 0;
-    deutschQuestArrayWahl = 0;
-    deutschQuestNumber = 0;
+    musiceffectslider = document.querySelector("#musiceffectslider");
+    musiceffectoutput = document.querySelector("#musiceffectoutput");
+    document.addEventListener('DOMContentLoaded', function() {
+        musiceffectoutput.value = musiceffectslider.value;
+    });
 
-    deutschar0 = ["klein", "kleiner", "am kleinsten"];
-    deutschar1 = ["gut", "besser", "am besten"];
-    deutschar2 = ["hoch", "höher", "am höchsten"];
-    deutschar3 = ["groß", "größer", "am größten"];
-    deutschar4 = ["schnell", "schneller", "am schnellsten"];
-    deutschar5 = ["dick", "dicker", "am dicksten"];
-    deutschar6 = ["spitz", "spitzer", "am spitzesten"];
-    deutschar7 = ["freundlich", "freundlicher", "am freundlichsten"];
-    deutschar8 = ["laut", "lauter", "am lautesten"];
-    deutschar9 = ["leise", "leiser", "am leisesten"];
-    deutschar10 = ["brav", "braver", "am bravsten"];
+    musiceffectslider.addEventListener ("input", function () {
+        musiceffectoutput.value = this.value;
+    });
 
-    deutscharrays = [deutschar0,
-        deutschar1,
-        deutschar2,
-        deutschar3,
-        deutschar4,
-        deutschar5,
-        deutschar6,
-        deutschar7,
-        deutschar8,
-        deutschar9,
-        deutschar10];
+    musicbackgroundslider = document.querySelector("#musicbackgroundslider");
+    musicbackgroundoutput = document.querySelector("#musicbackgroundoutput");
+    document.addEventListener('DOMContentLoaded', function() {
+        musicbackgroundoutput.value = musicbackgroundslider.value;
 
-    function createDeutschQuest() {
+        testRadioButtonChecked();
+    });
 
-        deutschQuestWahl = (Math.random() * (3 - 1)) + 1;
-        deutschQuestWahl = Math.round(deutschQuestWahl);
+    musicbackgroundslider.addEventListener ("input", function () {
+        musicbackgroundoutput.value = this.value;
 
-        deutschQuestArrayWahl = (Math.random() * (10 - 0)) + 0;
-        deutschQuestArrayWahl = Math.round(deutschQuestArrayWahl);
+        testRadioButtonChecked();
+    });
 
-        deutschQuest = document.getElementById("deutschQuest");
-
-        if (deutschQuestWahl==1){
-
-            deutschQuest.innerHTML = "?" + " - " + deutscharrays[deutschQuestArrayWahl][1] + " - " + deutscharrays[deutschQuestArrayWahl][2];
-            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][0];
-            deutschQuestNumber = 0;
-
-        }else if (deutschQuestWahl==2){
-
-            deutschQuest.innerHTML = deutscharrays[deutschQuestArrayWahl][0] + " - " + "?" + " - " + deutscharrays[deutschQuestArrayWahl][2];
-            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][1];
-            deutschQuestNumber = 1;
-
-        }else if (deutschQuestWahl==3){
-
-            deutschQuest.innerHTML = deutscharrays[deutschQuestArrayWahl][0] + " - " + deutscharrays[deutschQuestArrayWahl][1] + " - " + "?";
-            deutschQuestAnswer = deutscharrays[deutschQuestArrayWahl][2];
-            deutschQuestNumber = 2;
-
+    function testRadioButtonChecked() {
+        if (document.getElementById("lounge").checked==true){
+            pausebackgroundmusic2();
+            pausebackgroundmusic3();
+            pausebackgroundmusic4();
+            playbackgroundmusic1();
+        }else if (document.getElementById("disko").checked==true){
+            pausebackgroundmusic1();
+            pausebackgroundmusic3();
+            pausebackgroundmusic4();
+            playbackgroundmusic2();
+        }else if (document.getElementById("jazz").checked==true){
+            pausebackgroundmusic1();
+            pausebackgroundmusic2();
+            pausebackgroundmusic4();
+            playbackgroundmusic3();
+        }else if (document.getElementById("supermario").checked==true){
+            pausebackgroundmusic1();
+            pausebackgroundmusic2();
+            pausebackgroundmusic3();
+            playbackgroundmusic4();
         }
-
-        createDeutschAnswerOptions();
     }
 
-    function createDeutschAnswerOptions() {
-
-        deutschQuestAnswerOptions1 = document.getElementById("deutschQuestAnswerOptions1");
-        deutschQuestAnswerOptions2 = document.getElementById("deutschQuestAnswerOptions2");
-        deutschQuestAnswerOptions3 = document.getElementById("deutschQuestAnswerOptions3");
-
-        deutschw = (Math.random() * (3 - 1)) + 1;
-        deutschw = Math.round(deutschw);
-
-        do{
-            deutschx = (Math.random() * (10 - 0)) + 0;
-            deutschx = Math.round(deutschx);
-        }while (deutschQuestArrayWahl == deutschx);
-
-        do{
-            deutschy = (Math.random() * (10 - 0)) + 0;
-            deutschy = Math.round(deutschy);
-        }while ((deutschQuestArrayWahl == deutschy)||(deutschx == deutschy));
-
-        if (deutschw==1){
-
-            deutschQuestAnswerOptions1.innerHTML = deutschQuestAnswer;
-            deutschQuestAnswerOptions2.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
-            deutschQuestAnswerOptions3.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
-
-            deutschQuestAnswerOptions1.onclick = function() {
-                deutschQuestAnswerOptions1.style.color = "green";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-            deutschQuestAnswerOptions2.onclick = function() {
-                deutschQuestAnswerOptions2.style.color = "red";
-                deutschQuestAnswerOptions3.style.color = "red";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-            deutschQuestAnswerOptions3.onclick = function() {
-                deutschQuestAnswerOptions2.style.color = "red";
-                deutschQuestAnswerOptions3.style.color = "red";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-
-        }else if (deutschw==2){
-
-            deutschQuestAnswerOptions1.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
-            deutschQuestAnswerOptions2.innerHTML = deutschQuestAnswer;
-            deutschQuestAnswerOptions3.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
-
-            deutschQuestAnswerOptions2.onclick = function() {
-                deutschQuestAnswerOptions2.style.color = "green";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-            deutschQuestAnswerOptions1.onclick = function() {
-                deutschQuestAnswerOptions1.style.color = "red";
-                deutschQuestAnswerOptions3.style.color = "red";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-            deutschQuestAnswerOptions3.onclick = function() {
-                deutschQuestAnswerOptions1.style.color = "red";
-                deutschQuestAnswerOptions3.style.color = "red";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-
-        }else if (deutschw==3){
-
-            deutschQuestAnswerOptions1.innerHTML = deutscharrays[deutschx][deutschQuestNumber];
-            deutschQuestAnswerOptions2.innerHTML = deutscharrays[deutschy][deutschQuestNumber];
-            deutschQuestAnswerOptions3.innerHTML = deutschQuestAnswer;
-
-            deutschQuestAnswerOptions3.onclick = function() {
-                deutschQuestAnswerOptions3.style.color = "green";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-            deutschQuestAnswerOptions1.onclick = function() {
-                deutschQuestAnswerOptions1.style.color = "red";
-                deutschQuestAnswerOptions2.style.color = "red";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-            deutschQuestAnswerOptions2.onclick = function() {
-                deutschQuestAnswerOptions1.style.color = "red";
-                deutschQuestAnswerOptions2.style.color = "red";
-                setTimeout(function () {
-                    deutschQuestAnswerOptions1.style.color = "black";
-                    deutschQuestAnswerOptions2.style.color = "black";
-                    deutschQuestAnswerOptions3.style.color = "black";
-                    createDeutschQuest();
-                },2000);
-            }
-
-        }
-
-    }
 
 </script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------------------------music-->
+
+<script>
+    function playbackgroundmusic1() {
+        x = document.getElementById("backgroundmusic1");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic1() {
+        x = document.getElementById("backgroundmusic1");
+        x.pause();
+    }
+
+    function playbackgroundmusic2() {
+        x = document.getElementById("backgroundmusic2");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic2() {
+        x = document.getElementById("backgroundmusic2");
+        x.pause();
+    }
+
+    function playbackgroundmusic3() {
+        x = document.getElementById("backgroundmusic3");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic3() {
+        x = document.getElementById("backgroundmusic3");
+        x.pause();
+    }
+
+    function playbackgroundmusic4() {
+        x = document.getElementById("backgroundmusic4");
+        x.volume = musicbackgroundoutput.value/10;
+        x.play();
+    }
+
+    function pausebackgroundmusic4() {
+        x = document.getElementById("backgroundmusic4");
+        x.pause();
+    }
+
+
+</script>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 
 </body>
 </html>
