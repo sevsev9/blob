@@ -1,6 +1,3 @@
-""
-
-
 //Usage:
 //  * id - document.getElementById("");
 //  * itemname - "name of the item"

@@ -470,7 +470,7 @@
 <!--Shop Item Script-->
 <?php
 //Create Javascript Item Array
-$servername = "172.17.0.6";
+$servername = "localhost";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";

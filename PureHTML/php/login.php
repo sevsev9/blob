@@ -2,7 +2,7 @@
 
 require_once "session.php";
 
-$servername = "172.17.0.6";
+$servername = "localhost";
 $dbname = "blob_users";
 $dbuname = "webacc";
 $dbpassw = "Blob_256!";
