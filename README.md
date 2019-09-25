@@ -1,6 +1,6 @@
 # Blob
 
-One Paragraph of project description goes here
+Blob is a lean game for first/second grade students. It allows students to earn points and buy customization articles for their personal avatar.
 
 ## Contributors
 *[sevsev9](https://github.com/sevsev9)
